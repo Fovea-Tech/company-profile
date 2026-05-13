@@ -7,6 +7,6 @@ export default function robots(): MetadataRoute.Robots {
       allow: '/',
     },
     // Jika Anda memiliki sitemap nanti, pastikan URL-nya benar
-    sitemap: 'https://www.foveatech.com/sitemap.xml',
+    sitemap: 'https://www.fovea.digital/sitemap.xml',
   };
 }
