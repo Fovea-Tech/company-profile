@@ -6,23 +6,24 @@ export default function LanguageToggle() {
   const { lang, setLang } = useLang();
 
   return (
-    <div className="flex items-center bg-white/10 rounded-full p-0.5 border border-white/5">
-      <button
-        onClick={() => setLang('id')}
-        className={`px-2.5 py-1 text-[10px] font-medium rounded-full transition-all duration-200 ${
-          lang === 'id' ? 'bg-accent text-white shadow-sm' : 'text-muted hover:text-fg'
-        }`}
-      >
-        ID
-      </button>
-      <button
-        onClick={() => setLang('en')}
-        className={`px-2.5 py-1 text-[10px] font-medium rounded-full transition-all duration-200 ${
-          lang === 'en' ? 'bg-accent text-white shadow-sm' : 'text-muted hover:text-fg'
-        }`}
-      >
-        EN
-      </button>
+    <div className="inline-flex items-center gap-1 rounded-full border border-white/10 bg-white/5 p-1">
+      {(['id', 'en'] as const).map((item) => {
+        const active = lang === item;
+
+        return (
+          <button
+            key={item}
+            type="button"
+            onClick={() => setLang(item)}
+            className={[
+              'rounded-full px-3 py-1.5 text-[11px] font-semibold uppercase tracking-[0.18em]',
+              active ? 'bg-white text-slate-950 shadow-sm' : 'text-muted hover:text-fg',
+            ].join(' ')}
+          >
+            {item}
+          </button>
+        );
+      })}
     </div>
   );
 }

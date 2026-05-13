@@ -1,0 +1,132 @@
+import type { Translations } from '@/i18n/types';
+
+const id: Translations = {
+  nav: {
+    home: 'Beranda',
+    services: 'Layanan',
+    portfolio: 'Portofolio',
+    about: 'Tentang Kami',
+    faq: 'FAQ',
+    contact: 'Kontak',
+  },
+  hero: {
+    tagline: 'SaaS · Custom Web',
+    title: 'Bangun Masa Depan\nDigital Anda',
+    subtitle:
+      'Kami membangun produk SaaS inovatif dan website custom berkualitas tinggi yang mendorong pertumbuhan bisnis Anda.',
+    cta: 'Lihat Layanan',
+    ctaSecondary: 'Hubungi Kami',
+  },
+  services: {
+    heading: 'Layanan Kami',
+    subheading: 'Solusi digital berkualitas tinggi yang dirancang untuk kebutuhan bisnis modern.',
+    saasTitle: 'SaaS Product Development',
+    saasDesc:
+      'Membangun produk software berbasis langganan yang scalable, secure, dan siap memenuhi kebutuhan bisnis modern Anda.',
+    webTitle: 'Custom Website Development',
+    webDesc:
+      'Website sesuai kebutuhan klien dengan desain modern, performa tinggi, dan optimasi SEO maksimal.',
+  },
+  portfolio: {
+    heading: 'Portofolio',
+    subheading: 'Produk dan proyek yang telah kami bangun dengan penuh dedikasi.',
+    tabSaas: 'SaaS Live',
+    tabUpcoming: 'Segera Hadir',
+    tabCustom: 'Proyek Custom',
+    viewProduct: 'Lihat Produk',
+    notifyMe: 'Beri Tahu Saya',
+    inDev: 'Dalam Pengembangan',
+    comingSoon: 'Segera Hadir',
+    techStack: 'Tech Stack',
+    industry: 'Industri',
+    emptyTitle: 'Belum Ada Proyek',
+    emptySubtitle: 'Kami sedang mempersiapkan proyek-proyek terbaik untuk kategori ini. Pantau terus!',
+    emptyCta: 'Hubungi Kami',
+  },
+  portfolioDetail: {
+    client: 'Klien',
+    industry: 'Industri',
+    techStack: 'Tech Stack',
+    progress: 'Progress',
+    features: 'Fitur Utama',
+    gallery: 'Galeri',
+    viewProduct: 'Lihat Produk',
+    notifyMe: 'Beri Tahu Saya',
+    comingSoon: 'Segera Hadir',
+    demoSoon: 'Demo Segera',
+    allPortfolio: 'Semua Portofolio',
+    prev: 'Sebelumnya',
+    next: 'Berikutnya',
+    categoryLabel: { saas: 'Produk SaaS', upcoming: 'SaaS Mendatang', custom: 'Proyek Custom' },
+  },
+  about: {
+    heading: 'Tentang Fovea Tech',
+    subheading:
+      'Kami adalah software house yang berfokus membangun produk SaaS inovatif dan layanan custom website berkualitas tinggi. Teknologi adalah alat kami untuk menciptakan masa depan yang lebih baik.',
+    valuesHeading: 'Nilai-Nilai Kami',
+    teamHeading: 'Tim Kami',
+    values: [
+      { title: 'Inovasi', desc: 'Selalu mencari solusi baru dan teknologi terkini.' },
+      { title: 'Kualitas', desc: 'Standar tertinggi dalam setiap aspek pengembangan.' },
+      { title: 'Kolaborasi', desc: 'Bekerja erat bersama klien untuk mencapai visi mereka.' },
+      { title: 'Berkelanjutan', desc: 'Solusi yang relevan hari ini dan di masa depan.' },
+    ],
+    team: [
+      { name: 'Andi Santoso', position: 'Founder & CEO' },
+      { name: 'Budi Rahman', position: 'Lead Developer' },
+      { name: 'Citra Dewi', position: 'UI/UX Designer' },
+      { name: 'Dika Pratama', position: 'Project Manager' },
+    ],
+  },
+  contact: {
+    heading: 'Punya Ide? Mari Wujudkan.',
+    subheading: 'Diskusikan proyek SaaS atau website custom Anda bersama kami.',
+    name: 'Nama Lengkap',
+    namePlaceholder: 'Nama lengkap Anda',
+    email: 'Email',
+    emailPlaceholder: 'email@contoh.com',
+    service: 'Jenis Layanan',
+    servicePlaceholder: 'Pilih jenis layanan',
+    optSaas: 'SaaS Product Development',
+    optWeb: 'Custom Website Development',
+    optOther: 'Lainnya',
+    message: 'Pesan',
+    messagePlaceholder: 'Ceritakan kebutuhan Anda...',
+    send: 'Kirim Pesan',
+    sending: 'Mengirim...',
+    success: 'Pesan Anda terkirim! Kami akan menghubungi Anda dalam 24 jam.',
+    directContact: 'Kontak Langsung',
+    socialMedia: 'Media Sosial',
+  },
+  footer: {
+    tagline: 'Building the Future, One Product at a Time.',
+    quickLinks: 'Navigasi',
+    ourServices: 'Layanan',
+    contactUs: 'Kontak',
+    rights: 'Semua hak dilindungi.',
+  },
+  faq: {
+    heading: 'FAQ',
+    subheading: 'Pertanyaan yang sering diajukan seputar layanan kami.',
+    items: [
+      {
+        q: 'Apakah Fovea Tech menyediakan layanan maintenance setelah website selesai dibuat?',
+        a: 'Ya, kami menyediakan layanan maintenance dan dukungan teknis (SLA) pasca peluncuran untuk memastikan aplikasi atau website Anda tetap berjalan optimal dan aman.',
+      },
+      {
+        q: 'Berapa lama waktu yang dibutuhkan untuk mengembangkan sebuah produk SaaS?',
+        a: 'Waktu pengembangan bervariasi tergantung kompleksitas fitur. Untuk MVP (Minimum Viable Product) biasanya memakan waktu 2 hingga 4 bulan, sedangkan produk berskala besar bisa lebih dari 6 bulan.',
+      },
+      {
+        q: 'Apakah saya bisa meminta custom integrasi dengan sistem yang sudah ada?',
+        a: 'Tentu. Tim kami memiliki pengalaman luas dalam mengintegrasikan sistem baru dengan infrastruktur legacy, CRM, ERP, maupun payment gateway pihak ketiga.',
+      },
+      {
+        q: 'Teknologi apa saja yang biasanya digunakan oleh Fovea Tech?',
+        a: 'Kami menggunakan modern tech stack yang scalable dan reliable, seperti React/Next.js untuk frontend, serta Node.js, dan Go untuk backend, dipadukan dengan cloud infrastructure (AWS/GCP).',
+      },
+    ],
+  },
+};
+
+export default id;
