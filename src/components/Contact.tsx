@@ -3,6 +3,12 @@
 import { Check } from 'lucide-react';
 import { useState } from 'react';
 import { useLang } from '@/context/LanguageContext';
+import { trackGoogleAdsConversion } from '@/lib/googleAds';
+
+interface ContactResponse {
+  success: true;
+  transactionId: string;
+}
 
 export default function Contact() {
   const { t, lang } = useLang();
@@ -31,6 +37,9 @@ export default function Contact() {
       if (!res.ok) {
         throw new Error('send_failed');
       }
+
+      const data = (await res.json()) as ContactResponse;
+      trackGoogleAdsConversion({ transactionId: data.transactionId, newCustomer: false });
 
       setDone(true);
       setForm({ name: '', email: '', service: '', message: '' });

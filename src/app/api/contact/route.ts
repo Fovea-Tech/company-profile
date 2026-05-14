@@ -29,6 +29,8 @@ export async function POST(request: Request) {
       other: 'Other / Lainnya',
     };
 
+    const transactionId = crypto.randomUUID();
+
     await transporter.sendMail({
       from: `"Fovea Contact" <${process.env.GMAIL_USER}>`,
       to: process.env.CONTACT_EMAIL,
@@ -73,7 +75,7 @@ export async function POST(request: Request) {
       `,
     });
 
-    return NextResponse.json({ success: true });
+    return NextResponse.json({ success: true, transactionId });
   } catch (err) {
     console.error('[contact/route]', err);
     return NextResponse.json({ error: 'Failed to send email.' }, { status: 500 });

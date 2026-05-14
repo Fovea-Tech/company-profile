@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { Outfit } from 'next/font/google';
 import './globals.css';
 import { LanguageProvider } from '@/context/LanguageContext';
+import GoogleAdsTag from '@/components/GoogleAdsTag';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 
@@ -13,7 +14,7 @@ const outfit = Outfit({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://www.foveatech.com'),
+  metadataBase: new URL('https://fovea.digital'),
   title: {
     default: 'Fovea Tech - SaaS & Custom Website Development',
     template: '%s | Fovea Tech',
@@ -34,7 +35,7 @@ export const metadata: Metadata = {
     title: 'Fovea Tech - SaaS & Custom Website Development',
     description:
       'Fovea Tech builds SaaS products and custom websites with strong performance, accessible UX, and production-ready foundations.',
-    url: 'https://www.foveatech.com',
+    url: 'https://fovea.digital',
     siteName: 'Fovea Tech',
     locale: 'id_ID',
     type: 'website',
@@ -55,9 +56,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="id" className={outfit.variable}>
       <body className="site-shell antialiased">
-        <a href="#main-content" className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[500] focus:rounded-xl focus:bg-white focus:px-4 focus:py-2 focus:text-slate-950">
+        <a href="#main-content" className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-500 focus:rounded-xl focus:bg-white focus:px-4 focus:py-2 focus:text-slate-950">
           Skip to content
         </a>
+        <GoogleAdsTag />
         <LanguageProvider>
           <Navbar />
           <main id="main-content">{children}</main>
