@@ -13,10 +13,10 @@ export const dynamicParams = false;
 export const revalidate = false;
 
 interface PageProps {
-  params: {
+  params: Promise<{
     category: string;
     id: string;
-  };
+  }>;
 }
 
 function isValidCategory(value: string): value is PortfolioCategory {
@@ -30,8 +30,8 @@ export function generateStaticParams() {
   }));
 }
 
-export function generateMetadata({ params }: PageProps): Metadata {
-  const { category, id } = params;
+export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
+  const { category, id } = await params;
 
   if (!isValidCategory(category)) {
     return {};
@@ -48,8 +48,8 @@ export function generateMetadata({ params }: PageProps): Metadata {
   };
 }
 
-export default function PortfolioDetailPage({ params }: PageProps) {
-  const { category, id } = params;
+export default async function PortfolioDetailPage({ params }: PageProps) {
+  const { category, id } = await params;
 
   if (!isValidCategory(category)) {
     notFound();

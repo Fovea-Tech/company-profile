@@ -42,3 +42,7 @@ next-env.d.ts
 
 AGENTS.md
 CLAUDE.md
+.open-next/
+.wrangler/
+.dev.vars
+/worker-configuration.d.ts
