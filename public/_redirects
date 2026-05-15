@@ -1,0 +1,6 @@
+# Force HTTPS — redirect all HTTP requests to HTTPS
+http://fovea.digital/* https://fovea.digital/:splat 301!
+http://www.fovea.digital/* https://fovea.digital/:splat 301!
+
+# Canonicalize www to non-www
+https://www.fovea.digital/* https://fovea.digital/:splat 301!

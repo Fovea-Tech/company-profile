@@ -3,6 +3,7 @@
 import { ListFilter } from 'lucide-react';
 import { useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { useLang } from '@/context/LanguageContext';
 import {
   customWebsiteProjects,
@@ -88,10 +89,21 @@ export default function Portfolio() {
             {items.map((item) => (
               <article key={`${activeTab}-${item.id}`} className="aurora-panel rounded-3xl p-5 sm:p-6">
                 <div className="grid gap-5 md:grid-cols-[0.92fr_1.08fr]">
-                  <div className="mesh-card flex min-h-55 items-end rounded-[1.25rem] p-4">
-                    <div className="w-full rounded-2xl border border-white/10 bg-slate-950/28 p-4">
-                      <p className="text-xs uppercase tracking-[0.18em] text-muted">{activeTab}</p>
-                      <div className="mt-3 flex flex-wrap gap-2">
+                  <div className="relative flex min-h-64 overflow-hidden rounded-[1.25rem]">
+                    {item.screenshot ? (
+                      <Image
+                        src={item.screenshot}
+                        alt={`Screenshot ${item.name}`}
+                        fill
+                        sizes="(max-width: 768px) 100vw, 50vw"
+                        className="object-cover object-top"
+                      />
+                    ) : (
+                      <div className="mesh-card absolute inset-0" />
+                    )}
+                    {/* Overlay badge */}
+                    <div className="relative mt-auto w-full rounded-b-[1.25rem] bg-gradient-to-t from-slate-950/80 to-transparent p-4 pt-8">
+                      <div className="flex flex-wrap gap-2">
                         {'techStack' in item && item.techStack.slice(0, 3).map((tech) => <span key={tech} className="chip">{tech}</span>)}
                         {'clientIndustry' in item && <span className="chip">{item.clientIndustry}</span>}
                         {'progress' in item && <span className="chip">{item.progress}%</span>}

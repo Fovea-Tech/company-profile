@@ -23,8 +23,8 @@ export default function Footer() {
         <div className="grid gap-8 lg:grid-cols-[1.1fr_0.7fr_0.8fr]">
           <div>
             <Link href="/#hero" className="flex items-center gap-3">
-              <div className="flex h-11 w-11 items-center justify-center rounded-xl border border-white/10 bg-white/5">
-                <Image src="/logo_dark.png" alt={t.footer.brand} width={30} height={30} style={{ width: 'auto', height: 'auto' }} />
+              <div className="flex h-11 w-11 items-center justify-center">
+                <Image src="/logo_dark.svg" alt={t.footer.brand} width={30} height={30} style={{ width: 'auto', height: 'auto' }} />
               </div>
               <div>
                 <p className="text-sm font-semibold uppercase tracking-[0.14em] text-fg">{t.footer.brand}</p>

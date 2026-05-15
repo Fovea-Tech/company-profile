@@ -2,6 +2,7 @@
 
 import { Check } from 'lucide-react';
 import Link from 'next/link';
+import Image from 'next/image';
 import PortfolioDetailClient from '@/components/PortfolioDetailClient';
 import { useLang } from '@/context/LanguageContext';
 import type { CustomProject, PortfolioCategory, SaasProduct, UpcomingSaas } from '@/data/portfolio';
@@ -96,12 +97,28 @@ export default function PortfolioDetailContent({ item, category, prev, next }: P
 
           <div className="aurora-panel mesh-card rounded-3xl p-5 sm:p-6">
             <div className="grid h-full gap-4">
-              <div className="flex min-h-65 items-end rounded-[1.25rem] border border-white/10 bg-slate-950/20 p-4 backdrop-blur-md">
-                <div>
-                  <p className="text-xs uppercase tracking-[0.16em] text-muted">Preview</p>
-                  <p className="mt-2 text-lg font-semibold text-fg">{item.name}</p>
-                  <p className="mt-2 text-sm leading-7 text-muted">{i18n.description}</p>
-                </div>
+              {/* Screenshot */}
+              <div className="relative min-h-64 overflow-hidden rounded-[1.25rem] border border-white/10">
+                {item.screenshot ? (
+                  <Image
+                    src={item.screenshot}
+                    alt={`Screenshot ${item.name}`}
+                    fill
+                    sizes="(max-width: 1024px) 100vw, 50vw"
+                    className="object-cover object-top"
+                    priority
+                  />
+                ) : (
+                  <div className="absolute inset-0 flex items-end bg-slate-950/20 p-4 backdrop-blur-md">
+                    <div>
+                      <p className="text-xs uppercase tracking-[0.16em] text-muted">Preview</p>
+                      <p className="mt-2 text-lg font-semibold text-fg">{item.name}</p>
+                      <p className="mt-2 text-sm leading-7 text-muted">{i18n.description}</p>
+                    </div>
+                  </div>
+                )}
+                {/* Gradient overlay for text legibility */}
+                <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-slate-950/70 to-transparent" />
               </div>
               <div className="grid gap-3 sm:grid-cols-2">
                 {i18n.features.slice(0, 4).map((feature) => (
