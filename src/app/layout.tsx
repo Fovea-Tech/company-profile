@@ -32,9 +32,14 @@ export const metadata: Metadata = {
     canonical: '/',
   },
   icons: {
-    icon: '/favicon.ico',
-    shortcut: '/favicon.ico',
-  },
+  icon: [
+    {
+      url: '/favicon.ico',
+      sizes: 'any',
+    },
+  ],
+  shortcut: '/favicon.ico',
+},
   openGraph: {
     title: 'Fovea Technology - SaaS & Custom Website Development',
     description:
