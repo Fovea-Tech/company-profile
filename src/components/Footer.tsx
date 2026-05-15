@@ -24,10 +24,10 @@ export default function Footer() {
           <div>
             <Link href="/#hero" className="flex items-center gap-3">
               <div className="flex h-11 w-11 items-center justify-center rounded-xl border border-white/10 bg-white/5">
-                <Image src="/logo_dark.png" alt="Fovea Tech" width={30} height={30} style={{ width: 'auto', height: 'auto' }} />
+                <Image src="/logo_dark.png" alt={t.footer.brand} width={30} height={30} style={{ width: 'auto', height: 'auto' }} />
               </div>
               <div>
-                <p className="text-sm font-semibold uppercase tracking-[0.14em] text-fg">Fovea Tech</p>
+                <p className="text-sm font-semibold uppercase tracking-[0.14em] text-fg">{t.footer.brand}</p>
                 <p className="text-xs text-muted">{t.footer.tagline}</p>
               </div>
             </Link>
@@ -55,7 +55,7 @@ export default function Footer() {
         </div>
 
         <div className="mt-8 flex flex-col gap-3 border-t border-white/10 pt-6 text-sm text-muted sm:flex-row sm:items-center sm:justify-between">
-          <p>&copy; {year} Fovea Tech. {t.footer.rights}</p>
+          <p>&copy; {year} {t.footer.brand}. {t.footer.rights}</p>
           {/* <div className="flex gap-4">
             {['LinkedIn', 'GitHub', 'Behance'].map((item) => (
               <span key={item}>{item}</span>

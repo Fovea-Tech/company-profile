@@ -2,6 +2,7 @@ import type { Translations } from '@/i18n/types';
 
 const id: Translations = {
   nav: {
+    brand: 'Fovea Teknologi',
     home: 'Beranda',
     services: 'Layanan',
     portfolio: 'Portofolio',
@@ -60,7 +61,7 @@ const id: Translations = {
     categoryLabel: { saas: 'Produk SaaS', upcoming: 'SaaS Mendatang', custom: 'Proyek Custom' },
   },
   about: {
-    heading: 'Tentang Fovea Tech',
+    heading: 'Tentang Fovea Teknologi',
     subheading:
       'Kami adalah software house yang berfokus membangun produk SaaS inovatif dan layanan custom website berkualitas tinggi. Teknologi adalah alat kami untuk menciptakan masa depan yang lebih baik.',
     valuesHeading: 'Nilai-Nilai Kami',
@@ -70,12 +71,6 @@ const id: Translations = {
       { title: 'Kualitas', desc: 'Standar tertinggi dalam setiap aspek pengembangan.' },
       { title: 'Kolaborasi', desc: 'Bekerja erat bersama klien untuk mencapai visi mereka.' },
       { title: 'Berkelanjutan', desc: 'Solusi yang relevan hari ini dan di masa depan.' },
-    ],
-    team: [
-      { name: 'Andi Santoso', position: 'Founder & CEO' },
-      { name: 'Budi Rahman', position: 'Lead Developer' },
-      { name: 'Citra Dewi', position: 'UI/UX Designer' },
-      { name: 'Dika Pratama', position: 'Project Manager' },
     ],
   },
   contact: {
@@ -99,6 +94,7 @@ const id: Translations = {
     socialMedia: 'Media Sosial',
   },
   footer: {
+    brand: 'Fovea Teknologi',
     tagline: 'Building the Future, One Product at a Time.',
     quickLinks: 'Navigasi',
     ourServices: 'Layanan',
@@ -110,7 +106,7 @@ const id: Translations = {
     subheading: 'Pertanyaan yang sering diajukan seputar layanan kami.',
     items: [
       {
-        q: 'Apakah Fovea Tech menyediakan layanan maintenance setelah website selesai dibuat?',
+        q: 'Apakah Fovea Teknologi menyediakan layanan maintenance setelah website selesai dibuat?',
         a: 'Ya, kami menyediakan layanan maintenance dan dukungan teknis (SLA) pasca peluncuran untuk memastikan aplikasi atau website Anda tetap berjalan optimal dan aman.',
       },
       {
@@ -122,7 +118,7 @@ const id: Translations = {
         a: 'Tentu. Tim kami memiliki pengalaman luas dalam mengintegrasikan sistem baru dengan infrastruktur legacy, CRM, ERP, maupun payment gateway pihak ketiga.',
       },
       {
-        q: 'Teknologi apa saja yang biasanya digunakan oleh Fovea Tech?',
+        q: 'Teknologi apa saja yang biasanya digunakan oleh Fovea Teknologi?',
         a: 'Kami menggunakan modern tech stack yang scalable dan reliable, seperti React/Next.js untuk frontend, serta Node.js, dan Go untuk backend, dipadukan dengan cloud infrastructure (AWS/GCP).',
       },
     ],

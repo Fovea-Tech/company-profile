@@ -2,6 +2,7 @@ export type Lang = 'id' | 'en';
 
 export interface Translations {
   nav: {
+    brand: string;
     home: string;
     services: string;
     portfolio: string;
@@ -62,7 +63,6 @@ export interface Translations {
     valuesHeading: string;
     teamHeading: string;
     values: { title: string; desc: string }[];
-    team: { name: string; position: string }[];
   };
   contact: {
     heading: string;
@@ -85,6 +85,7 @@ export interface Translations {
     socialMedia: string;
   };
   footer: {
+    brand: string;
     tagline: string;
     quickLinks: string;
     ourServices: string;

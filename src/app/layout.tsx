@@ -16,13 +16,13 @@ const outfit = Outfit({
 export const metadata: Metadata = {
   metadataBase: new URL('https://fovea.digital'),
   title: {
-    default: 'Fovea Tech - SaaS & Custom Website Development',
-    template: '%s | Fovea Tech',
+    default: 'Fovea Technology - SaaS & Custom Website Development',
+    template: '%s | Fovea Technology',
   },
   description:
-    'Fovea Tech builds SaaS products and custom websites with strong performance, accessible UX, and production-ready foundations.',
+    'Fovea Technology builds SaaS products and custom websites with strong performance, accessible UX, and production-ready foundations.',
   keywords: [
-    'Fovea Tech',
+    'Fovea Technology',
     'software house Indonesia',
     'SaaS development',
     'custom website development',
@@ -32,19 +32,19 @@ export const metadata: Metadata = {
     canonical: '/',
   },
   openGraph: {
-    title: 'Fovea Tech - SaaS & Custom Website Development',
+    title: 'Fovea Technology - SaaS & Custom Website Development',
     description:
-      'Fovea Tech builds SaaS products and custom websites with strong performance, accessible UX, and production-ready foundations.',
+      'Fovea Technology builds SaaS products and custom websites with strong performance, accessible UX, and production-ready foundations.',
     url: 'https://fovea.digital',
-    siteName: 'Fovea Tech',
+    siteName: 'Fovea Technology',
     locale: 'id_ID',
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Fovea Tech - SaaS & Custom Website Development',
+    title: 'Fovea Technology - SaaS & Custom Website Development',
     description:
-      'Fovea Tech builds SaaS products and custom websites with strong performance, accessible UX, and production-ready foundations.',
+      'Fovea Technology builds SaaS products and custom websites with strong performance, accessible UX, and production-ready foundations.',
   },
   robots: {
     index: true,

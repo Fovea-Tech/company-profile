@@ -2,6 +2,7 @@ import type { Translations } from '@/i18n/types';
 
 const en: Translations = {
   nav: {
+    brand: 'Fovea Technology',
     home: 'Home',
     services: 'Services',
     portfolio: 'Portfolio',
@@ -60,7 +61,7 @@ const en: Translations = {
     categoryLabel: { saas: 'SaaS Product', upcoming: 'Upcoming SaaS', custom: 'Custom Project' },
   },
   about: {
-    heading: 'About Fovea Tech',
+    heading: 'About Fovea Technology',
     subheading:
       'We are a software house focused on building innovative SaaS products and delivering high-quality custom web services. Technology is our tool for creating a better future.',
     valuesHeading: 'Our Values',
@@ -70,13 +71,7 @@ const en: Translations = {
       { title: 'Quality', desc: 'The highest standards in every aspect of development.' },
       { title: 'Collaboration', desc: 'Working closely with clients to realize their vision.' },
       { title: 'Sustainability', desc: 'Solutions that are relevant today and in the future.' },
-    ],
-    team: [
-      { name: 'Andi Santoso', position: 'Founder & CEO' },
-      { name: 'Budi Rahman', position: 'Lead Developer' },
-      { name: 'Citra Dewi', position: 'UI/UX Designer' },
-      { name: 'Dika Pratama', position: 'Project Manager' },
-    ],
+    ]
   },
   contact: {
     heading: 'Have an Idea? Let\'s Build It.',
@@ -99,6 +94,7 @@ const en: Translations = {
     socialMedia: 'Social Media',
   },
   footer: {
+    brand: 'Fovea Technology',
     tagline: 'Building the Future, One Product at a Time.',
     quickLinks: 'Navigation',
     ourServices: 'Services',
@@ -110,7 +106,7 @@ const en: Translations = {
     subheading: 'Frequently asked questions about our services.',
     items: [
       {
-        q: 'Does Fovea Tech provide maintenance services after launch?',
+        q: 'Does Fovea Technology provide maintenance services after launch?',
         a: 'Yes, we provide ongoing maintenance and technical support (SLA) post-launch to ensure your application or website runs optimally and remains secure.',
       },
       {
@@ -122,7 +118,7 @@ const en: Translations = {
         a: 'Absolutely. Our team has extensive experience integrating new systems with legacy infrastructure, CRMs, ERPs, and third-party payment gateways.',
       },
       {
-        q: 'What technology stack does Fovea Tech typically use?',
+        q: 'What technology stack does Fovea Technology typically use?',
         a: 'We use modern, scalable, and reliable tech stacks, such as React/Next.js for the frontend, and Node.js, and Go for the backend, paired with cloud infrastructure (AWS/GCP).',
       },
     ],
