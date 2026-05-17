@@ -1,9 +1,9 @@
 'use client';
 
-import { MonitorCog, Workflow } from 'lucide-react';
+import { MonitorCog, ShieldCheck, Workflow } from 'lucide-react';
 import { useLang } from '@/context/LanguageContext';
 
-const serviceIcons = [Workflow, MonitorCog];
+const serviceIcons = [Workflow, MonitorCog, ShieldCheck];
 
 export default function Services() {
   const { t, lang } = useLang();
@@ -25,6 +25,14 @@ export default function Services() {
           ? ['Brand system yang rapi', 'Landing page dan company profile', 'SEO teknis dan performa inti']
           : ['Clean brand systems', 'Landing pages and company profiles', 'Technical SEO and core performance'],
     },
+    {
+      title: t.services.maintenanceTitle,
+      desc: t.services.maintenanceDesc,
+      bullets:
+        lang === 'id'
+          ? ['Monitoring & Security', 'Bug Fixes & Update', 'SLA Support']
+          : ['Monitoring & Security', 'Bug Fixes & Updates', 'SLA Support'],
+    },
   ];
 
   return (
@@ -36,47 +44,26 @@ export default function Services() {
           <p className="section-copy">{t.services.subheading}</p>
         </div>
 
-        <div className="space-y-6">
+        <div className="grid gap-6 md:grid-cols-3">
           {services.map((service, index) => {
             const Icon = serviceIcons[index];
             return (
-              <article key={service.title} className="grid gap-6 lg:grid-cols-2">
-                <div className={index % 2 === 1 ? 'lg:order-2' : ''}>
-                  <div className="aurora-panel h-full rounded-3xl p-6 sm:p-8">
-                    <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-2xl border border-white/12 bg-white/10 text-cyan-50 shadow-[0_10px_30px_rgba(89,243,255,0.12)]">
-                      <Icon className="h-6 w-6" aria-hidden="true" strokeWidth={2.1} />
-                    </div>
-                    <h3 className="text-2xl font-semibold tracking-tight text-fg">{service.title}</h3>
-                    <p className="mt-4 text-base leading-7 text-muted">{service.desc}</p>
-                    <div className="mt-6 flex flex-wrap gap-2">
-                      {service.bullets.map((item) => (
-                        <span key={item} className="chip">
-                          {item}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
+              <div key={service.title} className="aurora-panel rounded-3xl p-6 sm:p-8 flex flex-col">
+                <div className="mb-6 flex h-12 w-12 items-center justify-center rounded-2xl border border-white/12 bg-white/10 text-cyan-50 shadow-[0_10px_30px_rgba(89,243,255,0.12)]">
+                  <Icon className="h-6 w-6" aria-hidden="true" strokeWidth={2} />
                 </div>
-
-                <div className={index % 2 === 1 ? 'lg:order-1' : ''}>
-                  <div className="aurora-panel mesh-card grid h-full min-h-80 rounded-3xl p-5 sm:p-6">
-                    <div className="grid gap-4 self-end sm:grid-cols-2">
-                      {service.bullets.map((item, bulletIndex) => (
-                        <div
-                          key={item}
-                          className={[
-                            'rounded-[1.25rem] border border-white/10 bg-slate-950/20 p-4',
-                            bulletIndex === 0 ? 'sm:col-span-2' : '',
-                          ].join(' ')}
-                        >
-                          <p className="text-xs uppercase tracking-[0.18em] text-muted">Focus {bulletIndex + 1}</p>
-                          <p className="mt-3 text-sm leading-6 text-slate-100">{item}</p>
-                        </div>
-                      ))}
+                <h3 className="text-xl font-semibold tracking-tight text-fg">{service.title}</h3>
+                <p className="mt-3 text-sm leading-6 text-muted flex-grow">{service.desc}</p>
+                
+                <div className="mt-8 space-y-3">
+                  {service.bullets.map((item) => (
+                    <div key={item} className="flex items-start gap-3">
+                      <div className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-cyan-400" />
+                      <span className="text-sm text-slate-300">{item}</span>
                     </div>
-                  </div>
+                  ))}
                 </div>
-              </article>
+              </div>
             );
           })}
         </div>

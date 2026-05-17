@@ -25,7 +25,7 @@ export default function JsonLd() {
     },
     image: 'https://fovea.digital/icon-512.png',
     description:
-      'Fovea Technology adalah software house Indonesia yang membangun produk SaaS dan website custom dengan performa tinggi dan desain premium. Fovea Technology is an Indonesian software house building high-performance SaaS products and custom websites.',
+      'Fovea Technology membantu bisnis B2B, UMKM, dan brand lokal di Indonesia membangun website custom, sistem booking, dashboard internal, katalog produk, dan aplikasi SaaS. Fovea Technology helps B2B businesses and local brands build custom websites, booking systems, internal dashboards, and SaaS applications.',
     foundingDate: '2026',
     areaServed: [
       { '@type': 'Country', name: 'Indonesia' },
@@ -33,20 +33,19 @@ export default function JsonLd() {
     ],
     knowsAbout: [
       // Indonesian terms
-      'Jasa Custom Web',
-      'Jasa Pembuatan Website',
-      'Jasa Landing Page',
-      'Jasa Company Profile',
-      'Jasa Pembuatan SaaS',
+      'Jasa Pembuatan Website B2B',
+      'Jasa Website UMKM',
+      'Jasa Sistem Booking',
+      'Pembuatan Dashboard Internal',
+      'Katalog Produk Online',
+      'Jasa Pembuatan SaaS MVP',
       'Software House Indonesia',
-      'Pengembangan Aplikasi Web',
       // English terms
       'Custom Web Development',
+      'B2B Website Development',
+      'Booking System Development',
+      'Internal Dashboard Development',
       'SaaS Development',
-      'Web Application Development',
-      'Landing Page Design',
-      'Company Profile Website',
-      'Software as a Service',
       'MVP Development',
     ],
     hasOfferCatalog: {
@@ -57,27 +56,27 @@ export default function JsonLd() {
           '@type': 'Offer',
           itemOffered: {
             '@type': 'Service',
-            name: 'Jasa Custom Website / Custom Website Development',
+            name: 'Website, Booking System & Dashboard',
             description:
-              'Pembuatan website custom sesuai kebutuhan bisnis dengan desain premium dan performa tinggi. Custom website development tailored to your business needs with premium design and high performance.',
+              'Pembuatan website custom, sistem booking, dan dashboard internal untuk B2B dan UMKM. Custom website, booking system, and internal dashboard development for B2B and MSMEs.',
           },
         },
         {
           '@type': 'Offer',
           itemOffered: {
             '@type': 'Service',
-            name: 'SaaS Product Development / Pengembangan Produk SaaS',
+            name: 'SaaS Product & MVP Development',
             description:
-              'Pengembangan produk Software-as-a-Service dari desain hingga deployment production-ready. End-to-end SaaS product development from design to production-ready deployment.',
+              'Pengembangan produk SaaS dan MVP siap pakai untuk skala bisnis modern. End-to-end SaaS and MVP product development ready for modern business scale.',
           },
         },
         {
           '@type': 'Offer',
           itemOffered: {
             '@type': 'Service',
-            name: 'Landing Page & Company Profile',
+            name: 'Maintenance & Support',
             description:
-              'Pembuatan landing page dan website company profile profesional untuk meningkatkan kredibilitas bisnis. Professional landing page and company profile websites to boost business credibility.',
+              'Layanan pemeliharaan sistem bulanan untuk memastikan performa yang cepat dan aman. Monthly system maintenance services to ensure fast and secure performance.',
           },
         },
       ],
@@ -99,7 +98,7 @@ export default function JsonLd() {
     name: 'Fovea Technology',
     alternateName: 'Fovea Teknologi',
     description:
-      'Jasa Custom Web & SaaS Development Indonesia — Software House | Custom Web & SaaS Development Services',
+      'Jasa Website, Dashboard & Aplikasi SaaS Indonesia — Software House | Website, Dashboard & SaaS Development Services',
     publisher: {
       '@id': 'https://fovea.digital/#organization',
     },

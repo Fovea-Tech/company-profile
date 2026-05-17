@@ -16,6 +16,7 @@ export interface Translations {
     subtitle: string;
     cta: string;
     ctaSecondary: string;
+    trustMicrocopy: string;
   };
   services: {
     heading: string;
@@ -24,6 +25,13 @@ export interface Translations {
     saasDesc: string;
     webTitle: string;
     webDesc: string;
+    maintenanceTitle: string;
+    maintenanceDesc: string;
+  };
+  problems: {
+    heading: string;
+    items: string[];
+    footer: string;
   };
   portfolio: {
     heading: string;

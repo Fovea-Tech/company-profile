@@ -12,11 +12,12 @@ const id: Translations = {
   },
   hero: {
     tagline: 'SaaS · Custom Web',
-    title: 'Bangun Masa Depan\nDigital Anda',
+    title: 'Website & Sistem Web\nuntuk Bisnis yang Ingin Naik Level',
     subtitle:
-      'Kami membangun produk SaaS inovatif dan website custom berkualitas tinggi yang mendorong pertumbuhan bisnis Anda.',
-    cta: 'Lihat Layanan',
-    ctaSecondary: 'Hubungi Kami',
+      'Fovea Teknologi membantu bisnis B2B, UMKM jasa, dan brand lokal membangun website, sistem booking, dashboard internal, katalog produk, dan aplikasi SaaS yang siap dipakai.',
+    cta: 'Konsultasi Gratis',
+    ctaSecondary: 'Lihat Contoh Solusi',
+    trustMicrocopy: 'Custom website · SaaS MVP · Dashboard bisnis · Maintenance bulanan',
   },
   services: {
     heading: 'Layanan Kami',
@@ -27,6 +28,20 @@ const id: Translations = {
     webTitle: 'Custom Website Development',
     webDesc:
       'Website sesuai kebutuhan klien dengan desain modern, performa tinggi, dan optimasi SEO maksimal.',
+    maintenanceTitle: 'Maintenance & Support',
+    maintenanceDesc:
+      'Layanan pemeliharaan bulanan untuk memastikan website dan sistem Anda selalu berjalan optimal, aman, dan up-to-date.',
+  },
+  problems: {
+    heading: 'Apakah Bisnis Anda Masih Mengalami Ini?',
+    items: [
+      'Calon customer hanya bertanya di WhatsApp tapi tidak tercatat rapi.',
+      'Website hanya jadi pajangan dan tidak menghasilkan lead.',
+      'Order, booking, dan data pelanggan masih tersebar di chat.',
+      'Tim masih memakai spreadsheet untuk proses penting.',
+      'Bisnis butuh sistem custom tapi belum siap membangun aplikasi besar.',
+    ],
+    footer: 'Fovea membantu mengubah proses manual itu menjadi sistem web sederhana yang bisa dipakai harian.',
   },
   portfolio: {
     heading: 'Portofolio',

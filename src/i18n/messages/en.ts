@@ -12,11 +12,12 @@ const en: Translations = {
   },
   hero: {
     tagline: 'SaaS · Custom Web',
-    title: 'Build Your Digital\nFuture',
+    title: 'Website & Web Systems\nfor Businesses Ready to Level Up',
     subtitle:
-      'We craft innovative SaaS products and high-quality custom websites that drive your business forward.',
-    cta: 'Our Services',
-    ctaSecondary: 'Contact Us',
+      'Fovea Technology helps B2B businesses, service MSMEs, and local brands build ready-to-use websites, booking systems, internal dashboards, product catalogs, and SaaS applications.',
+    cta: 'Free Consultation',
+    ctaSecondary: 'View Solution Examples',
+    trustMicrocopy: 'Custom website · SaaS MVP · Business dashboard · Monthly maintenance',
   },
   services: {
     heading: 'Our Services',
@@ -27,6 +28,20 @@ const en: Translations = {
     webTitle: 'Custom Website Development',
     webDesc:
       'Tailored websites with modern design, high performance, and maximum SEO optimization.',
+    maintenanceTitle: 'Maintenance & Support',
+    maintenanceDesc:
+      'Monthly maintenance services to ensure your website and systems are always optimal, fast, and up-to-date.',
+  },
+  problems: {
+    heading: 'Is Your Business Still Experiencing This?',
+    items: [
+      'Potential customers only ask on WhatsApp but are not recorded properly.',
+      'The website is just a display and does not generate leads.',
+      'Orders, bookings, and customer data are still scattered in chats.',
+      'The team still uses spreadsheets for critical processes.',
+      'The business needs a custom system but is not ready to build a large application.',
+    ],
+    footer: 'Fovea helps transform these manual processes into simple web systems that can be used daily.',
   },
   portfolio: {
     heading: 'Portfolio',

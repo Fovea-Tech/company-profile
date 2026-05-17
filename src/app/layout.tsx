@@ -17,11 +17,11 @@ const outfit = Outfit({
 export const metadata: Metadata = {
   metadataBase: new URL('https://fovea.digital'),
   title: {
-    default: 'Fovea Technology — Jasa Custom Web & SaaS Development Indonesia',
+    default: 'Fovea Technology — Jasa Website, Dashboard & Aplikasi SaaS',
     template: '%s | Fovea Technology',
   },
   description:
-    'Fovea Technology — jasa custom web dan SaaS development Indonesia. We build professional websites, landing pages, company profiles, and SaaS products with high performance and premium design. Software house terpercaya.',
+    'Fovea Teknologi membantu bisnis B2B, UMKM, dan brand lokal di Indonesia membangun website custom, sistem booking, dashboard internal, katalog produk, dan aplikasi SaaS berkualitas.',
   keywords: [
     // ── Brand (ID + EN) ──────────────────────────────────────────
     'Fovea',
@@ -32,44 +32,39 @@ export const metadata: Metadata = {
     'fovea.digital',
 
     // ── Jasa Website — Indonesia ─────────────────────────────────
-    'jasa custom web',
     'jasa pembuatan website',
     'jasa website profesional',
-    'jasa website murah',
-    'jasa web developer',
-    'jasa landing page',
-    'jasa company profile',
+    'jasa website UMKM',
+    'jasa website B2B',
+    'bikin website custom',
+    'jasa sistem booking',
+    'jasa katalog produk',
+    'jasa pembuatan dashboard',
     'jasa web app',
     'pembuatan website custom',
-    'website custom Indonesia',
-    'bikin website profesional',
 
     // ── Website Services — English ───────────────────────────────
     'custom web development',
-    'custom website Indonesia',
-    'web development Indonesia',
-    'professional website design',
-    'landing page development',
-    'company profile website',
+    'B2B website development',
+    'booking system development',
+    'internal dashboard development',
     'web application development',
 
     // ── SaaS — Indonesia ─────────────────────────────────────────
     'jasa pembuatan saas',
     'pengembangan saas Indonesia',
-    'saas product Indonesia',
-    'software as a service Indonesia',
+    'bikin aplikasi saas',
+    'MVP saas Indonesia',
 
     // ── SaaS — English ───────────────────────────────────────────
     'saas development Indonesia',
+    'saas MVP development',
     'saas product development',
-    'saas startup Indonesia',
-    'MVP development Indonesia',
 
     // ── Software House — Indonesia ───────────────────────────────
     'software house Indonesia',
     'software house terpercaya',
-    'vendor IT Indonesia',
-    'IT consultant Indonesia',
+    'vendor IT B2B Indonesia',
 
     // ── Software House — English ─────────────────────────────────
     'software house',
@@ -98,9 +93,9 @@ export const metadata: Metadata = {
     ],
   },
   openGraph: {
-    title: 'Fovea Technology — Jasa Custom Web & SaaS Development Indonesia',
+    title: 'Fovea Technology — Jasa Website, Dashboard & Aplikasi SaaS',
     description:
-      'Fovea Technology — jasa custom web dan SaaS development Indonesia. Professional websites, landing pages, and SaaS products with high performance.',
+      'Fovea Teknologi membantu bisnis B2B, UMKM, dan brand lokal di Indonesia membangun website custom, sistem booking, dashboard internal, katalog produk, dan aplikasi SaaS berkualitas.',
     url: 'https://fovea.digital',
     siteName: 'Fovea Technology',
     locale: 'id_ID',
@@ -117,9 +112,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Fovea Technology — Jasa Custom Web & SaaS Development Indonesia',
+    title: 'Fovea Technology — Jasa Website, Dashboard & Aplikasi SaaS',
     description:
-      'Fovea Technology — jasa custom web dan SaaS development Indonesia. Professional websites, landing pages, and SaaS products.',
+      'Fovea Teknologi membantu bisnis B2B, UMKM, dan brand lokal membangun website custom, sistem booking, dan SaaS.',
     images: ['/icon-512.png'],
   },
   robots: {

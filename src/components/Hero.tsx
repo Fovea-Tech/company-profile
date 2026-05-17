@@ -1,14 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import { MonitorCog, Search, Workflow } from 'lucide-react';
 import { useLang } from '@/context/LanguageContext';
-
-const statCards = [
-  { value: 'SaaS', label: 'Product strategy and delivery', icon: Workflow },
-  { value: 'Web', label: 'Custom builds for specific teams', icon: MonitorCog },
-  { value: 'SEO', label: 'Performance-first foundations', icon: Search },
-];
 
 export default function Hero() {
   const { t } = useLang();
@@ -38,20 +31,9 @@ export default function Hero() {
             </Link>
           </div>
 
-          <div className="mx-auto grid max-w-4xl gap-4 md:grid-cols-3">
-            {statCards.map((item) => {
-              const Icon = item.icon;
-              return (
-                <div key={item.value} className="aurora-panel rounded-[1.25rem] p-5 text-left md:text-center">
-                  <div className="mb-4 inline-flex h-11 w-11 items-center justify-center rounded-2xl border border-white/12 bg-white/8 text-cyan-100 md:mx-auto">
-                    <Icon className="h-5 w-5" aria-hidden="true" strokeWidth={2} />
-                  </div>
-                  <p className="text-lg font-semibold text-fg">{item.value}</p>
-                  <p className="mt-2 text-sm leading-6 text-muted">{item.label}</p>
-                </div>
-              );
-            })}
-          </div>
+          <p className="mt-8 text-sm font-medium text-muted/80">
+            {t.hero.trustMicrocopy}
+          </p>
         </div>
       </div>
     </section>
