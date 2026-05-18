@@ -70,8 +70,8 @@ export default function Footer() {
             <p className="text-sm font-semibold uppercase tracking-[0.16em] text-cyan-100">{t.footer.contactUs}</p>
             <div className="mt-4 space-y-2 text-sm text-muted">
               <p>hello@fovea.digital</p>
-              <p>+62 821 2542 8320</p>
-              <p>www.fovea.digital</p>
+              <p>+62 881 8204 100</p>
+              <p>fovea.digital</p>
             </div>
           </div>
         </div>
