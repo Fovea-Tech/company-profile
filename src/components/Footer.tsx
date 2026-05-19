@@ -69,9 +69,9 @@ export default function Footer() {
           <div>
             <p className="text-sm font-semibold uppercase tracking-[0.16em] text-cyan-100">{t.footer.contactUs}</p>
             <div className="mt-4 space-y-2 text-sm text-muted">
-              <p>hello@fovea.digital</p>
-              <p>+62 881 8204 100</p>
-              <p>fovea.digital</p>
+              <a href="mailto:hello@fovea.digital" className="block hover:text-fg transition-colors">hello@fovea.digital</a>
+              <a href="https://wa.me/6288182041000" target="_blank" rel="noopener noreferrer" className="block hover:text-fg transition-colors">+62 881 8204 100</a>
+              <a href="https://www.fovea.digital" className="block hover:text-fg transition-colors">www.fovea.digital</a>
             </div>
           </div>
         </div>

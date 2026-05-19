@@ -2,10 +2,10 @@ import type { MetadataRoute } from 'next';
 import { getAllItems } from '@/data/portfolio';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://fovea.digital';
+  const baseUrl = 'https://www.fovea.digital';
   const now = new Date();
 
-  // Static pages
+  // Static pages — only real URLs (no hash fragments, not valid in sitemaps)
   const staticPages: MetadataRoute.Sitemap = [
     {
       url: baseUrl,
@@ -14,28 +14,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 1.0,
     },
     {
-      url: `${baseUrl}/#services`,
-      lastModified: now,
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/#portfolio`,
+      url: `${baseUrl}/portfolio`,
       lastModified: now,
       changeFrequency: 'weekly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/#about`,
-      lastModified: now,
-      changeFrequency: 'monthly',
-      priority: 0.6,
-    },
-    {
-      url: `${baseUrl}/#contact`,
-      lastModified: now,
-      changeFrequency: 'monthly',
-      priority: 0.7,
+      priority: 0.9,
     },
   ];
 
@@ -49,3 +31,4 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   return [...staticPages, ...portfolioPages];
 }
+

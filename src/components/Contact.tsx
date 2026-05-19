@@ -67,7 +67,7 @@ export default function Contact() {
           <div className="mt-8 space-y-4">
             {[
               ['Email', 'hello@fovea.digital'],
-              ['Website', 'fovea.digital'],
+              ['Website', 'www.fovea.digital'],
               ['WhatsApp', '+62 881 8204 100'],
             ].map(([label, value]) => (
               <div key={label} className="rounded-[1.2rem] border border-white/10 bg-slate-950/24 p-4 backdrop-blur-md">

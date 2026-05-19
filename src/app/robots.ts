@@ -14,7 +14,7 @@ export default function robots(): MetadataRoute.Robots {
         allow: '/',
       },
     ],
-    sitemap: 'https://fovea.digital/sitemap.xml',
-    host: 'https://fovea.digital',
+    sitemap: 'https://www.fovea.digital/sitemap.xml',
+    host: 'https://www.fovea.digital',
   };
 }

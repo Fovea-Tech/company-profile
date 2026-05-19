@@ -15,13 +15,13 @@ const outfit = Outfit({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://fovea.digital'),
+  metadataBase: new URL('https://www.fovea.digital'),
   title: {
-    default: 'Fovea Technology — Jasa Website, Dashboard & Aplikasi SaaS',
+    default: 'Fovea Technology — Jasa Website, Dashboard & Aplikasi SaaS Indonesia',
     template: '%s | Fovea Technology',
   },
   description:
-    'Fovea Teknologi membantu bisnis B2B, UMKM, dan brand lokal di Indonesia membangun website custom, sistem booking, dashboard internal, katalog produk, dan aplikasi SaaS berkualitas.',
+    'Fovea Technology — software house Indonesia spesialis jasa pembuatan website custom, sistem booking, dashboard internal, katalog produk, dan aplikasi SaaS untuk bisnis B2B & UMKM. Konsultasi gratis!',
   keywords: [
     // ── Brand (ID + EN) ──────────────────────────────────────────
     'Fovea',
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     'Fovea Teknologi',
     'Fovea Tech',
     'Fovea Digital',
-    'fovea.digital',
+    'www.fovea.digital',
 
     // ── Jasa Website — Indonesia ─────────────────────────────────
     'jasa pembuatan website',
@@ -37,24 +37,29 @@ export const metadata: Metadata = {
     'jasa website UMKM',
     'jasa website B2B',
     'bikin website custom',
-    'jasa sistem booking',
-    'jasa katalog produk',
-    'jasa pembuatan dashboard',
-    'jasa web app',
-    'pembuatan website custom',
+    'jasa sistem booking online',
+    'jasa katalog produk online',
+    'jasa pembuatan dashboard admin',
+    'jasa web app Indonesia',
+    'pembuatan website custom Indonesia',
+    'jasa landing page profesional',
+    'website bisnis profesional',
+    'jasa website company profile',
 
     // ── Website Services — English ───────────────────────────────
-    'custom web development',
+    'custom web development Indonesia',
     'B2B website development',
     'booking system development',
     'internal dashboard development',
-    'web application development',
+    'web application development Indonesia',
+    'professional landing page',
 
     // ── SaaS — Indonesia ─────────────────────────────────────────
     'jasa pembuatan saas',
     'pengembangan saas Indonesia',
     'bikin aplikasi saas',
     'MVP saas Indonesia',
+    'aplikasi berbasis web Indonesia',
 
     // ── SaaS — English ───────────────────────────────────────────
     'saas development Indonesia',
@@ -65,17 +70,23 @@ export const metadata: Metadata = {
     'software house Indonesia',
     'software house terpercaya',
     'vendor IT B2B Indonesia',
+    'digital agency Indonesia',
+    'konsultan IT Indonesia',
 
     // ── Software House — English ─────────────────────────────────
     'software house',
     'web development agency Indonesia',
     'tech startup Indonesia',
+    'IT consultant Indonesia',
   ],
+  authors: [{ name: 'Fovea Technology', url: 'https://www.fovea.digital' }],
+  creator: 'Fovea Technology',
+  publisher: 'Fovea Technology',
   alternates: {
-    canonical: 'https://fovea.digital',
+    canonical: 'https://www.fovea.digital',
     languages: {
-      'id-ID': 'https://fovea.digital',
-      'en-US': 'https://fovea.digital',
+      'id-ID': 'https://www.fovea.digital',
+      'en-US': 'https://www.fovea.digital',
     },
   },
   icons: {
@@ -93,20 +104,21 @@ export const metadata: Metadata = {
     ],
   },
   openGraph: {
-    title: 'Fovea Technology — Jasa Website, Dashboard & Aplikasi SaaS',
+    title: 'Fovea Technology — Jasa Website, Dashboard & Aplikasi SaaS Indonesia',
     description:
-      'Fovea Teknologi membantu bisnis B2B, UMKM, dan brand lokal di Indonesia membangun website custom, sistem booking, dashboard internal, katalog produk, dan aplikasi SaaS berkualitas.',
-    url: 'https://fovea.digital',
+      'Software house Indonesia spesialis website custom, sistem booking, dashboard, katalog produk & SaaS untuk bisnis B2B & UMKM. Konsultasi gratis sekarang!',
+    url: 'https://www.fovea.digital',
     siteName: 'Fovea Technology',
     locale: 'id_ID',
     alternateLocale: ['en_US'],
     type: 'website',
     images: [
       {
-        url: '/icon-512.png',
-        width: 512,
-        height: 512,
-        alt: 'Fovea Technology Logo',
+        url: '/og-image.png',
+        width: 1200,
+        height: 630,
+        alt: 'Fovea Technology — Jasa Website, Dashboard & Aplikasi SaaS Indonesia',
+        type: 'image/png',
       },
     ],
   },
@@ -114,21 +126,26 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Fovea Technology — Jasa Website, Dashboard & Aplikasi SaaS',
     description:
-      'Fovea Teknologi membantu bisnis B2B, UMKM, dan brand lokal membangun website custom, sistem booking, dan SaaS.',
-    images: ['/icon-512.png'],
+      'Software house Indonesia spesialis website custom, sistem booking, dashboard, dan SaaS untuk bisnis B2B & UMKM.',
+    images: ['/og-image.png'],
+    creator: '@buildwithfovea',
+    site: '@buildwithfovea',
   },
   robots: {
     index: true,
     follow: true,
+    nocache: false,
     googleBot: {
       index: true,
       follow: true,
+      noimageindex: false,
       'max-video-preview': -1,
       'max-image-preview': 'large',
       'max-snippet': -1,
     },
   },
   category: 'technology',
+  applicationName: 'Fovea Technology',
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
@@ -138,6 +155,19 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <link rel="manifest" href="/site.webmanifest" />
         <meta name="theme-color" content="#7c3aed" />
         <meta name="color-scheme" content="dark" />
+        {/* Geo targeting — help Google surface in Indonesian searches */}
+        <meta name="geo.region" content="ID" />
+        <meta name="geo.country" content="Indonesia" />
+        <meta name="language" content="Indonesian, English" />
+        <meta httpEquiv="content-language" content="id, en" />
+        {/* Mobile & rendering */}
+        <meta name="mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+        <meta name="apple-mobile-web-app-title" content="Fovea Technology" />
+        {/* Prevent AI scraping but allow indexing */}
+        <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+        <meta name="googlebot" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
       </head>
       <body className="site-shell antialiased">
         <a
