@@ -23,10 +23,10 @@ export default function Hero() {
           </div>
 
           <div className="flex flex-col items-center justify-center gap-3 sm:flex-row">
-            <Link href="/#services" className="aurora-button">
+            <Link href="/#contact" className="aurora-button">
               {t.hero.cta}
             </Link>
-            <Link href="/#contact" className="aurora-button-secondary">
+            <Link href="/#portfolio" className="aurora-button-secondary">
               {t.hero.ctaSecondary}
             </Link>
           </div>
