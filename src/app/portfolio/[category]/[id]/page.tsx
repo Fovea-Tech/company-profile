@@ -8,9 +8,7 @@ import {
   type PortfolioCategory,
 } from '@/data/portfolio';
 
-export const dynamic = 'force-static';
-export const dynamicParams = false;
-export const revalidate = false;
+export const dynamic = 'force-dynamic';
 
 interface PageProps {
   params: Promise<{
@@ -43,8 +41,17 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   }
 
   return {
-    title: `${item.name} - Fovea Tech`,
+    title: `${item.name} | Fovea Technology`,
     description: item.description,
+    alternates: {
+      canonical: `https://www.fovea.digital/portfolio/${category}/${id}`,
+    },
+    openGraph: {
+      title: `${item.name} | Fovea Technology`,
+      description: item.description,
+      url: `https://www.fovea.digital/portfolio/${category}/${id}`,
+      images: [{ url: item.screenshot || '/og-image.png', alt: item.name }],
+    },
   };
 }
 
