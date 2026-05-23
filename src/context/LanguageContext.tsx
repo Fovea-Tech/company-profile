@@ -13,13 +13,14 @@ interface LanguageContextType {
 const LanguageContext = createContext<LanguageContextType | null>(null);
 
 export function LanguageProvider({ children }: { children: ReactNode }) {
-  const [lang, setLang] = useState<Lang>(() => {
-    if (typeof window === 'undefined') {
-      return 'id';
-    }
+  const [lang, setLang] = useState<Lang>('id');
 
-    return window.localStorage.getItem('fovea-lang') === 'en' ? 'en' : 'id';
-  });
+  useEffect(() => {
+    const stored = window.localStorage.getItem('fovea-lang');
+    if (stored === 'en') {
+      setLang('en');
+    }
+  }, []);
   const [t, setT] = useState<Translations>(id);
 
   useEffect(() => {

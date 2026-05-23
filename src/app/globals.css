@@ -1,21 +1,21 @@
 @import "tailwindcss";
 
 :root {
-  --bg: #07111f;
-  --bg-elevated: rgba(10, 19, 36, 0.78);
-  --surface: rgba(13, 24, 44, 0.68);
-  --surface-strong: rgba(18, 31, 57, 0.88);
-  --fg: #f4f8ff;
-  --muted: #9fb0ca;
-  --border: rgba(182, 209, 255, 0.16);
+  --bg: #E2EEFF;
+  --bg-elevated: #ffffff;
+  --surface: #ffffff;
+  --surface-strong: #f1f5f9;
+  --fg: #111111;
+  --muted: #475569;
+  --border: #111111;
   --accent: #3a8dff;
   --accent-2: #ff4db8;
-  --accent-3: #59f3ff;
+  --accent-3: #00ffff;
   --accent-4: #ffc857;
-  --success: #84f0a2;
-  --danger: #ff7d92;
+  --success: #10b981;
+  --danger: #ef4444;
   --shadow-soft: 0 2px 12px rgba(0, 0, 0, 0.06);
-  --shadow-panel: 0 24px 80px rgba(2, 10, 24, 0.34);
+  --shadow-panel: 6px 6px 0 #111111;
   --radius: 0.75rem;
   --section-gap: clamp(4rem, 8vw, 8rem);
 }
@@ -32,7 +32,8 @@
   --color-accent-2: var(--accent-2);
   --color-accent-3: var(--accent-3);
   --color-accent-4: var(--accent-4);
-  --font-sans: var(--font-outfit), ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --font-sans: var(--font-plus-jakarta-sans), ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --font-heading: var(--font-space-grotesk), ui-sans-serif, system-ui, -apple-system, sans-serif;
 }
 
 @keyframes auroraShift {
@@ -74,49 +75,14 @@
 }
 
 html {
-  scroll-behavior: smooth;
+  /* scroll-behavior is applied only when user allows motion — avoids INP delay on mobile */
 }
 
 body {
   min-height: 100dvh;
   color: var(--fg);
-  background:
-    radial-gradient(circle at 15% 20%, rgba(58, 141, 255, 0.20), transparent 30%),
-    radial-gradient(circle at 85% 18%, rgba(255, 77, 184, 0.18), transparent 28%),
-    radial-gradient(circle at 75% 72%, rgba(89, 243, 255, 0.16), transparent 24%),
-    linear-gradient(180deg, #07111f 0%, #091628 38%, #060d19 100%);
-  background-attachment: fixed;
+  background: var(--bg);
   overflow-x: hidden;
-}
-
-body::before,
-body::after {
-  content: "";
-  position: fixed;
-  inset: auto;
-  pointer-events: none;
-  z-index: -1;
-  border-radius: 9999px;
-  filter: blur(90px);
-  mix-blend-mode: screen;
-  animation: auroraShift 10s ease-in-out infinite;
-}
-
-body::before {
-  width: 34rem;
-  height: 34rem;
-  left: -8rem;
-  top: 7rem;
-  background: radial-gradient(circle, rgba(58, 141, 255, 0.28) 0%, rgba(0, 255, 255, 0.18) 45%, transparent 72%);
-}
-
-body::after {
-  width: 30rem;
-  height: 30rem;
-  right: -7rem;
-  top: 18rem;
-  background: radial-gradient(circle, rgba(255, 77, 184, 0.24) 0%, rgba(255, 200, 87, 0.14) 50%, transparent 70%);
-  animation-delay: 4s;
 }
 
 * {
@@ -128,19 +94,22 @@ body::after {
   color: var(--fg);
 }
 
-a,
-button,
-input,
-select,
-textarea,
-summary {
-  transition:
-    color 200ms ease,
-    background-color 200ms ease,
-    border-color 200ms ease,
-    transform 200ms ease,
-    opacity 200ms ease,
-    box-shadow 200ms ease;
+/* Transitions only for users who allow motion — avoids blocking INP on mobile */
+@media (prefers-reduced-motion: no-preference) {
+  a,
+  button,
+  input,
+  select,
+  textarea,
+  summary {
+    transition:
+      color 200ms ease,
+      background-color 200ms ease,
+      border-color 200ms ease,
+      transform 200ms ease,
+      opacity 200ms ease,
+      box-shadow 200ms ease;
+  }
 }
 
 .site-shell {
@@ -155,6 +124,15 @@ summary {
 
 .section-shell {
   padding-block: var(--section-gap);
+  /* Skip off-screen rendering — major mobile performance win */
+  content-visibility: auto;
+  contain-intrinsic-size: auto 600px;
+}
+
+/* Hero is always in the viewport — content-visibility: auto would delay it */
+#hero {
+  content-visibility: visible;
+  contain-intrinsic-size: none;
 }
 
 .section-grid {
@@ -200,13 +178,14 @@ summary {
   gap: 0.6rem;
   padding: 0.5rem 0.9rem;
   border-radius: 9999px;
-  border: 1px solid rgba(182, 209, 255, 0.14);
-  background: rgba(255, 255, 255, 0.04);
+  border: 1.5px solid var(--border);
+  background: var(--bg-elevated);
   font-size: 0.75rem;
-  font-weight: 600;
+  font-weight: 700;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: #d3e3ff;
+  color: var(--fg);
+  box-shadow: 2px 2px 0 var(--border);
 }
 
 .eyebrow::before {
@@ -214,11 +193,16 @@ summary {
   width: 0.55rem;
   height: 0.55rem;
   border-radius: 9999px;
-  background: linear-gradient(135deg, var(--accent-3), var(--accent-2));
-  box-shadow: 0 0 18px rgba(89, 243, 255, 0.45);
+  background: linear-gradient(135deg, var(--accent), var(--accent-2));
+  box-shadow: 0 0 10px rgba(58, 141, 255, 0.35);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
 }
 
 .section-title {
+  font-family: var(--font-heading);
   font-size: clamp(2rem, 5vw, 4rem);
   line-height: 1.05;
   font-weight: 700;
@@ -226,6 +210,7 @@ summary {
 }
 
 .section-subtitle {
+  font-family: var(--font-heading);
   font-size: 2.25rem;
   line-height: 1.15;
   font-weight: 700;
@@ -240,7 +225,7 @@ summary {
 }
 
 .aurora-text {
-  background-image: linear-gradient(115deg, #d9f5ff 5%, #7fd0ff 30%, #ff98d1 62%, #fff0ac 100%);
+  background-image: linear-gradient(115deg, #1d4ed8 5%, #6d28d9 45%, #be185d 90%);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -279,22 +264,24 @@ summary {
   min-height: 3rem;
   padding-inline: 1.2rem;
   border-radius: 0.75rem;
-  border: 1.5px solid rgba(182, 209, 255, 0.16);
-  background: rgba(255, 255, 255, 0.04);
+  border: 1.5px solid var(--border);
+  background: var(--bg-elevated);
   color: var(--fg);
   font-size: 0.95rem;
   font-weight: 600;
+  box-shadow: 3px 3px 0 var(--border);
 }
 
 .aurora-button-secondary:hover {
   transform: translateY(-1px) scale(1.03);
-  background: rgba(255, 255, 255, 0.08);
+  background: var(--surface-strong);
 }
 
 .surface-outline {
-  border: 1px solid rgba(182, 209, 255, 0.16);
+  border: 1.5px solid var(--border);
   border-radius: 0.75rem;
-  background: rgba(255, 255, 255, 0.03);
+  background: var(--bg-elevated);
+  box-shadow: 4px 4px 0 var(--border);
 }
 
 .chip {
@@ -377,6 +364,13 @@ summary {
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
+  }
+}
+
+/* Only enable smooth scroll for users who haven't opted out of motion */
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
   }
 }
 

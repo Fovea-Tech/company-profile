@@ -8,7 +8,7 @@ export default function JsonLd() {
 
   const organizationSchema = {
     '@context': 'https://schema.org',
-    '@type': ['Organization', 'ProfessionalService'],
+    '@type': ['Organization', 'ProfessionalService', 'LocalBusiness'],
     '@id': `${BASE}/#organization`,
     name: 'Fovea Technology',
     alternateName: [
@@ -29,6 +29,7 @@ export default function JsonLd() {
     description:
       'Fovea Technology adalah software house Indonesia spesialis jasa pembuatan website custom, sistem booking, dashboard internal, katalog produk, dan aplikasi SaaS untuk bisnis B2B & UMKM. Fovea Technology is an Indonesian software house specializing in custom website development, booking systems, internal dashboards, and SaaS applications.',
     foundingDate: '2026',
+    priceRange: '$$',
     areaServed: [
       { '@type': 'Country', name: 'Indonesia' },
       { '@type': 'Country', name: 'Worldwide' },
@@ -36,9 +37,17 @@ export default function JsonLd() {
     address: {
       '@type': 'PostalAddress',
       addressCountry: 'ID',
+      addressRegion: 'Indonesia',
+    },
+    contactPoint: {
+      '@type': 'ContactPoint',
+      contactType: 'customer service',
+      email: 'hello@fovea.digital',
+      telephone: '+62-881-8204-100',
+      areaServed: 'ID',
+      availableLanguage: ['Indonesian', 'English'],
     },
     knowsAbout: [
-      // Indonesian terms
       'Jasa Pembuatan Website B2B',
       'Jasa Website UMKM',
       'Jasa Sistem Booking Online',
@@ -48,7 +57,6 @@ export default function JsonLd() {
       'Software House Indonesia',
       'Jasa Landing Page Profesional',
       'Jasa Website Company Profile',
-      // English terms
       'Custom Web Development',
       'B2B Website Development',
       'Booking System Development',
@@ -56,6 +64,8 @@ export default function JsonLd() {
       'SaaS Development',
       'MVP Development',
       'IT Consulting Indonesia',
+      'IT Maintenance Indonesia',
+      'Jasa IT Maintenance',
     ],
     hasOfferCatalog: {
       '@type': 'OfferCatalog',
@@ -63,40 +73,38 @@ export default function JsonLd() {
       itemListElement: [
         {
           '@type': 'Offer',
+          url: `${BASE}/services/saas`,
           itemOffered: {
             '@type': 'Service',
-            name: 'Custom Website Development',
+            name: 'Produk SaaS Fovea',
             description:
-              'Pembuatan website custom, sistem booking, dan dashboard internal untuk B2B dan UMKM dengan desain modern dan SEO optimal. Custom website, booking system, and internal dashboard development.',
+              'Aplikasi SaaS (Software as a Service) milik Fovea Technology yang siap pakai, dirancang khusus untuk mempermudah pekerjaan sehari-hari pengguna.',
+            url: `${BASE}/services/saas`,
           },
         },
         {
           '@type': 'Offer',
+          url: `${BASE}/services/website-custom`,
           itemOffered: {
             '@type': 'Service',
-            name: 'SaaS Product & MVP Development',
+            name: 'Jasa Website Custom',
             description:
-              'Pengembangan produk SaaS dan MVP siap pakai untuk skala bisnis modern Indonesia. End-to-end SaaS and MVP product development ready for modern business scale.',
+              'Pembuatan website custom, sistem booking, dan dashboard internal untuk B2B dan UMKM dengan desain modern dan SEO optimal.',
+            url: `${BASE}/services/website-custom`,
           },
         },
         {
           '@type': 'Offer',
+          url: `${BASE}/services/maintenance`,
           itemOffered: {
             '@type': 'Service',
-            name: 'Maintenance & Support',
+            name: 'Jasa IT Maintenance & Support',
             description:
-              'Layanan pemeliharaan sistem bulanan untuk memastikan performa yang cepat dan aman. Monthly system maintenance to ensure fast and secure performance.',
+              'Layanan pemeliharaan sistem bulanan untuk memastikan performa cepat, aman, dan uptime 99.9%.',
+            url: `${BASE}/services/maintenance`,
           },
         },
       ],
-    },
-    contactPoint: {
-      '@type': 'ContactPoint',
-      contactType: 'customer service',
-      email: 'hello@fovea.digital',
-      telephone: '+62-881-8204-100',
-      areaServed: 'ID',
-      availableLanguage: ['Indonesian', 'English'],
     },
     sameAs: [
       BASE,
@@ -114,7 +122,7 @@ export default function JsonLd() {
     name: 'Fovea Technology',
     alternateName: 'Fovea Teknologi',
     description:
-      'Jasa Website Custom, Dashboard & Aplikasi SaaS Indonesia — Software House | Custom Website, Dashboard & SaaS Development Services',
+      'Jasa Website Custom, Dashboard & Aplikasi SaaS Indonesia | Software House Terpercaya',
     publisher: {
       '@id': `${BASE}/#organization`,
     },
@@ -134,7 +142,7 @@ export default function JsonLd() {
     '@type': 'WebPage',
     '@id': `${BASE}/#webpage`,
     url: BASE,
-    name: 'Fovea Technology — Jasa Website, Dashboard & Aplikasi SaaS Indonesia',
+    name: 'Fovea Technology | Jasa Website, Dashboard & Aplikasi SaaS Indonesia',
     description:
       'Software house Indonesia spesialis jasa pembuatan website custom, sistem booking, dashboard internal, katalog produk, dan aplikasi SaaS untuk bisnis B2B & UMKM.',
     isPartOf: { '@id': `${BASE}/#website` },
@@ -153,6 +161,34 @@ export default function JsonLd() {
     },
   };
 
+  const serviceListSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'ItemList',
+    name: 'Layanan Fovea Technology',
+    description: 'Daftar layanan yang tersedia di Fovea Technology',
+    numberOfItems: 3,
+    itemListElement: [
+      {
+        '@type': 'ListItem',
+        position: 1,
+        url: `${BASE}/services/saas`,
+        name: 'Produk SaaS Fovea',
+      },
+      {
+        '@type': 'ListItem',
+        position: 2,
+        url: `${BASE}/services/website-custom`,
+        name: 'Jasa Website Custom',
+      },
+      {
+        '@type': 'ListItem',
+        position: 3,
+        url: `${BASE}/services/maintenance`,
+        name: 'Jasa IT Maintenance & Support',
+      },
+    ],
+  };
+
   const faqSchema = {
     '@context': 'https://schema.org',
     '@type': 'FAQPage',
@@ -167,10 +203,10 @@ export default function JsonLd() {
       },
       {
         '@type': 'Question',
-        name: 'Berapa lama waktu yang dibutuhkan untuk mengembangkan sebuah produk SaaS?',
+        name: 'Berapa biaya jasa pembuatan website custom di Fovea Technology?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: 'Waktu pengembangan bervariasi tergantung kompleksitas fitur. Untuk MVP (Minimum Viable Product) biasanya memakan waktu 2 hingga 4 bulan, sedangkan produk berskala besar bisa lebih dari 6 bulan.',
+          text: 'Biaya bervariasi tergantung kompleksitas dan fitur yang dibutuhkan. Hubungi kami melalui form kontak atau WhatsApp +62 881 8204 100 untuk konsultasi gratis dan penawaran harga terbaik.',
         },
       },
       {
@@ -191,10 +227,10 @@ export default function JsonLd() {
       },
       {
         '@type': 'Question',
-        name: 'Berapa biaya jasa pembuatan website custom di Fovea Technology?',
+        name: 'Apa perbedaan website custom dengan WordPress atau Wix?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: 'Biaya bervariasi tergantung kompleksitas dan fitur yang dibutuhkan. Hubungi kami melalui form kontak atau WhatsApp +62 881 8204 100 untuk konsultasi gratis dan penawaran harga terbaik.',
+          text: 'Website custom dikoding secara khusus menggunakan teknologi terkini. Hasilnya 10x lebih cepat, jauh lebih aman dari peretasan, dan desainnya tidak terbatas oleh template.',
         },
       },
       {
@@ -221,6 +257,10 @@ export default function JsonLd() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceListSchema) }}
       />
       <script
         type="application/ld+json"

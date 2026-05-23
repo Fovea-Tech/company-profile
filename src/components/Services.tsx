@@ -1,71 +1,177 @@
 'use client';
 
-import { MonitorCog, ShieldCheck, Workflow } from 'lucide-react';
+import Link from 'next/link';
+import type { ElementType } from 'react';
+import { ArrowRight, Check, Code2, MonitorCog, ShieldCheck } from 'lucide-react';
 import { useLang } from '@/context/LanguageContext';
 
-const serviceIcons = [Workflow, MonitorCog, ShieldCheck];
+type ServiceItem = {
+  number: string;
+  title: string;
+  desc: string;
+  bullets: string[];
+  bgClass: string;
+  checkClass: string;
+  icon: ElementType;
+  cta: string;
+  href: string;
+};
 
 export default function Services() {
-  const { t, lang } = useLang();
+  const { t } = useLang();
 
-  const services = [
+  const services: ServiceItem[] = [
     {
-      title: t.services.saasTitle,
-      desc: t.services.saasDesc,
-      bullets:
-        lang === 'id'
-          ? ['MVP dan roadmap produk', 'Dashboard, subscription, dan automation', 'Arsitektur siap scale']
-          : ['MVP and product roadmaps', 'Dashboards, subscriptions, and automation', 'Architecture prepared for scale'],
+      number: '01',
+      title: t.services.cards[0].title,
+      desc:
+        t.services.cards[0].desc,
+      bullets: t.services.cards[0].bullets,
+      bgClass: 'bg-[#6EA8FF]',
+      checkClass: 'bg-[#006CFF]',
+      icon: MonitorCog,
+      cta: t.services.cards[0].cta,
+      href: '/services/saas',
     },
     {
-      title: t.services.webTitle,
-      desc: t.services.webDesc,
+      number: '02',
+      title: t.services.cards[1].title,
+      desc:
+        t.services.cards[1].desc,
       bullets:
-        lang === 'id'
-          ? ['Brand system yang rapi', 'Landing page dan company profile', 'SEO teknis dan performa inti']
-          : ['Clean brand systems', 'Landing pages and company profiles', 'Technical SEO and core performance'],
+        t.services.cards[1].bullets,
+      bgClass: 'bg-[#F47AC2]',
+      checkClass: 'bg-[#D93672]',
+      icon: Code2,
+      cta: t.services.cards[1].cta,
+      href: '/services/website-custom',
     },
     {
-      title: t.services.maintenanceTitle,
-      desc: t.services.maintenanceDesc,
+      number: '03',
+      title: t.services.cards[2].title,
+      desc: t.services.cards[2].desc,
       bullets:
-        lang === 'id'
-          ? ['Monitoring & Security', 'Bug Fixes & Update', 'SLA Support']
-          : ['Monitoring & Security', 'Bug Fixes & Updates', 'SLA Support'],
+        t.services.cards[2].bullets,
+      bgClass: 'bg-[#84F29B]',
+      checkClass: 'bg-[#0E8F43]',
+      icon: ShieldCheck,
+      cta: t.services.cards[2].cta,
+      href: '/services/maintenance',
     },
   ];
 
   return (
-    <section id="services" className="section-shell">
-      <div className="page-shell space-y-10">
-        <div className="max-w-3xl space-y-4">
-          <span className="eyebrow">{t.nav.services}</span>
-          <h2 className="section-subtitle aurora-text">{t.services.heading}</h2>
-          <p className="section-copy">{t.services.subheading}</p>
+    <section
+      id="services"
+      aria-labelledby="services-title"
+      className="section-shell overflow-visible bg-[#F7F7F4] py-24 sm:py-28 lg:py-32"
+    >
+      <div className="page-shell overflow-visible">
+        <div className="max-w-3xl">
+          <p className="inline-flex rounded-full border-[3px] border-black bg-[#FFD84D] px-5 py-3 text-xs font-black uppercase tracking-wide text-black shadow-[5px_5px_0_#111111]">
+            { t.services.heading }
+          </p>
+
+          <div className="mt-10 space-y-5">
+            <h2
+              id="services-title"
+              className="text-balance text-4xl font-black leading-[1.12] tracking-[-0.04em] text-[#111111] sm:text-5xl lg:text-[56px]"
+            >
+              {t.services.title }
+            </h2>
+
+            <p className="max-w-2xl text-base font-medium leading-8 text-[#2C2C2C] sm:text-lg">
+              {t.services.subtitle}
+            </p>
+          </div>
         </div>
 
-        <div className="grid gap-6 md:grid-cols-3">
-          {services.map((service, index) => {
-            const Icon = serviceIcons[index];
-            return (
-              <div key={service.title} className="aurora-panel rounded-3xl p-6 sm:p-8 flex flex-col">
-                <div className="mb-6 flex h-12 w-12 items-center justify-center rounded-2xl border border-white/12 bg-white/10 text-cyan-50 shadow-[0_10px_30px_rgba(89,243,255,0.12)]">
-                  <Icon className="h-6 w-6" aria-hidden="true" strokeWidth={2} />
-                </div>
-                <h3 className="text-xl font-semibold tracking-tight text-fg">{service.title}</h3>
-                <p className="mt-3 text-sm leading-6 text-muted flex-grow">{service.desc}</p>
-                
-                <div className="mt-8 space-y-3">
-                  {service.bullets.map((item) => (
-                    <div key={item} className="flex items-start gap-3">
-                      <div className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-cyan-400" />
-                      <span className="text-sm text-slate-300">{item}</span>
+        <div className="mt-10 overflow-visible px-1 pb-6 sm:px-2">
+          <div className="grid overflow-visible gap-6 lg:grid-cols-3">
+            {services.map((service) => {
+              const Icon = service.icon;
+
+              return (
+                <article
+                  key={service.number}
+                  className={[
+                    'group flex min-h-140 flex-col rounded-2xl border-[3px] border-black p-6 sm:p-8',
+                    'shadow-[8px_8px_0_#111111]',
+                    'transition-all duration-200',
+                    'hover:-translate-y-1 hover:shadow-[12px_12px_0_#111111]',
+                    'active:translate-y-1 active:shadow-[4px_4px_0_#111111]',
+                    service.bgClass,
+                  ].join(' ')}
+                >
+                  <header className="flex items-start justify-between gap-5">
+                    <div className="flex h-16 w-16 items-center justify-center rounded-lg border-[3px] border-black bg-white text-3xl font-black tracking-[-0.06em] text-black shadow-[3px_3px_0_#111111]">
+                      {service.number}
                     </div>
-                  ))}
-                </div>
-              </div>
-            );
-          })}
+
+                    <Icon
+                      className="h-16 w-16 shrink-0 text-black"
+                      aria-hidden="true"
+                      strokeWidth={2.4}
+                    />
+                  </header>
+
+                  <div className="mt-8">
+                    <h3 className="text-3xl font-black tracking-tighter text-black sm:text-4xl">
+                      {service.title}
+                    </h3>
+
+                    <p className="mt-5 max-w-md text-lg font-medium leading-8 text-black">
+                      {service.desc}
+                    </p>
+                  </div>
+
+                  <ul className="mt-7 space-y-4">
+                    {service.bullets.map((item) => (
+                      <li key={item} className="flex items-center gap-4">
+                        <span
+                          className={[
+                            'flex h-7 w-7 shrink-0 items-center justify-center rounded-full text-white',
+                            service.checkClass,
+                          ].join(' ')}
+                        >
+                          <Check
+                            className="h-4 w-4"
+                            aria-hidden="true"
+                            strokeWidth={3}
+                          />
+                        </span>
+
+                        <span className="text-lg font-medium text-black">
+                          {item}
+                        </span>
+                      </li>
+                    ))}
+                  </ul>
+
+                  <footer className="mt-auto flex items-center justify-between gap-4 pt-10">
+                    <Link
+                      href={service.href}
+                      className="inline-flex min-h-14 flex-1 items-center justify-center rounded-lg border-[3px] border-black bg-white px-4 text-base font-black text-black shadow-[4px_4px_0_#111111] transition-all duration-200 hover:-translate-y-0.5 hover:shadow-[6px_6px_0_#111111] active:translate-y-1 active:shadow-[2px_2px_0_#111111]"
+                    >
+                      {service.cta}
+                    </Link>
+
+                    <Link
+                      href={service.href}
+                      aria-label={`Daftar ${service.title}`}
+                      className="flex h-16 w-16 shrink-0 items-center justify-center rounded-full border-[3px] border-black bg-white text-black shadow-[4px_4px_0_#111111] transition-all duration-200 hover:-translate-y-0.5 hover:shadow-[6px_6px_0_#111111] active:translate-y-1 active:shadow-[2px_2px_0_#111111]"
+                    >
+                      <ArrowRight
+                        className="h-9 w-9 transition-transform duration-200 group-hover:translate-x-1"
+                        aria-hidden="true"
+                        strokeWidth={3}
+                      />
+                    </Link>
+                  </footer>
+                </article>
+              );
+            })}
+          </div>
         </div>
       </div>
     </section>

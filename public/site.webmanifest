@@ -4,8 +4,8 @@
   "description": "Jasa Custom Web & SaaS Development Indonesia — Software House",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#0d1117",
-  "theme_color": "#7c3aed",
+  "background_color": "#E2EEFF",
+  "theme_color": "#FFD84D",
   "icons": [
     {
       "src": "/icon-192.png",

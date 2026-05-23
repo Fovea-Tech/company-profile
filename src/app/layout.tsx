@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { Outfit } from 'next/font/google';
+import { Space_Grotesk, Plus_Jakarta_Sans } from 'next/font/google';
 import './globals.css';
 import { LanguageProvider } from '@/context/LanguageContext';
 import GoogleAdsTag from '@/components/GoogleAdsTag';
@@ -7,21 +7,33 @@ import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import JsonLd from '@/components/JsonLd';
 
-const outfit = Outfit({
+// Only load weights actually used in the UI:
+// Space Grotesk — headings only, always bold (700)
+const spaceGrotesk = Space_Grotesk({
   subsets: ['latin'],
-  weight: ['300', '400', '500', '600', '700'],
+  weight: ['500', '600', '700'],
   display: 'swap',
-  variable: '--font-outfit',
+  variable: '--font-space-grotesk',
+  preload: true,
+});
+
+// Plus Jakarta Sans — body text (400 regular, 500 medium, 600 semibold, 700 bold, 800 extrabold)
+const plusJakartaSans = Plus_Jakarta_Sans({
+  subsets: ['latin'],
+  weight: ['400', '500', '600', '700', '800'],
+  display: 'swap',
+  variable: '--font-plus-jakarta-sans',
+  preload: true,
 });
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.fovea.digital'),
   title: {
-    default: 'Fovea Technology — Jasa Website, Dashboard & Aplikasi SaaS Indonesia',
+    default: 'Fovea Technology | Jasa Website, Dashboard & Aplikasi SaaS Indonesia',
     template: '%s | Fovea Technology',
   },
   description:
-    'Fovea Technology — software house Indonesia spesialis jasa pembuatan website custom, sistem booking, dashboard internal, katalog produk, dan aplikasi SaaS untuk bisnis B2B & UMKM. Konsultasi gratis!',
+    'Fovea Technology: software house Indonesia spesialis jasa pembuatan website custom, sistem booking, dashboard internal, katalog produk, dan aplikasi SaaS untuk bisnis B2B & UMKM. Konsultasi gratis!',
   keywords: [
     // ── Brand (ID + EN) ──────────────────────────────────────────
     'Fovea',
@@ -104,7 +116,7 @@ export const metadata: Metadata = {
     ],
   },
   openGraph: {
-    title: 'Fovea Technology — Jasa Website, Dashboard & Aplikasi SaaS Indonesia',
+    title: 'Fovea Technology | Jasa Website, Dashboard & Aplikasi SaaS Indonesia',
     description:
       'Software house Indonesia spesialis website custom, sistem booking, dashboard, katalog produk & SaaS untuk bisnis B2B & UMKM. Konsultasi gratis sekarang!',
     url: 'https://www.fovea.digital',
@@ -117,14 +129,14 @@ export const metadata: Metadata = {
         url: '/og-image.png',
         width: 1200,
         height: 630,
-        alt: 'Fovea Technology — Jasa Website, Dashboard & Aplikasi SaaS Indonesia',
+        alt: 'Fovea Technology | Jasa Website, Dashboard & Aplikasi SaaS Indonesia',
         type: 'image/png',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Fovea Technology — Jasa Website, Dashboard & Aplikasi SaaS',
+    title: 'Fovea Technology | Jasa Website, Dashboard & Aplikasi SaaS',
     description:
       'Software house Indonesia spesialis website custom, sistem booking, dashboard, dan SaaS untuk bisnis B2B & UMKM.',
     images: ['/og-image.png'],
@@ -150,11 +162,10 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="id" className={outfit.variable}>
+    <html lang="id" className={`${spaceGrotesk.variable} ${plusJakartaSans.variable}`}>
       <head>
-        <link rel="manifest" href="/site.webmanifest" />
-        <meta name="theme-color" content="#7c3aed" />
-        <meta name="color-scheme" content="dark" />
+        {/* Theme color matches brand yellow for PWA chrome */}
+        <meta name="theme-color" content="#FFD84D" />
         {/* Geo targeting — help Google surface in Indonesian searches */}
         <meta name="geo.region" content="ID" />
         <meta name="geo.country" content="Indonesia" />
@@ -163,13 +174,17 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         {/* Mobile & rendering */}
         <meta name="mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
-        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="default" />
         <meta name="apple-mobile-web-app-title" content="Fovea Technology" />
         {/* Prevent AI scraping but allow indexing */}
         <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
         <meta name="googlebot" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+        {/* next/font self-hosts fonts — no external preconnect needed */}
+        {/* next/image with priority prop handles LCP preload automatically with correct srcset */}
+        {/* DNS prefetch for interaction-gated GTM (only fires after user gesture) */}
+        <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
       </head>
-      <body className="site-shell antialiased">
+      <body className="bg-bg text-fg site-shell antialiased">
         <a
           href="#main-content"
           className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-500 focus:rounded-xl focus:bg-white focus:px-4 focus:py-2 focus:text-slate-950"

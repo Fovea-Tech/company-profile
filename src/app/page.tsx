@@ -2,22 +2,33 @@ import type { Metadata } from 'next';
 import dynamic from 'next/dynamic';
 import Hero from '@/components/Hero';
 
-const Problems = dynamic(() => import('@/components/Problems'));
-const Services = dynamic(() => import('@/components/Services'));
-const Portfolio = dynamic(() => import('@/components/Portfolio'));
-const About = dynamic(() => import('@/components/About'));
-const FAQ = dynamic(() => import('@/components/FAQ'));
-const Contact = dynamic(() => import('@/components/Contact'));
+// Below-fold sections: dynamically imported so their JS doesn't block
+// the critical rendering path. Still server-rendered for SEO (ssr: true default).
+const WhoAreWe = dynamic(() => import('@/components/WhoAreWe'), {
+  loading: () => <div className="section-shell" aria-hidden="true" />,
+});
+const Process = dynamic(() => import('@/components/Process'), {
+  loading: () => <div className="section-shell" aria-hidden="true" />,
+});
+const Services = dynamic(() => import('@/components/Services'), {
+  loading: () => <div className="section-shell" aria-hidden="true" />,
+});
+const FAQ = dynamic(() => import('@/components/FAQ'), {
+  loading: () => <div className="section-shell" aria-hidden="true" />,
+});
+const Contact = dynamic(() => import('@/components/Contact'), {
+  loading: () => <div className="section-shell" aria-hidden="true" />,
+});
 
 export const metadata: Metadata = {
-  title: 'Fovea Technology — Jasa Website, Dashboard & Aplikasi SaaS Indonesia',
+  title: 'Fovea Technology | Jasa Website, Dashboard & Aplikasi SaaS Indonesia',
   description:
     'Fovea Technology, software house Indonesia terpercaya. Jasa pembuatan website custom, sistem booking online, dashboard internal, katalog produk, dan SaaS MVP untuk bisnis B2B & UMKM. Konsultasi gratis!',
   alternates: {
     canonical: 'https://www.fovea.digital',
   },
   openGraph: {
-    title: 'Fovea Technology — Jasa Website, Dashboard & Aplikasi SaaS Indonesia',
+    title: 'Fovea Technology | Jasa Website, Dashboard & Aplikasi SaaS Indonesia',
     description:
       'Software house Indonesia terpercaya. Website custom, sistem booking, dashboard, SaaS untuk B2B & UMKM. Konsultasi gratis!',
     url: 'https://www.fovea.digital',
@@ -29,10 +40,9 @@ export default function Home() {
   return (
     <>
       <Hero />
-      <Problems />
+      <WhoAreWe />
+      <Process />
       <Services />
-      <Portfolio />
-      <About />
       <FAQ />
       <Contact />
     </>
