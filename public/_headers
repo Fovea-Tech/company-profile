@@ -6,7 +6,7 @@
   X-XSS-Protection: 1; mode=block
   Referrer-Policy: strict-origin-when-cross-origin
   Permissions-Policy: camera=(), microphone=(), geolocation=(), interest-cohort=()
-  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://www.google-analytics.com https://googleads.g.doubleclick.net https://www.googleadservices.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: blob: https://www.google.com https://www.googletagmanager.com https://googleads.g.doubleclick.net; connect-src 'self' https://www.google-analytics.com https://googleads.g.doubleclick.net https://region1.google-analytics.com; frame-src https://bid.g.doubleclick.net https://td.doubleclick.net; object-src 'none'; base-uri 'self'; form-action 'self'
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://www.google-analytics.com https://googleads.g.doubleclick.net https://www.googleadservices.com https://static.cloudflareinsights.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: blob: https://www.google.com https://www.googletagmanager.com https://googleads.g.doubleclick.net; connect-src 'self' https://www.google-analytics.com https://googleads.g.doubleclick.net https://region1.google-analytics.com https://cloudflareinsights.com; frame-src https://bid.g.doubleclick.net https://td.doubleclick.net; object-src 'none'; base-uri 'self'; form-action 'self'
 
 # Static Next.js assets — immutable, 1 year cache
 /_next/static/*

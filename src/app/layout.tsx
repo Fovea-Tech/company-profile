@@ -33,12 +33,13 @@ export const metadata: Metadata = {
     template: '%s | Fovea Technology',
   },
   description:
-    'Fovea Technology: software house Indonesia spesialis jasa pembuatan website custom, sistem booking, dashboard internal, katalog produk, dan aplikasi SaaS untuk bisnis B2B & UMKM. Konsultasi gratis!',
+    'Fovea Technology: software house Indonesia spesialis jasa pembuatan website custom, sistem booking, dashboard internal, katalog produk, dan saas product untuk bisnis B2B & UMKM. Konsultasi gratis!',
   keywords: [
     // ── Brand (ID + EN) ──────────────────────────────────────────
     'Fovea',
     'Fovea Technology',
     'Fovea Teknologi',
+    'Fovea Techology',
     'Fovea Tech',
     'Fovea Digital',
     'www.fovea.digital',
@@ -49,6 +50,8 @@ export const metadata: Metadata = {
     'jasa website UMKM',
     'jasa website B2B',
     'bikin website custom',
+    'jasa website custom',
+    'custom website',
     'jasa sistem booking online',
     'jasa katalog produk online',
     'jasa pembuatan dashboard admin',
@@ -72,11 +75,13 @@ export const metadata: Metadata = {
     'bikin aplikasi saas',
     'MVP saas Indonesia',
     'aplikasi berbasis web Indonesia',
+    'prodak saas',
 
     // ── SaaS — English ───────────────────────────────────────────
     'saas development Indonesia',
     'saas MVP development',
     'saas product development',
+    'saas product',
 
     // ── Software House — Indonesia ───────────────────────────────
     'software house Indonesia',

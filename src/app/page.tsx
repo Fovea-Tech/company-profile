@@ -21,16 +21,16 @@ const Contact = dynamic(() => import('@/components/Contact'), {
 });
 
 export const metadata: Metadata = {
-  title: 'Fovea Technology | Jasa Website, Dashboard & Aplikasi SaaS Indonesia',
+  title: 'Fovea Technology | Jasa Website Custom, Dashboard & SaaS Product',
   description:
-    'Fovea Technology, software house Indonesia terpercaya. Jasa pembuatan website custom, sistem booking online, dashboard internal, katalog produk, dan SaaS MVP untuk bisnis B2B & UMKM. Konsultasi gratis!',
+    'Fovea Technology, software house Indonesia terpercaya. Jasa pembuatan website custom, sistem booking online, dashboard internal, katalog produk, dan saas product (prodak saas) untuk bisnis B2B & UMKM. Konsultasi gratis!',
   alternates: {
     canonical: 'https://www.fovea.digital',
   },
   openGraph: {
-    title: 'Fovea Technology | Jasa Website, Dashboard & Aplikasi SaaS Indonesia',
+    title: 'Fovea Technology | Jasa Website Custom, Dashboard & SaaS Product',
     description:
-      'Software house Indonesia terpercaya. Website custom, sistem booking, dashboard, SaaS untuk B2B & UMKM. Konsultasi gratis!',
+      'Software house Indonesia terpercaya. Jasa website custom, sistem booking, dashboard, SaaS product untuk B2B & UMKM. Konsultasi gratis!',
     url: 'https://www.fovea.digital',
     images: [{ url: '/og-image.png', width: 1200, height: 630, alt: 'Fovea Technology' }],
   },

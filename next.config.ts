@@ -36,16 +36,16 @@ const securityHeaders = [
     key: 'Content-Security-Policy',
     value: [
       "default-src 'self'",
-      // Scripts: self + Google Ads + GTM + inline (needed for Next.js)
-      "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://www.google-analytics.com https://googleads.g.doubleclick.net https://www.googleadservices.com",
+      // Scripts: self + Google Ads + GTM + inline (needed for Next.js) + Cloudflare Insights
+      "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://www.google-analytics.com https://googleads.g.doubleclick.net https://www.googleadservices.com https://static.cloudflareinsights.com",
       // Styles: self + Google Fonts + inline
       "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
       // Fonts
       "font-src 'self' https://fonts.gstatic.com",
       // Images: self + data URIs + Google domains
       "img-src 'self' data: blob: https://www.google.com https://www.googletagmanager.com https://googleads.g.doubleclick.net",
-      // Connections: self + Google analytics
-      "connect-src 'self' https://www.google-analytics.com https://googleads.g.doubleclick.net https://region1.google-analytics.com",
+      // Connections: self + Google analytics + Cloudflare Insights
+      "connect-src 'self' https://www.google-analytics.com https://googleads.g.doubleclick.net https://region1.google-analytics.com https://cloudflareinsights.com",
       // Frames: only Google Ads
       "frame-src https://bid.g.doubleclick.net https://td.doubleclick.net",
       // Block all plugins/objects
