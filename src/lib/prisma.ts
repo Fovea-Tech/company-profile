@@ -14,8 +14,13 @@ export const prisma = new Proxy({} as PrismaClient, {
     try {
       // Dapatkan binding Cloudflare dari OpenNext context
       env = getCloudflareContext()?.env;
+      if (process.env.NODE_ENV === 'production') {
+        console.log("DEBUG: Cloudflare env bindings detected:", env ? Object.keys(env) : "ENV IS UNDEFINED");
+      }
     } catch (e) {
-      // Akan throw error jika dijalankan di luar siklus request, atau saat local dev
+      if (process.env.NODE_ENV === 'production') {
+        console.error("DEBUG: getCloudflareContext threw an error:", e);
+      }
     }
 
     // 1. Jika terdeteksi berjalan di Cloudflare (punya env.DB)
