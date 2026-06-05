@@ -43,7 +43,6 @@ export default function LoginPage() {
               id="email"
               name="email"
               required
-              placeholder="admin@fovea.digital"
               className="w-full rounded-xl border-[3px] border-black bg-[#F7F7F4] px-4 py-3 text-base font-medium text-black focus:bg-white focus:outline-none focus:ring-4 focus:ring-[#FFD84D] transition-all"
             />
           </div>
