@@ -1,19 +1,29 @@
-import { createClient } from '@supabase/supabase-js';
+import { createClient, SupabaseClient } from '@supabase/supabase-js';
+import { getCloudflareContext } from '@opennextjs/cloudflare';
 
-const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL || 'https://dummy.supabase.co';
-const supabaseServiceKey = process.env.SUPABASE_SERVICE_ROLE_KEY || 'dummy-key';
+let cachedClient: SupabaseClient | null = null;
 
-if (!supabaseUrl || !supabaseServiceKey) {
-  if (process.env.NODE_ENV === 'production') {
-    console.warn("WARNING: Supabase URL or Service Key is missing. Database queries will fail.");
-  }
-}
+export const supabase = new Proxy({} as SupabaseClient, {
+  get(target, prop: keyof SupabaseClient) {
+    if (cachedClient) return cachedClient[prop];
 
-// Gunakan Service Role Key untuk operasi admin (bypassing RLS)
-// Supabase-js bisa dijalankan di Edge runtime tanpa masalah!
-export const supabase = createClient(supabaseUrl, supabaseServiceKey, {
-  auth: {
-    persistSession: false,
-    autoRefreshToken: false,
+    let env: any = process.env;
+    try {
+      env = getCloudflareContext()?.env || process.env;
+    } catch (e) {
+      // Ignored outside request context
+    }
+
+    const supabaseUrl = env.NEXT_PUBLIC_SUPABASE_URL || env.SUPABASE_URL || process.env.SUPABASE_URL || 'https://dummy.supabase.co';
+    const supabaseServiceKey = env.SUPABASE_SERVICE_ROLE_KEY || process.env.SUPABASE_SERVICE_ROLE_KEY || 'dummy-key';
+
+    cachedClient = createClient(supabaseUrl, supabaseServiceKey, {
+      auth: {
+        persistSession: false,
+        autoRefreshToken: false,
+      }
+    });
+
+    return cachedClient[prop];
   }
 });
