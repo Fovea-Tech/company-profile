@@ -9,7 +9,7 @@ export default function PortfolioDetailClient({ project }: { project: Portfolio 
   const { lang, t } = useLang();
 
   // Parse tech strings
-  const technologies = project.tech.split(',').map(t => t.trim());
+  const technologies = (project.tech || '').split(',').map(t => t.trim()).filter(Boolean);
 
   return (
     <div className="pb-24 pt-32">

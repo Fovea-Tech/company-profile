@@ -5,6 +5,7 @@ export const dynamic = 'force-dynamic';
 
 import Hero from '@/components/Hero';
 import { supabase } from '@/lib/supabase';
+import { Portfolio, Faq } from '@/types';
 
 // Below-fold sections: dynamically imported so their JS doesn't block
 // the critical rendering path. Still server-rendered for SEO (ssr: true default).
@@ -48,8 +49,8 @@ export default async function Home() {
     supabase.from('Portfolio').select('*').order('createdAt', { ascending: false }).limit(3),
     supabase.from('FAQ').select('*').order('order', { ascending: true })
   ]);
-  const portfolios = portfolioReq.data || [];
-  const faqs = faqReq.data || [];
+  const portfolios = (portfolioReq.data as Portfolio[]) || [];
+  const faqs = (faqReq.data as Faq[]) || [];
 
   return (
     <>

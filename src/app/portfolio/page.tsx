@@ -4,6 +4,7 @@ export const dynamic = 'force-dynamic';
 import Link from 'next/link';
 import PortfolioClient from './PortfolioClient';
 import { supabase } from '@/lib/supabase';
+import { Portfolio } from '@/types';
 
 export const metadata: Metadata = {
   title: 'Portofolio | Fovea Teknologi',
@@ -11,10 +12,12 @@ export const metadata: Metadata = {
 }
 
 export default async function PortfolioPage() {
-  const { data: portfolioData = [] } = await supabase
+  const { data: rawPortfolioData } = await supabase
     .from('Portfolio')
     .select('*')
     .order('createdAt', { ascending: false });
+
+  const portfolioData = (rawPortfolioData as Portfolio[]) || [];
 
   return (
     <div className="pb-24 pt-32">
