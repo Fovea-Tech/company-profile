@@ -48,9 +48,9 @@ export const prisma = new Proxy({} as PrismaClient, {
             }
           }
         });
-        if (process.env.NODE_ENV !== 'production') {
-          globalForPrisma.prisma = localPrisma;
-        }
+        // Karena di atas kita sudah melempar error jika production,
+        // baris ini pasti hanya berjalan di development/test.
+        globalForPrisma.prisma = localPrisma;
       }
     }
 
