@@ -2,32 +2,34 @@ import type { Translations } from '@/i18n/types';
 
 const en: Translations = {
   nav: {
-    brand: 'Fovea Technology',
+    brand: 'Fovea Teknologi',
     home: 'Home',
     whoWeAre: 'Who We Are',
     process: 'Work Process',
     services: 'Services',
     faq: 'FAQ',
     contact: 'Contact',
+    portfolio: 'Portfolio',
   },
   hero: {
-    tagline: 'INDONESIA SOFTWARE HOUSE SPECIALIZING IN WEBSITES',
-    title: 'Sharp, Fast Websites Built to Scale',
+    tagline: 'TRUSTED INDONESIA SOFTWARE HOUSE',
+    title: 'Custom Websites & Digital Systems Designed for Your Business Growth.',
     subtitle:
-      'Fovea Technology helps brands, businesses, and startups build custom websites, booking systems, internal dashboards, and SaaS applications that are clean, fast, and ready to use.',
-    cta: 'Free Consultation',
+      'Leave rigid templates behind. Fovea Teknologi helps SMBs, startups, and enterprises build custom websites, booking systems, and SaaS apps that are fast-loading, secure, and ready to attract more customers.',
+    cta: 'Consult Your Project (Free)',
     ctaSecondary: 'View Services',
-    trustMicrocopy: ['Fovea SaaS Products', 'Custom Website', 'Ongoing Maintenance'],
+    ctaWA: 'Chat via WhatsApp',
+    trustMicrocopy: ['✅ Exclusive Design', '✅ SEO Optimized', '✅ Ongoing Tech Support'],
   },
   whoAreWe: {
-    heading: 'About Fovea Technology',
-    title: 'We build websites that not only look good, but also work clearly.',
-    subtitle: 'Fovea Technology is here as a solution provider partner to design, build, and manage your business website so that it is always relevant, secure, and ready to be relied on for the long term.',
-    titleCards: ['Website-first Approach', 'Clear Structure', 'Built for Growth'],
+    heading: 'WHO WE ARE',
+    title: 'We Build Websites That Don\'t Just Look Good, They Deliver Results.',
+    subtitle: 'Fovea Teknologi is more than a vendor; we are your digital partner. We ensure every line of code and design element serves one goal: accelerating your business growth.',
+    titleCards: ['Built from Scratch (Custom)', 'Performance & SEO Friendly', 'Long-term Support'],
     descCards: [
-      "We\'re on the website, so strategy, design, development, and maintenance are more focused and don't get bogged down in unnecessary detail.",
-      "Each page is structured with a clear content flow, from the main role, supporting information, to the desired user action.",
-      "The website doesn\'t stop at launch. We help maintain performance, security, and development to ensure it remains ready for growth.",
+      'Forget generic templates. We design exclusive UI/UX tailored to your brand identity and target market.',
+      'Slow websites lose visitors. We optimize loading speeds so your website is loved by both users and search engines (Google).',
+      'A website doesn\'t die after launch. We are ready to assist with maintenance, updates, and future feature development.',
     ],
   },
   process: {
@@ -42,9 +44,9 @@ const en: Translations = {
     ],
   },
   services: {
-    heading: 'Services',
-    title: 'Choose a website service according to your business needs.',
-    subtitle: 'From subscribing to Fovea\'s ready-to-use SaaS products, to custom website development and system maintenance.',
+    heading: 'OUR SERVICES',
+    title: 'The Right Technology Solutions for Your Business Scale.',
+    subtitle: 'From company profiles to internal operational systems, we are ready to make it happen.',
     cards: [
       {
         title: 'SaaS Products',
@@ -82,13 +84,19 @@ const en: Translations = {
       },
     ]
   },
+  featuredPortfolio: {
+    heading: 'Portfolio',
+    title: 'Our Work for Your Business Growth',
+    subtitle: 'From landing pages to complex SaaS applications, we design digital solutions that prioritize performance, security, and aesthetics.',
+    cta: 'View All Portfolios',
+  },
   faq: {
     heading: 'FAQ',
     title: 'Questions that often arise before starting a project.',
-    subtitle: 'Some things that are usually asked before working with Fovea Technology.',
+    subtitle: 'Some things that are usually asked before working with Fovea Teknologi.',
     items: [
       {
-        q: 'Does Fovea Technology provide maintenance services after launch?',
+        q: 'Does Fovea Teknologi provide maintenance services after launch?',
         a: 'Yes, we provide ongoing maintenance and technical support (SLA) post-launch to ensure your application or website runs optimally and remains secure.',
       },
       {
@@ -100,15 +108,15 @@ const en: Translations = {
         a: 'Absolutely. Our team has extensive experience integrating new systems with legacy infrastructure, CRMs, ERPs, and third-party payment gateways.',
       },
       {
-        q: 'What technology stack does Fovea Technology typically use?',
+        q: 'What technology stack does Fovea Teknologi typically use?',
         a: 'We use modern, scalable, and reliable tech stacks, such as React/Next.js for the frontend, and Node.js, and Go for the backend, paired with cloud infrastructure (AWS/GCP).',
       },
     ],
   },
   contact: {
-    heading: 'LET\'S TALK',
-    title: 'Ready to build a cleaner, more scalable website?',
-    subtitle: 'Tell us about your website needs, and we\'ll help direct you to the most appropriate service.',
+    heading: 'LET\'S COLLABORATE',
+    title: 'Have a Brilliant Idea or Operational Issue? Let\'s Find the Solution Together.',
+    subtitle: 'Don\'t let your ideas remain just plans. Tell us your needs, and our team will design the most efficient technology solution.',
     cta: 'Send Project Brief',
     form: {
       name: 'Full Name',
@@ -129,7 +137,7 @@ const en: Translations = {
     socialMedia: 'Social Media',
   },
   footer: {
-    brand: 'Fovea Technology',
+    brand: 'Fovea Teknologi',
     title: [
       'Navigation',
       'Services',

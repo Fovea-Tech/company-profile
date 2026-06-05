@@ -9,25 +9,27 @@ const id: Translations = {
     services: 'Layanan',
     faq: 'FAQ',
     contact: 'Kontak',
+    portfolio: 'Portofolio',
   },
   hero: {
-    tagline: 'SOFTWARE HOUSE INDONESIA SPESIALIS WEBSITE',
-    title: 'Website Tajam, Cepat, dan Siap Bertumbuh',
+    tagline: 'SOFTWARE HOUSE INDONESIA TERPERCAYA',
+    title: 'Website Custom & Sistem Digital yang Dirancang untuk Pertumbuhan Bisnis Anda.',
     subtitle:
-      'Fovea Teknologi membantu brand, bisnis, dan startup membangun website custom, sistem booking, dashboard internal, dan aplikasi SaaS yang rapi, cepat, dan siap pakai.',
-    cta: 'Konsultasi Gratis',
+      'Tinggalkan template pasaran yang kaku. Fovea Teknologi membantu UMKM, startup, dan perusahaan membangun website custom, sistem booking, dan aplikasi SaaS yang fast-loading, aman, dan siap mendatangkan lebih banyak pelanggan.',
+    cta: 'Konsultasikan Proyek Anda (Gratis)',
     ctaSecondary: 'Lihat Layanan',
-    trustMicrocopy: ['Produk SaaS Fovea', 'Website Custom', 'Pemeliharaan Berkala'],
+    ctaWA: 'Chat via WhatsApp',
+    trustMicrocopy: ['✅ Desain Eksklusif', '✅ SEO Optimized', '✅ Support Teknis Berkala'],
   },
   whoAreWe: {
-    heading: 'Siapa Kami?',
-    title: 'Kami membangun website yang bukan cuma terlihat bagus, tapi juga bekerja dengan jelas.',
-    subtitle: 'Fovea Teknologi hadir sebagai mitra penyedia solusi untuk merancang, membangun, dan mengelola website bisnis Anda agar selalu relevan, aman, dan siap diandalkan untuk jangka panjang.',
-    titleCards: ['Fokus pada Website', 'Struktur yang jelas', 'Membangun untuk Pertumbuhan'],
+    heading: 'SIAPA KAMI',
+    title: 'Kami Membangun Website yang Tidak Hanya Sekadar Menarik, Tapi Menghasilkan.',
+    subtitle: 'Fovea Teknologi bukan sekadar vendor, kami adalah mitra digital Anda. Kami memastikan setiap baris kode dan elemen desain yang kami buat memiliki satu tujuan: mempercepat pertumbuhan bisnis Anda.',
+    titleCards: ['Desain Dibuat dari Nol (Custom)', 'Performa & SEO Friendly', 'Dukungan Jangka Panjang'],
     descCards: [
-      'Kami pada website, sehingga strategi, desain, development, dan maintenance dibuat lebih tajam dan tidak melebar ke hal yang tidak perlu.',
-      'Setiap halaman disusun dengan alur konten yang jelas, mulai dari peran utama, informasi pendukung, sampai tindakan yang ingin dilakukan user.',
-      'Website tidak berhenti saat launch. Kami bantu menjaga performa, keamanan, dan pengembangan agar tetap siap bertumbuh.',
+      'Lupakan template pasaran. Kami merancang UI/UX yang eksklusif sesuai dengan identitas dan target pasar brand Anda.',
+      'Website yang lambat akan ditinggalkan. Kami mengoptimasi kecepatan agar website Anda disukai oleh pengunjung dan mesin pencari (Google).',
+      'Website tidak mati setelah launching. Kami siap sedia membantu maintenance, update, dan pengembangan fitur selanjutnya.',
     ],
   },
   process: {
@@ -42,9 +44,9 @@ const id: Translations = {
     ],
   },
   services: {
-    heading: 'Layanan',
-    title: 'Pilih layanan website sesuai kebutuhan bisnis Anda.',
-    subtitle: 'Mulai dari berlangganan produk SaaS Fovea yang siap pakai, pembuatan website custom, hingga pemeliharaan sistem.',
+    heading: 'LAYANAN KAMI',
+    title: 'Solusi Teknologi Tepat Guna Sesuai Skala Bisnis Anda.',
+    subtitle: 'Mulai dari profil perusahaan hingga sistem operasional internal, kami siap mewujudkannya.',
     cards: [
       {
         title: 'Produk SaaS',
@@ -82,6 +84,12 @@ const id: Translations = {
       },
     ]
   },
+  featuredPortfolio: {
+    heading: 'Portofolio',
+    title: 'Karya Kami untuk Pertumbuhan Bisnis Anda',
+    subtitle: 'Dari landing page hingga aplikasi SaaS kompleks, kami merancang solusi digital yang mengutamakan performa, keamanan, dan estetika.',
+    cta: 'Lihat Semua Portofolio',
+  },
   faq: {
     heading: 'FAQ',
     title: 'Pertanyaan yang sering muncul sebelum mulai proyek.',
@@ -106,9 +114,9 @@ const id: Translations = {
     ],
   },
   contact: {
-    heading: 'MARI BICARA',
-    title: 'Siap membangun website yang lebih rapi dan siap berkembang?',
-    subtitle: 'Ceritakan kebutuhan websitemu, dan kami akan bantu arahkan layanan yang paling sesuai.',
+    heading: 'MARI BERKOLABORASI',
+    title: 'Punya Ide Brilian atau Masalah Operasional? Mari Cari Solusinya Bersama.',
+    subtitle: 'Jangan biarkan ide Anda hanya sebatas rencana. Ceritakan kebutuhan Anda, dan tim kami akan merancang solusi teknologi yang paling efisien.',
     cta: 'Kirim Ringkasan Proyek',
     form: {
       name: 'Nama Lengkap',

@@ -4,10 +4,10 @@ import Image from 'next/image';
 
 export default function HeroImage() {
   return (
-    <div className="relative mx-auto w-full max-w-[560px] lg:mx-0">
+    <div className="relative mx-auto w-full max-w-140 lg:mx-0">
       <Image
         src="/mockup-web-bg.webp"
-        alt="Tampilan website yang dibangun Fovea Technology"
+        alt="Tampilan website yang dibangun Fovea Teknologi"
         width={449}
         height={496}
         priority

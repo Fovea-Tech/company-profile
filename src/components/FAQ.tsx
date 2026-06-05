@@ -3,8 +3,14 @@
 import { ChevronDown } from 'lucide-react';
 import { useLang } from '@/context/LanguageContext';
 
-export default function FAQ() {
-  const { t } = useLang();
+import { Faq } from '@prisma/client';
+
+interface FAQProps {
+  faqs: Faq[];
+}
+
+export default function FAQ({ faqs }: FAQProps) {
+  const { t, lang } = useLang();
 
   return (
     <section
@@ -37,9 +43,9 @@ export default function FAQ() {
           {/* Right FAQ List */}
           <div className="overflow-visible pb-5">
             <div className="space-y-4">
-              {t.faq.items.map((item, index) => (
+              {faqs.map((item, index) => (
                 <details
-                  key={item.q}
+                  key={item.id}
                   className={[
                     'group rounded-2xl border-[3px] border-black bg-white',
                     'shadow-[7px_7px_0_#111111]',
@@ -51,7 +57,7 @@ export default function FAQ() {
                 >
                   <summary className="flex cursor-pointer list-none items-center justify-between gap-5 px-5 py-5 sm:px-6">
                     <span className="text-left text-base font-black leading-6 text-black sm:text-lg">
-                      {item.q}
+                      {lang === 'id' ? item.question_id : item.question_en}
                     </span>
 
                     <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full border-[3px] border-black bg-[#6FFF9A] text-black shadow-[3px_3px_0_#111111] transition-transform duration-200 group-open:rotate-180 group-open:bg-white">
@@ -67,7 +73,7 @@ export default function FAQ() {
                     <div className="h-[3px] w-full bg-black" />
 
                     <p className="mt-5 text-sm font-medium leading-7 text-black sm:text-base">
-                      {item.a}
+                      {lang === 'id' ? item.answer_id : item.answer_en}
                     </p>
                   </div>
                 </details>

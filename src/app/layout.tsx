@@ -3,8 +3,7 @@ import { Space_Grotesk, Plus_Jakarta_Sans } from 'next/font/google';
 import './globals.css';
 import { LanguageProvider } from '@/context/LanguageContext';
 import GoogleAdsTag from '@/components/GoogleAdsTag';
-import Navbar from '@/components/Navbar';
-import Footer from '@/components/Footer';
+import { ConditionalNavbar, ConditionalFooter } from '@/components/ConditionalLayout';
 import JsonLd from '@/components/JsonLd';
 
 // Only load weights actually used in the UI:
@@ -29,17 +28,16 @@ const plusJakartaSans = Plus_Jakarta_Sans({
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.fovea.digital'),
   title: {
-    default: 'Fovea Technology | Jasa Website, Dashboard & Aplikasi SaaS Indonesia',
-    template: '%s | Fovea Technology',
+    default: 'Fovea Teknologi | Jasa Website, Dashboard & Aplikasi SaaS Indonesia',
+    template: '%s | Fovea Teknologi',
   },
   description:
-    'Fovea Technology: software house Indonesia spesialis jasa pembuatan website custom, sistem booking, dashboard internal, katalog produk, dan saas product untuk bisnis B2B & UMKM. Konsultasi gratis!',
+    'Fovea Teknologi: software house Indonesia spesialis jasa pembuatan website custom, sistem booking, dashboard internal, katalog produk, dan saas product untuk bisnis B2B & UMKM. Konsultasi gratis!',
   keywords: [
     // ── Brand (ID + EN) ──────────────────────────────────────────
     'Fovea',
-    'Fovea Technology',
     'Fovea Teknologi',
-    'Fovea Techology',
+    'Fovea Technology',
     'Fovea Tech',
     'Fovea Digital',
     'www.fovea.digital',
@@ -61,13 +59,13 @@ export const metadata: Metadata = {
     'website bisnis profesional',
     'jasa website company profile',
 
-    // ── Website Services — English ───────────────────────────────
-    'custom web development Indonesia',
-    'B2B website development',
-    'booking system development',
-    'internal dashboard development',
-    'web application development Indonesia',
-    'professional landing page',
+    // ── Website Services — Top ───────────────────────────────
+    'jasa pembuatan aplikasi web',
+    'bikin web perusahaan',
+    'jasa seo website',
+    'jasa optimasi website',
+    'pembuatan sistem informasi',
+    'jasa web app murah',
 
     // ── SaaS — Indonesia ─────────────────────────────────────────
     'jasa pembuatan saas',
@@ -77,11 +75,11 @@ export const metadata: Metadata = {
     'aplikasi berbasis web Indonesia',
     'prodak saas',
 
-    // ── SaaS — English ───────────────────────────────────────────
-    'saas development Indonesia',
-    'saas MVP development',
-    'saas product development',
-    'saas product',
+    // ── Local & Specific ───────────────────────────────────────────
+    'jasa pembuatan website e-commerce',
+    'jasa pemeliharaan website',
+    'jasa maintenance website',
+    'jasa kelola website',
 
     // ── Software House — Indonesia ───────────────────────────────
     'software house Indonesia',
@@ -90,15 +88,15 @@ export const metadata: Metadata = {
     'digital agency Indonesia',
     'konsultan IT Indonesia',
 
-    // ── Software House — English ─────────────────────────────────
-    'software house',
-    'web development agency Indonesia',
-    'tech startup Indonesia',
-    'IT consultant Indonesia',
+    // ── Software House — Lokal ─────────────────────────────────
+    'software house jakarta',
+    'software house bogor',
+    'software house depok',
+    'jasa website jakarta',
   ],
-  authors: [{ name: 'Fovea Technology', url: 'https://www.fovea.digital' }],
-  creator: 'Fovea Technology',
-  publisher: 'Fovea Technology',
+  authors: [{ name: 'Fovea Teknologi', url: 'https://www.fovea.digital' }],
+  creator: 'Fovea Teknologi',
+  publisher: 'Fovea Teknologi',
   alternates: {
     canonical: 'https://www.fovea.digital',
     languages: {
@@ -121,11 +119,11 @@ export const metadata: Metadata = {
     ],
   },
   openGraph: {
-    title: 'Fovea Technology | Jasa Website, Dashboard & Aplikasi SaaS Indonesia',
+    title: 'Fovea Teknologi | Jasa Website, Dashboard & Aplikasi SaaS Indonesia',
     description:
       'Software house Indonesia spesialis website custom, sistem booking, dashboard, katalog produk & SaaS untuk bisnis B2B & UMKM. Konsultasi gratis sekarang!',
     url: 'https://www.fovea.digital',
-    siteName: 'Fovea Technology',
+    siteName: 'Fovea Teknologi',
     locale: 'id_ID',
     alternateLocale: ['en_US'],
     type: 'website',
@@ -134,14 +132,14 @@ export const metadata: Metadata = {
         url: '/og-image.png',
         width: 1200,
         height: 630,
-        alt: 'Fovea Technology | Jasa Website, Dashboard & Aplikasi SaaS Indonesia',
+        alt: 'Fovea Teknologi | Jasa Website, Dashboard & Aplikasi SaaS Indonesia',
         type: 'image/png',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Fovea Technology | Jasa Website, Dashboard & Aplikasi SaaS',
+    title: 'Fovea Teknologi | Jasa Website, Dashboard & Aplikasi SaaS',
     description:
       'Software house Indonesia spesialis website custom, sistem booking, dashboard, dan SaaS untuk bisnis B2B & UMKM.',
     images: ['/og-image.png'],
@@ -162,7 +160,7 @@ export const metadata: Metadata = {
     },
   },
   category: 'technology',
-  applicationName: 'Fovea Technology',
+  applicationName: 'Fovea Teknologi',
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
@@ -180,7 +178,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <meta name="mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="default" />
-        <meta name="apple-mobile-web-app-title" content="Fovea Technology" />
+        <meta name="apple-mobile-web-app-title" content="Fovea Teknologi" />
         {/* Prevent AI scraping but allow indexing */}
         <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
         <meta name="googlebot" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
@@ -199,9 +197,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <JsonLd />
         <GoogleAdsTag />
         <LanguageProvider>
-          <Navbar />
+          <ConditionalNavbar />
           <main id="main-content">{children}</main>
-          <Footer />
+          <ConditionalFooter />
         </LanguageProvider>
       </body>
     </html>

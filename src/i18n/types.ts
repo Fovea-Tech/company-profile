@@ -9,6 +9,7 @@ export interface Translations {
     services: string;
     faq: string;
     contact: string;
+    portfolio: string;
   };
   hero: {
     tagline: string;
@@ -16,6 +17,7 @@ export interface Translations {
     subtitle: string;
     cta: string;
     ctaSecondary: string;
+    ctaWA: string;
     trustMicrocopy: Array<string>;
   };
   whoAreWe: {
@@ -41,6 +43,12 @@ export interface Translations {
       bullets: string[];
       cta: string;
     }[];
+  };
+  featuredPortfolio: {
+    heading: string;
+    title: string;
+    subtitle: string;
+    cta: string;
   };
   faq: {
     heading: string;

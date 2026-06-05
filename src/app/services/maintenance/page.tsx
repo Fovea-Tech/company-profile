@@ -1,16 +1,16 @@
 import ServiceTemplate from '@/components/ServiceTemplate';
 
 export const metadata = {
-  title: 'Jasa IT Maintenance Website & Aplikasi | Fovea Technology',
+  title: 'Jasa IT Maintenance Website & Aplikasi | Fovea Teknologi',
   description: 'Jasa pemeliharaan sistem IT, website, dan aplikasi SaaS secara berkala. Server monitoring 24/7, security patching, backup otomatis, bug fixing, dan laporan bulanan. Retainer mulai 6 bulan.',
   alternates: {
     canonical: 'https://www.fovea.digital/services/maintenance',
   },
   openGraph: {
-    title: 'Jasa IT Maintenance & Support | Fovea Technology',
-    description: 'Pastikan website dan aplikasi Anda selalu optimal dengan layanan maintenance bulanan Fovea Technology. Monitoring 24/7, keamanan terjamin, laporan transparan.',
+    title: 'Jasa IT Maintenance & Support | Fovea Teknologi',
+    description: 'Pastikan website dan aplikasi Anda selalu optimal dengan layanan maintenance bulanan Fovea Teknologi. Monitoring 24/7, keamanan terjamin, laporan transparan.',
     url: 'https://www.fovea.digital/services/maintenance',
-    images: [{ url: '/og-image.png', width: 1200, height: 630, alt: 'Jasa IT Maintenance Fovea Technology' }],
+    images: [{ url: '/og-image.png', width: 1200, height: 630, alt: 'Jasa IT Maintenance Fovea Teknologi' }],
   },
 };
 
@@ -18,16 +18,16 @@ export default function MaintenancePage() {
   return (
     <ServiceTemplate
       title={{
-        id: 'IT Maintenance & Support',
-        en: 'IT Maintenance & Support',
+        id: 'Jasa IT Maintenance: Amankan Website Anda Sebelum Terlambat.',
+        en: 'IT Maintenance: Secure Your Website Before It\'s Too Late.',
       }}
       subtitle={{
-        id: 'Pastikan website dan aplikasi Anda tetap berjalan optimal, aman, dan mutakhir.',
-        en: 'Ensure your website and applications run optimally, securely, and stay up-to-date.',
+        id: 'Jangan biarkan website lambat atau diretas menghancurkan reputasi bisnis Anda. Kami bantu kelola, monitor, dan amankan sistem Anda 24/7 agar Anda bisa fokus jualan.',
+        en: 'Don\'t let a slow or hacked website destroy your business reputation. We help manage, monitor, and secure your systems 24/7 so you can focus on selling.',
       }}
       overview={{
-        id: 'Teknologi berkembang pesat. Sebuah aplikasi yang dibiarkan tanpa pemeliharaan akan rentan terhadap serangan siber, performa yang melambat, dan bug pada OS baru. Layanan IT Maintenance kami memastikan sistem Anda memiliki uptime 99.9%, selalu di-backup, dan mendapatkan pembaruan keamanan secara berkala.',
-        en: 'Technology evolves rapidly. Applications left unmaintained become vulnerable to cyber attacks, slow down, and face bugs on new OS versions. Our IT Maintenance services ensure your system has 99.9% uptime, is regularly backed up, and receives security updates.',
+        id: 'Teknologi terus berubah setiap hari. Aplikasi web yang dibiarkan tanpa perawatan ibarat mobil yang tidak pernah ganti oli—suatu saat pasti mogok. Layanan IT Maintenance bulanan kami hadir sebagai ekstensi dari tim IT internal Anda. Kami memantau server 24/7, melakukan backup otomatis harian, dan menutup celah keamanan hacker sebelum masalah terjadi.',
+        en: 'Technology changes every day. Web applications left unmaintained are like cars that never get an oil change—they will inevitably break down. Our monthly IT Maintenance service acts as an extension of your in-house IT team. We monitor servers 24/7, perform automated daily backups, and patch security vulnerabilities before problems occur.',
       }}
       features={[
         {

@@ -1,0 +1,50 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id        String   @id @default(uuid())
+  email     String   @unique
+  password  String
+  name      String?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Portfolio {
+  id           String   @id
+  title_id     String
+  title_en     String
+  category_id  String
+  category_en  String
+  image        String
+  desc_id      String
+  desc_en      String
+  client       String
+  year         String
+  tech         String
+  challenge_id String
+  challenge_en String
+  solution_id  String
+  solution_en  String
+  results_id   String
+  results_en   String
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+}
+
+model Faq {
+  id          String   @id @default(uuid())
+  question_id String
+  question_en String
+  answer_id   String
+  answer_en   String
+  order       Int      @default(0)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}

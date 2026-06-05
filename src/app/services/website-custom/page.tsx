@@ -1,16 +1,16 @@
 import ServiceTemplate from '@/components/ServiceTemplate';
 
 export const metadata = {
-  title: 'Jasa Website Custom | Fovea Technology: Web Company Profile, Landing Page, Katalog',
-  description: 'Jasa pembuatan website custom profesional: company profile, landing page konversi tinggi, katalog produk, dan sistem booking. Desain eksklusif, SEO optimized, fast loading. Oleh Fovea Technology.',
+  title: 'Jasa Website Custom | Fovea Teknologi: Web Company Profile, Landing Page, Katalog',
+  description: 'Jasa pembuatan website custom profesional: company profile, landing page konversi tinggi, katalog produk, dan sistem booking. Desain eksklusif, SEO optimized, fast loading. Oleh Fovea Teknologi.',
   alternates: {
     canonical: 'https://www.fovea.digital/services/website-custom',
   },
   openGraph: {
-    title: 'Jasa Website Custom Profesional | Fovea Technology',
-    description: 'Jasa pembuatan website custom yang rapi, cepat, dan SEO-friendly. Mulai dari company profile, landing page, hingga katalog produk interaktif. Hubungi Fovea Technology.',
+    title: 'Jasa Website Custom Profesional | Fovea Teknologi',
+    description: 'Jasa pembuatan website custom yang rapi, cepat, dan SEO-friendly. Mulai dari company profile, landing page, hingga katalog produk interaktif. Hubungi Fovea Teknologi.',
     url: 'https://www.fovea.digital/services/website-custom',
-    images: [{ url: '/og-image.png', width: 1200, height: 630, alt: 'Jasa Website Custom Fovea Technology' }],
+    images: [{ url: '/og-image.png', width: 1200, height: 630, alt: 'Jasa Website Custom Fovea Teknologi' }],
   },
 };
 
@@ -18,41 +18,41 @@ export default function WebsiteCustomPage() {
   return (
     <ServiceTemplate
       title={{
-        id: 'Jasa Pembuatan Website Custom',
-        en: 'Custom Website Development',
+        id: 'Jasa Pembuatan Website Custom yang Mencerminkan Kelas Bisnis Anda.',
+        en: 'Custom Website Development that Reflects Your Business Class.',
       }}
       subtitle={{
-        id: 'Website profesional, interaktif, dan berkinerja tinggi yang dirancang khusus untuk merepresentasikan identitas brand Anda.',
-        en: 'Professional, interactive, and high-performance websites custom-designed to represent your brand identity.',
+        id: 'Dapatkan website eksklusif, aman, dan super cepat. Dirancang khusus dari nol tanpa template pasaran untuk merepresentasikan identitas brand Anda secara sempurna.',
+        en: 'Get an exclusive, secure, and lightning-fast website. Designed from scratch without generic templates to perfectly represent your brand identity.',
       }}
       overview={{
-        id: 'Kami merancang dan mengembangkan website dari nol tanpa bergantung pada template pasaran (seperti WordPress theme standar). Fokus kami adalah pada performa super cepat (SEO friendly), desain yang memukau (UI/UX), dan keamanan yang tidak bisa ditembus. Cocok untuk Company Profile, Landing Page premium, hingga sistem katalog produk interaktif.',
-        en: 'We design and develop websites from scratch without relying on generic templates. Our focus is on lightning-fast performance (SEO friendly), stunning design (UI/UX), and impenetrable security. Ideal for Company Profiles, premium Landing Pages, and interactive product catalogs.',
+        id: 'Kami percaya setiap bisnis itu unik, begitu pula websitenya. Kami tidak menggunakan WordPress theme standar. Kami merancang Company Profile, Landing Page, dan Katalog Produk dengan teknologi modern agar website Anda tidak hanya memukau secara visual, tapi juga mendominasi pencarian Google.',
+        en: 'We believe every business is unique, and its website should be too. We don\'t use standard WordPress themes. We design Company Profiles, Landing Pages, and Product Catalogs with modern technology so your website isn\'t just visually stunning, but also dominates Google searches.',
       }}
       features={[
         {
-          title: { id: 'Custom UI/UX Design', en: 'Custom UI/UX Design' },
-          desc: { id: 'Desain orisinal dan modern yang merefleksikan nilai unik bisnis Anda.', en: 'Original and modern designs reflecting your unique business values.' },
+          title: { id: 'Desain UI/UX Eksklusif (100% Original)', en: 'Exclusive UI/UX Design (100% Original)' },
+          desc: { id: 'Tidak ada website lain yang kembar dengan milik Anda. Desain dirancang khusus sesuai karakter dan panduan visual brand Anda.', en: 'No other website will look identical to yours. Designs are custom-tailored to your brand\'s character and visual guidelines.' },
         },
         {
-          title: { id: 'SEO Optimized', en: 'SEO Optimized' },
-          desc: { id: 'Struktur web dan tag HTML yang dirancang untuk mudah ditemukan di Google (PageSpeed tinggi).', en: 'Web structure and HTML tags designed for high Google visibility (high PageSpeed).' },
+          title: { id: 'Super Cepat & Disukai Google (SEO)', en: 'Lightning Fast & Google Friendly (SEO)' },
+          desc: { id: 'Website lelet membuat pelanggan kabur. Kami memastikan waktu loading di bawah 2 detik agar skor SEO Anda maksimal.', en: 'Slow websites drive customers away. We ensure load times are under 2 seconds to maximize your SEO score.' },
         },
         {
-          title: { id: 'Fully Responsive', en: 'Fully Responsive' },
-          desc: { id: 'Tampilan sempurna dan interaktif di berbagai ukuran layar (HP, Tablet, Desktop).', en: 'Perfect and interactive displays across all screen sizes (Mobile, Tablet, Desktop).' },
+          title: { id: 'Tampil Sempurna di Semua Perangkat', en: 'Flawless on All Devices' },
+          desc: { id: '80% pengunjung datang dari HP. Website Anda akan otomatis beradaptasi dengan mulus di layar mobile, tablet, maupun desktop.', en: '80% of visitors use mobile phones. Your website will seamlessly adapt to mobile, tablet, and desktop screens.' },
         },
         {
-          title: { id: 'Headless CMS', en: 'Headless CMS Integration' },
-          desc: { id: 'Kemudahan mengedit konten web tanpa merusak kode, menggunakan platform seperti Sanity atau Strapi.', en: 'Easy web content editing without breaking code, using platforms like Sanity or Strapi.' },
+          title: { id: 'Mudah Dikelola (Sistem CMS Modern)', en: 'Easy to Manage (Modern CMS)' },
+          desc: { id: 'Anda tidak perlu paham koding. Kami sediakan panel admin yang semudah menggunakan Microsoft Word untuk mengubah teks dan gambar.', en: 'No coding knowledge required. We provide an admin panel as easy to use as Microsoft Word for updating text and images.' },
         },
         {
-          title: { id: 'Fast Loading', en: 'Fast Loading' },
-          desc: { id: 'Optimasi gambar dan kode untuk waktu pemuatan website (load time) di bawah 2 detik.', en: 'Image and code optimization for website load times under 2 seconds.' },
+          title: { id: 'Animasi yang Menghidupkan Website', en: 'Animations that Bring Your Site to Life' },
+          desc: { id: 'Tinggalkan website yang kaku. Kami menyematkan interaksi dan animasi halus agar pengunjung betah berlama-lama.', en: 'Leave rigid websites behind. We embed smooth interactions and animations to keep visitors engaged.' },
         },
         {
-          title: { id: 'Interactive Animations', en: 'Interactive Animations' },
-          desc: { id: 'Animasi scroll dan mikro-interaksi yang memukau (menggunakan Framer Motion / GSAP).', en: 'Stunning scroll animations and micro-interactions (using Framer Motion / GSAP).' },
+          title: { id: 'Keamanan Tingkat Tinggi', en: 'High-Level Security' },
+          desc: { id: 'Karena dibangun secara custom, website Anda jauh lebih kebal dari serangan hacker dan spam dibanding CMS tradisional.', en: 'Because it\'s custom-built, your website is far more immune to hacker attacks and spam compared to traditional CMS platforms.' },
         },
       ]}
       idealFor={[
@@ -63,20 +63,20 @@ export default function WebsiteCustomPage() {
       ]}
       process={[
         {
-          title: { id: '1. Requirement Analysis', en: '1. Requirement Analysis' },
-          desc: { id: 'Diskusi struktur halaman, konten, dan gaya desain (moodboard).', en: 'Discussing page structures, content, and design styles (moodboard).' },
+          title: { id: '1. Analisis Kebutuhan', en: '1. Requirement Analysis' },
+          desc: { id: 'Kita mulai dengan mengobrol santai. Kami bedah apa tujuan bisnis Anda dan fitur apa yang sebenarnya dibutuhkan.', en: 'We start with a casual chat. We dissect your business goals and the exact features you actually need.' },
         },
         {
-          title: { id: '2. Design (Figma)', en: '2. Design (Figma)' },
-          desc: { id: 'Pembuatan desain visual dan mockup resolusi tinggi untuk disetujui.', en: 'Creating visual designs and high-resolution mockups for approval.' },
+          title: { id: '2. Desain Visual (Mockup)', en: '2. Visual Design (Mockup)' },
+          desc: { id: 'Tim desainer kami akan menggambar blueprint dan antarmuka (UI) website untuk Anda setujui sebelum mulai dikerjakan.', en: 'Our design team will sketch out the blueprint and website interface (UI) for your approval before coding starts.' },
         },
         {
-          title: { id: '3. Development', en: '3. Development' },
-          desc: { id: 'Implementasi desain menjadi kode website interaktif (Next.js / React).', en: 'Implementing designs into interactive website code (Next.js / React).' },
+          title: { id: '3. Pengembangan (Coding)', en: '3. Development (Coding)' },
+          desc: { id: 'Desain disulap menjadi website interaktif yang responsif dan siap digunakan dengan teknologi Next.js terkini.', en: 'The design is magically transformed into an interactive, responsive website ready for use with the latest Next.js technology.' },
         },
         {
-          title: { id: '4. Optimization & Go-Live', en: '4. Optimization & Go-Live' },
-          desc: { id: 'SEO, optimasi performa, dan peluncuran website ke domain Anda.', en: 'SEO, performance optimization, and launching the website to your domain.' },
+          title: { id: '4. Optimasi & Peluncuran', en: '4. Optimization & Launch' },
+          desc: { id: 'Kami lakukan quality control, pengecekan kecepatan, optimasi SEO, lalu website Anda siap live dan menyapa dunia!', en: 'We perform quality control, speed checks, SEO optimization, and then your website is ready to go live and greet the world!' },
         },
       ]}
       deliverables={[
@@ -98,6 +98,44 @@ export default function WebsiteCustomPage() {
         {
           q: { id: 'Apakah domain dan hosting sudah termasuk?', en: 'Are domain and hosting included?' },
           a: { id: 'Kami dapat membantu Anda melakukan pendaftaran domain dan hosting (deployment) di cloud provider modern seperti Vercel. Biaya tahunan server bisa ditagihkan terpisah atau masuk ke paket.', en: 'We can assist with domain registration and hosting (deployment) on modern cloud providers like Vercel. Annual server costs can be billed separately or included in the package.' },
+        },
+      ]}
+      pricing={[
+        {
+          title: { id: 'Landing Page', en: 'Landing Page' },
+          price: 'Mulai dari Rp 3.000.000',
+          features: [
+            { id: '1 Halaman Responsif', en: '1 Responsive Page' },
+            { id: 'Desain Premium', en: 'Premium Design' },
+            { id: 'Optimasi SEO Dasar', en: 'Basic SEO Optimization' },
+            { id: 'Formulir Kontak / Integrasi WA', en: 'Contact Form / WA Integration' },
+          ],
+          cta: { id: 'Konsultasi Sekarang', en: 'Consult Now' },
+        },
+        {
+          title: { id: 'Company Profile', en: 'Company Profile' },
+          price: 'Mulai dari Rp 5.000.000',
+          isPopular: true,
+          features: [
+            { id: 'Hingga 5 Halaman', en: 'Up to 5 Pages' },
+            { id: 'Desain Custom Eksklusif', en: 'Exclusive Custom Design' },
+            { id: 'Animasi Interaktif', en: 'Interactive Animations' },
+            { id: 'Optimasi Kecepatan Lanjutan', en: 'Advanced Speed Optimization' },
+            { id: 'Integrasi Analitik', en: 'Analytics Integration' },
+          ],
+          cta: { id: 'Konsultasi Sekarang', en: 'Consult Now' },
+        },
+        {
+          title: { id: 'Katalog Produk', en: 'Product Catalog' },
+          price: 'Mulai dari Rp 8.000.000',
+          features: [
+            { id: 'Halaman Tak Terbatas (CMS)', en: 'Unlimited Pages (CMS)' },
+            { id: 'Panel Akses Admin', en: 'Admin Access Panel' },
+            { id: 'Fitur Pencarian & Filter', en: 'Search & Filter Features' },
+            { id: 'Katalog Produk Dinamis', en: 'Dynamic Product Catalog' },
+            { id: 'SEO Lanjutan', en: 'Advanced SEO' },
+          ],
+          cta: { id: 'Konsultasi Sekarang', en: 'Consult Now' },
         },
       ]}
     />

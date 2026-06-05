@@ -10,11 +10,11 @@ export default function JsonLd() {
     '@context': 'https://schema.org',
     '@type': ['Organization', 'ProfessionalService', 'LocalBusiness'],
     '@id': `${BASE}/#organization`,
-    name: 'Fovea Technology',
+    name: 'Fovea Teknologi',
     alternateName: [
       'Fovea Teknologi',
       'Fovea Tech',
-      'Fovea Technology',
+      'Fovea Teknologi',
       'Fovea Digital',
       'Fovea',
     ],
@@ -27,7 +27,7 @@ export default function JsonLd() {
     },
     image: `${BASE}/og-image.png`,
     description:
-      'Fovea Technology adalah software house Indonesia spesialis jasa pembuatan website custom, sistem booking, dashboard internal, katalog produk, dan aplikasi SaaS untuk bisnis B2B & UMKM. Fovea Technology is an Indonesian software house specializing in custom website development, booking systems, internal dashboards, and SaaS applications.',
+      'Fovea Teknologi adalah software house Indonesia spesialis jasa pembuatan website custom, sistem booking, dashboard internal, katalog produk, dan aplikasi SaaS untuk skala UMKM hingga Perusahaan.',
     foundingDate: '2026',
     priceRange: '$$',
     areaServed: [
@@ -69,7 +69,7 @@ export default function JsonLd() {
     ],
     hasOfferCatalog: {
       '@type': 'OfferCatalog',
-      name: 'Layanan Fovea Technology / Fovea Technology Services',
+      name: 'Layanan Fovea Teknologi / Fovea Technology Services',
       itemListElement: [
         {
           '@type': 'Offer',
@@ -78,7 +78,7 @@ export default function JsonLd() {
             '@type': 'Service',
             name: 'Produk SaaS Fovea',
             description:
-              'Aplikasi SaaS (Software as a Service) milik Fovea Technology yang siap pakai, dirancang khusus untuk mempermudah pekerjaan sehari-hari pengguna.',
+              'Aplikasi SaaS (Software as a Service) milik Fovea Teknologi yang siap pakai, dirancang khusus untuk mempermudah pekerjaan sehari-hari pengguna.',
             url: `${BASE}/services/saas`,
           },
         },
@@ -119,7 +119,7 @@ export default function JsonLd() {
     '@type': 'WebSite',
     '@id': `${BASE}/#website`,
     url: BASE,
-    name: 'Fovea Technology',
+    name: 'Fovea Teknologi',
     alternateName: 'Fovea Teknologi',
     description:
       'Jasa Website Custom, Dashboard & Aplikasi SaaS Indonesia | Software House Terpercaya',
@@ -142,7 +142,7 @@ export default function JsonLd() {
     '@type': 'WebPage',
     '@id': `${BASE}/#webpage`,
     url: BASE,
-    name: 'Fovea Technology | Jasa Website, Dashboard & Aplikasi SaaS Indonesia',
+    name: 'Fovea Teknologi | Jasa Website, Dashboard & Aplikasi SaaS Indonesia',
     description:
       'Software house Indonesia spesialis jasa pembuatan website custom, sistem booking, dashboard internal, katalog produk, dan aplikasi SaaS untuk bisnis B2B & UMKM.',
     isPartOf: { '@id': `${BASE}/#website` },
@@ -164,8 +164,8 @@ export default function JsonLd() {
   const serviceListSchema = {
     '@context': 'https://schema.org',
     '@type': 'ItemList',
-    name: 'Layanan Fovea Technology',
-    description: 'Daftar layanan yang tersedia di Fovea Technology',
+    name: 'Layanan Fovea Teknologi',
+    description: 'Daftar layanan yang tersedia di Fovea Teknologi',
     numberOfItems: 3,
     itemListElement: [
       {
@@ -195,15 +195,15 @@ export default function JsonLd() {
     mainEntity: [
       {
         '@type': 'Question',
-        name: 'Apakah Fovea Technology menyediakan layanan maintenance setelah website selesai dibuat?',
+        name: 'Apakah Fovea Teknologi menyediakan layanan maintenance setelah website selesai dibuat?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: 'Ya, Fovea Technology menyediakan layanan maintenance dan dukungan teknis (SLA) pasca peluncuran untuk memastikan aplikasi atau website Anda tetap berjalan optimal dan aman.',
+          text: 'Ya, Fovea Teknologi menyediakan layanan maintenance dan dukungan teknis (SLA) pasca peluncuran untuk memastikan aplikasi atau website Anda tetap berjalan optimal dan aman.',
         },
       },
       {
         '@type': 'Question',
-        name: 'Berapa biaya jasa pembuatan website custom di Fovea Technology?',
+        name: 'Berapa biaya jasa pembuatan website custom di Fovea Teknologi?',
         acceptedAnswer: {
           '@type': 'Answer',
           text: 'Biaya bervariasi tergantung kompleksitas dan fitur yang dibutuhkan. Hubungi kami melalui form kontak atau WhatsApp +62 881 8204 100 untuk konsultasi gratis dan penawaran harga terbaik.',
@@ -219,7 +219,7 @@ export default function JsonLd() {
       },
       {
         '@type': 'Question',
-        name: 'Teknologi apa saja yang biasanya digunakan oleh Fovea Technology?',
+        name: 'Teknologi apa saja yang biasanya digunakan oleh Fovea Teknologi?',
         acceptedAnswer: {
           '@type': 'Answer',
           text: 'Kami menggunakan modern tech stack yang scalable dan reliable, seperti React/Next.js untuk frontend, serta Node.js dan Go untuk backend, dipadukan dengan cloud infrastructure (AWS/GCP).',
@@ -231,14 +231,6 @@ export default function JsonLd() {
         acceptedAnswer: {
           '@type': 'Answer',
           text: 'Website custom dikoding secara khusus menggunakan teknologi terkini. Hasilnya 10x lebih cepat, jauh lebih aman dari peretasan, dan desainnya tidak terbatas oleh template.',
-        },
-      },
-      {
-        '@type': 'Question',
-        name: 'Does Fovea Technology provide maintenance services after launch?',
-        acceptedAnswer: {
-          '@type': 'Answer',
-          text: 'Yes, we provide ongoing maintenance and technical support (SLA) post-launch to ensure your application or website runs optimally and remains secure.',
         },
       },
     ],

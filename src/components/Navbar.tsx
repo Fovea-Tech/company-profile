@@ -61,6 +61,7 @@ const Navbar = () => {
   // Reset active section when navigating away from / back to homepage
   useEffect(() => {
     if (isHomePage) {
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       setActiveSection('hero');
     }
   }, [isHomePage]);

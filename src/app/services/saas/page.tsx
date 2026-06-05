@@ -2,15 +2,15 @@ import ServiceTemplate from '@/components/ServiceTemplate';
 
 export const metadata = {
   title: 'Produk SaaS Fovea | Aplikasi SaaS Siap Pakai untuk Bisnis Indonesia',
-  description: 'Produk SaaS (Software as a Service) milik Fovea Technology yang siap pakai, terjangkau, dan selalu diperbarui. Cocok untuk freelancer, UMKM, dan digital agency di Indonesia.',
+  description: 'Produk SaaS (Software as a Service) milik Fovea Teknologi yang siap pakai, terjangkau, dan selalu diperbarui. Cocok untuk freelancer, UMKM, dan digital agency di Indonesia.',
   alternates: {
     canonical: 'https://www.fovea.digital/services/saas',
   },
   openGraph: {
     title: 'Produk SaaS Fovea | Aplikasi SaaS Siap Pakai untuk Bisnis Indonesia',
-    description: 'Produk SaaS milik Fovea Technology: siap pakai, harga langganan terjangkau, selalu diperbarui. Daftar sekarang dan tingkatkan produktivitas bisnis Anda.',
+    description: 'Produk SaaS milik Fovea Teknologi: siap pakai, harga langganan terjangkau, selalu diperbarui. Daftar sekarang dan tingkatkan produktivitas bisnis Anda.',
     url: 'https://www.fovea.digital/services/saas',
-    images: [{ url: '/og-image.png', width: 1200, height: 630, alt: 'Produk SaaS Fovea Technology' }],
+    images: [{ url: '/og-image.png', width: 1200, height: 630, alt: 'Produk SaaS Fovea Teknologi' }],
   },
 };
 
@@ -18,16 +18,16 @@ export default function SaaSServicePage() {
   return (
     <ServiceTemplate
       title={{
-        id: 'Produk SaaS Fovea',
-        en: 'Fovea SaaS Products',
+        id: 'Aplikasi SaaS Siap Pakai untuk Percepat Bisnis Anda.',
+        en: 'Ready-to-Use SaaS Apps to Accelerate Your Business.',
       }}
       subtitle={{
-        id: 'Layanan SaaS (Software as a Service) milik Fovea yang dirancang untuk mempermudah pekerjaan sehari-hari Anda secara instan dan efisien.',
-        en: 'Fovea\'s proprietary SaaS (Software as a Service) solutions designed to instantly and efficiently simplify your daily tasks.',
+        id: 'Hemat waktu dan biaya. Tidak perlu membangun sistem dari nol. Gunakan produk software berlangganan kami yang dirancang khusus untuk menyelesaikan masalah operasional Anda secara instan.',
+        en: 'Save time and money. No need to build systems from scratch. Use our subscription-based software products specifically designed to solve your operational issues instantly.',
       }}
       overview={{
-        id: 'Sebagai inovator di bidang teknologi, kami tidak hanya membuat software untuk klien, tetapi juga merancang dan mengembangkan lini produk SaaS (Software as a Service) kami sendiri. Produk-produk ini merupakan Hak Kekayaan Intelektual (IP) milik Fovea Technology yang dipublikasikan secara umum dan dapat digunakan oleh siapa saja, mulai dari pengguna individu, freelancer, hingga perusahaan berskala besar.',
-        en: 'As technology innovators, we don\'t just build software for clients; we design and develop our own line of SaaS (Software as a Service) products. These products are the intellectual property of Fovea Technology, published publicly and available for anyone to use, from individuals and freelancers to large-scale enterprises.',
+        id: 'Membangun sistem IT sendiri membutuhkan biaya ratusan juta dan waktu berbulan-bulan. Solusinya? Gunakan lini produk SaaS unggulan dari Fovea Teknologi. Anda cukup berlangganan dengan biaya sangat terjangkau, dan langsung nikmati aplikasi canggih yang selalu di-update secara otomatis tanpa perlu pusing memikirkan biaya server atau maintenance.',
+        en: 'Building your own IT system requires thousands of dollars and months of time. The solution? Use Fovea Teknologi\'s flagship SaaS product line. Simply subscribe at a very affordable rate, and instantly enjoy advanced applications that are automatically updated without worrying about server costs or maintenance.',
       }}
       features={[
         {

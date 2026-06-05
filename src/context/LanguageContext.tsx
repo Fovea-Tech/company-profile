@@ -18,6 +18,7 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
   useEffect(() => {
     const stored = window.localStorage.getItem('fovea-lang');
     if (stored === 'en') {
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       setLang('en');
     }
   }, []);

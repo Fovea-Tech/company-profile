@@ -1,14 +1,24 @@
 {
-  "$schema": "node_modules/wrangler/config-schema.json",
-  "name": "fovea",
-  "main": ".open-next/worker.js",
-  "assets": {
-    "directory": ".open-next/assets",
-    "binding": "ASSETS"
-  },
-  "compatibility_date": "2026-05-14",
-  "compatibility_flags": ["nodejs_compat"],
-  "observability": {
-    "enabled": true
-  }
+	"$schema": "node_modules/wrangler/config-schema.json",
+	"name": "fovea",
+	"main": ".open-next/worker.js",
+	"assets": {
+		"directory": ".open-next/assets",
+		"binding": "ASSETS"
+	},
+	"compatibility_date": "2026-05-14",
+	"compatibility_flags": [
+		"nodejs_compat"
+	],
+	"observability": {
+		"enabled": true
+	},
+	"d1_databases": [
+		{
+			"binding": "fovea_db",
+			"database_name": "fovea-db",
+			"database_id": "ca123630-4990-41bd-8068-f59d6ef250d1",
+			"remote": true
+		}
+	]
 }

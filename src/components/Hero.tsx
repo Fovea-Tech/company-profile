@@ -49,12 +49,27 @@ export default function Hero() {
                 {t.hero.cta}
               </Link>
 
-              <Link
-                href="/#services"
-                className="inline-flex min-h-16 w-full items-center justify-center rounded-xl border-3 border-black bg-white px-8 text-base font-black text-black shadow-[8px_8px_0_#111111] transition-all duration-200 hover:-translate-y-0.5 hover:shadow-[10px_10px_0_#111111] active:translate-y-1 active:shadow-[4px_4px_0_#111111] sm:w-auto"
+              <a
+                href="https://wa.me/628818204100"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex min-h-16 w-full items-center justify-center gap-2 rounded-xl border-3 border-black bg-[#25D366] px-8 text-base font-black text-white shadow-[8px_8px_0_#111111] transition-all duration-200 hover:-translate-y-0.5 hover:shadow-[10px_10px_0_#111111] active:translate-y-1 active:shadow-[4px_4px_0_#111111] sm:w-auto"
               >
-                {t.hero.ctaSecondary}
-              </Link>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2.5"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
+                  <path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z" />
+                </svg>
+                {t.hero.ctaWA}
+              </a>
             </div>
 
             <ul

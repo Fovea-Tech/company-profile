@@ -12,6 +12,14 @@ interface ServiceTemplateProps {
   process: { title: { id: string; en: string }; desc: { id: string; en: string } }[];
   deliverables: { id: string; en: string }[];
   faqs: { q: { id: string; en: string }; a: { id: string; en: string } }[];
+  pricing?: {
+    title: { id: string; en: string };
+    price: string;
+    features: { id: string; en: string }[];
+    cta: { id: string; en: string };
+    ctaHref?: string;
+    isPopular?: boolean;
+  }[];
 }
 
 export default function ServiceTemplate({
@@ -23,6 +31,7 @@ export default function ServiceTemplate({
   process,
   deliverables,
   faqs,
+  pricing,
 }: ServiceTemplateProps) {
   const { lang, t } = useLang();
 
@@ -101,7 +110,7 @@ export default function ServiceTemplate({
           <h2 className="text-4xl font-black tracking-[-0.04em] text-black mb-16 text-center">
             {lang === 'id' ? 'Proses Kerja' : 'Our Process'}
           </h2>
-          <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4 relative before:absolute before:left-0 before:top-[36px] before:h-[3px] before:w-full before:bg-black before:hidden lg:before:block">
+          <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4 relative before:absolute before:left-0 before:top-9 before:h-0.75 before:w-full before:bg-black before:hidden lg:before:block">
             {process.map((p, i) => (
               <div key={i} className="relative z-10">
                 <div className="mb-6 flex h-16 w-16 items-center justify-center rounded-xl border-[3px] border-black bg-white text-2xl font-black text-black shadow-[4px_4px_0_#111111]">
@@ -130,6 +139,63 @@ export default function ServiceTemplate({
           </div>
         </div>
       </section>
+
+      {/* Pricing Tier */}
+      {pricing && pricing.length > 0 && (
+        <section className="section-shell">
+          <div className="page-shell">
+            <h2 className="text-4xl font-black tracking-[-0.04em] text-black mb-10 text-center">
+              {lang === 'id' ? 'Estimasi Harga' : 'Pricing Estimate'}
+            </h2>
+            <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 items-start justify-center">
+              {pricing.map((tier, i) => (
+                <div
+                  key={i}
+                  className={[
+                    'relative flex flex-col rounded-3xl border-[3px] border-black bg-white p-8 shadow-[8px_8px_0_#111111] transition-all duration-200 hover:-translate-y-1 hover:shadow-[12px_12px_0_#111111]',
+                    tier.isPopular ? 'ring-4 ring-[#FFD84D]' : '',
+                  ].join(' ')}
+                >
+                  {tier.isPopular && (
+                    <div className="absolute -top-4 right-8 rounded-full border-[3px] border-black bg-[#FFD84D] px-4 py-1 text-xs font-black uppercase text-black shadow-[3px_3px_0_#111111]">
+                      {lang === 'id' ? 'Paling Populer' : 'Most Popular'}
+                    </div>
+                  )}
+                  <h3 className="text-2xl font-black tracking-tight text-black mb-2">
+                    {lang === 'id' ? tier.title.id : tier.title.en}
+                  </h3>
+                  <div className="text-3xl font-black text-black mb-8">
+                    {tier.price}
+                  </div>
+                  <ul className="mb-8 space-y-4 flex-1">
+                    {tier.features.map((feat, idx) => (
+                      <li key={idx} className="flex items-start gap-3">
+                        <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-[#6FFF9A] border-2 border-black text-black font-black text-sm">
+                          ✓
+                        </span>
+                        <span className="text-base font-medium text-[#2C2C2C]">
+                          {lang === 'id' ? feat.id : feat.en}
+                        </span>
+                      </li>
+                    ))}
+                  </ul>
+                  <Link
+                    href={tier.ctaHref ?? '/#contact'}
+                    className={[
+                      'inline-flex w-full items-center justify-center rounded-xl border-[3px] border-black px-6 py-4 text-center text-lg font-black text-black transition-all duration-200 active:translate-y-1 active:shadow-[2px_2px_0_#111111]',
+                      tier.isPopular
+                        ? 'bg-[#FFD84D] shadow-[4px_4px_0_#111111] hover:shadow-[6px_6px_0_#111111]'
+                        : 'bg-white shadow-[4px_4px_0_#111111] hover:bg-[#F7F7F4] hover:shadow-[6px_6px_0_#111111]',
+                    ].join(' ')}
+                  >
+                    {lang === 'id' ? tier.cta.id : tier.cta.en}
+                  </Link>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* Service FAQ */}
       <section className="section-shell">

@@ -83,7 +83,7 @@ export default function Contact() {
       className="section-shell overflow-visible py-24 sm:py-28 lg:py-32"
     >
       <div className="page-shell overflow-visible">
-        <div className="rounded-[2rem] border-[3px] border-black bg-[#FFD84D] p-6 shadow-[14px_14px_0_#111111] sm:p-10 lg:p-14">
+        <div className="rounded-4xl border-[3px] border-black bg-[#FFD84D] p-6 shadow-[14px_14px_0_#111111] sm:p-10 lg:p-14">
           <div className="grid items-center gap-12 lg:grid-cols-[0.95fr_1.05fr] lg:gap-16">
             <div>
               <p className="inline-flex rounded-full border-[3px] border-black bg-white px-7 py-3 text-xs font-black uppercase tracking-wide text-black shadow-[6px_6px_0_#111111]">
@@ -93,7 +93,7 @@ export default function Contact() {
               <div className="mt-10 space-y-6">
                 <h2
                   id="contact-title"
-                  className="text-balance text-4xl font-black leading-[1.12] tracking-[-0.05em] text-black sm:text-5xl lg:text-[52px]"
+                  className="text-balance text-4xl font-black leading-[1.12] tracking-tighter text-black sm:text-5xl lg:text-[52px]"
                 >
                   {t.contact.title}
                 </h2>
@@ -247,7 +247,7 @@ export default function Contact() {
                   </div>
 
                   {error && (
-                    <p className="mt-4 rounded-lg border-[2px] border-black bg-[#FF7ABF] px-4 py-3 text-sm font-black text-black">
+                    <p className="mt-4 rounded-lg border-2 border-black bg-[#FF7ABF] px-4 py-3 text-sm font-black text-black">
                       {error}
                     </p>
                   )}
