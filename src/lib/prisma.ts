@@ -33,7 +33,13 @@ export const prisma = new Proxy({} as PrismaClient, {
       if (globalForPrisma.prisma) {
         localPrisma = globalForPrisma.prisma;
       } else {
-        localPrisma = new PrismaClient();
+        localPrisma = new PrismaClient({
+          datasources: {
+            db: {
+              url: process.env.DATABASE_URL || "file:./dev.db"
+            }
+          }
+        });
         if (process.env.NODE_ENV !== 'production') {
           globalForPrisma.prisma = localPrisma;
         }
