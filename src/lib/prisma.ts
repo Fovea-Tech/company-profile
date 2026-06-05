@@ -23,11 +23,13 @@ export const prisma = new Proxy({} as PrismaClient, {
       }
     }
 
-    // 1. Jika terdeteksi berjalan di Cloudflare (punya env.DB)
-    if (env?.DB) {
+    // 1. Jika terdeteksi berjalan di Cloudflare (punya env.DB atau sejenisnya)
+    const d1Database = env?.DB || env?.fovea_db || env?.fovea || (globalThis as any).env?.DB || process.env.DB;
+
+    if (d1Database) {
       // Simpan instance Prisma di dalam objek env agar tidak terus-menerus membuat client baru
       if (!env.__prisma) {
-        const adapter = new PrismaD1(env.DB);
+        const adapter = new PrismaD1(d1Database);
         env.__prisma = new PrismaClient({ adapter });
       }
       return env.__prisma[prop];

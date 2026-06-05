@@ -2,6 +2,8 @@ import { notFound } from 'next/navigation';
 import { prisma } from '@/lib/prisma';
 import PortfolioDetailClient from './PortfolioDetailClient';
 
+export const dynamic = 'force-dynamic';
+
 export async function generateStaticParams() {
   const portfolios = await prisma.portfolio.findMany({ select: { id: true } });
   return portfolios.map((project) => ({

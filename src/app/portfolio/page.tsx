@@ -1,4 +1,7 @@
 import { Metadata } from 'next';
+import { getTranslations, setRequestLocale } from 'next-intl/server';
+
+export const dynamic = 'force-dynamic';
 import Link from 'next/link';
 import PortfolioClient from './PortfolioClient';
 import { prisma } from '@/lib/prisma';

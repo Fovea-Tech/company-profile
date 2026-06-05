@@ -1,5 +1,8 @@
 import type { Metadata } from 'next';
 import dynamic from 'next/dynamic';
+
+export const dynamic = 'force-dynamic';
+
 import Hero from '@/components/Hero';
 import { prisma } from '@/lib/prisma';
 
