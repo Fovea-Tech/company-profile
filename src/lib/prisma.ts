@@ -28,13 +28,9 @@ export const prisma = new Proxy({} as PrismaClient, {
       return env.__prisma[prop];
     }
 
-    if (process.env.NODE_ENV === 'production') {
-      throw new Error(
-        'CRITICAL: Binding D1 Database tidak ditemukan! ' +
-        'Pastikan Anda sudah masuk ke Cloudflare Dashboard -> Settings -> Bindings, ' +
-        'lalu tambahkan D1 database dengan variable name "DB" huruf besar semua.'
-      );
-    }
+    // Karena proses `next build` berjalan di environment Node.js (bukan Edge/Cloudflare),
+    // env.DB pasti undefined saat build. Maka kita tidak boleh melempar error di sini,
+    // melainkan biarkan fallback ke localPrisma (yang otomatis membaca dev.db) agar proses build sukses.
 
     // 2. Fallback jika berjalan di Local Development (npm run dev biasa tanpa wrangler)
     if (!localPrisma) {
