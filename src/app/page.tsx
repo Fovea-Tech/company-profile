@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import dynamic from 'next/dynamic';
+import dynamicImport from 'next/dynamic';
 
 export const dynamic = 'force-dynamic';
 
@@ -8,22 +8,22 @@ import { prisma } from '@/lib/prisma';
 
 // Below-fold sections: dynamically imported so their JS doesn't block
 // the critical rendering path. Still server-rendered for SEO (ssr: true default).
-const WhoAreWe = dynamic(() => import('@/components/WhoAreWe'), {
+const WhoAreWe = dynamicImport(() => import('@/components/WhoAreWe'), {
   loading: () => <div className="section-shell" aria-hidden="true" />,
 });
-const Process = dynamic(() => import('@/components/Process'), {
+const Process = dynamicImport(() => import('@/components/Process'), {
   loading: () => <div className="section-shell" aria-hidden="true" />,
 });
-const Services = dynamic(() => import('@/components/Services'), {
+const Services = dynamicImport(() => import('@/components/Services'), {
   loading: () => <div className="section-shell" aria-hidden="true" />,
 });
-const FeaturedPortfolio = dynamic(() => import('@/components/FeaturedPortfolio'), {
+const FeaturedPortfolio = dynamicImport(() => import('@/components/FeaturedPortfolio'), {
   loading: () => <div className="section-shell" aria-hidden="true" />,
 });
-const FAQ = dynamic(() => import('@/components/FAQ'), {
+const FAQ = dynamicImport(() => import('@/components/FAQ'), {
   loading: () => <div className="section-shell" aria-hidden="true" />,
 });
-const Contact = dynamic(() => import('@/components/Contact'), {
+const Contact = dynamicImport(() => import('@/components/Contact'), {
   loading: () => <div className="section-shell" aria-hidden="true" />,
 });
 
