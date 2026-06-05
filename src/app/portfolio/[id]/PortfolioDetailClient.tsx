@@ -3,7 +3,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { useLang } from '@/context/LanguageContext';
-import { Portfolio } from '@prisma/client';
+import { Portfolio } from '@/types';
 
 export default function PortfolioDetailClient({ project }: { project: Portfolio }) {
   const { lang, t } = useLang();

@@ -3,7 +3,7 @@
 import { ChevronDown } from 'lucide-react';
 import { useLang } from '@/context/LanguageContext';
 
-import { Faq } from '@prisma/client';
+import { Faq } from '@/types';
 
 interface FAQProps {
   faqs: Faq[];

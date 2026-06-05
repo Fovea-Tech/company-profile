@@ -4,7 +4,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { useLang } from '@/context/LanguageContext';
 
-import { Portfolio } from '@prisma/client';
+import { Portfolio } from '@/types';
 
 interface FeaturedPortfolioProps {
   projects: Portfolio[];
