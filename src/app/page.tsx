@@ -4,7 +4,7 @@ import dynamicImport from 'next/dynamic';
 export const dynamic = 'force-dynamic';
 
 import Hero from '@/components/Hero';
-import { prisma } from '@/lib/prisma';
+import { supabase } from '@/lib/supabase';
 
 // Below-fold sections: dynamically imported so their JS doesn't block
 // the critical rendering path. Still server-rendered for SEO (ssr: true default).
@@ -44,10 +44,12 @@ export const metadata: Metadata = {
 };
 
 export default async function Home() {
-  const [portfolios, faqs] = await Promise.all([
-    prisma.portfolio.findMany({ orderBy: { createdAt: 'desc' }, take: 3 }),
-    prisma.faq.findMany({ orderBy: { order: 'asc' } })
+  const [portfolioReq, faqReq] = await Promise.all([
+    supabase.from('Portfolio').select('*').order('createdAt', { ascending: false }).limit(3),
+    supabase.from('FAQ').select('*').order('order', { ascending: true })
   ]);
+  const portfolios = portfolioReq.data || [];
+  const faqs = faqReq.data || [];
 
   return (
     <>

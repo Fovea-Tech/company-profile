@@ -1,6 +1,6 @@
 'use server';
 
-import { prisma } from '@/lib/prisma';
+import { supabase } from '@/lib/supabase';
 import bcrypt from 'bcryptjs';
 import { createSession, deleteSession } from '@/lib/auth';
 import { redirect } from 'next/navigation';
@@ -13,9 +13,11 @@ export async function login(formData: FormData) {
     return { error: 'Email dan password harus diisi.' };
   }
 
-  const user = await prisma.user.findUnique({
-    where: { email },
-  });
+  const { data: user } = await supabase
+    .from('User')
+    .select('*')
+    .eq('email', email)
+    .single();
 
   if (!user) {
     return { error: 'Kredensial tidak valid.' };

@@ -1,11 +1,12 @@
-import { prisma } from '@/lib/prisma';
+import { supabase } from '@/lib/supabase';
 import Link from 'next/link';
 import { deleteFaq } from '@/app/actions/faq';
 
 export default async function AdminFaqPage() {
-  const faqs = await prisma.faq.findMany({
-    orderBy: { order: 'asc' }
-  });
+  const { data: faqs = [] } = await supabase
+    .from('FAQ')
+    .select('*')
+    .order('order', { ascending: true });
 
   return (
     <div className="max-w-5xl mx-auto">
@@ -20,7 +21,7 @@ export default async function AdminFaqPage() {
       </div>
 
       <div className="space-y-4">
-        {faqs.map(faq => (
+        {(faqs || []).map(faq => (
           <div key={faq.id} className="rounded-2xl border-[3px] border-black bg-white p-6 shadow-[8px_8px_0_#111111] flex flex-col md:flex-row justify-between items-start gap-4">
             <div className="flex-1">
               <div className="inline-flex rounded-full border-2 border-black bg-[#E2EEFF] px-3 py-1 text-xs font-black mb-3">
@@ -44,7 +45,7 @@ export default async function AdminFaqPage() {
             </div>
           </div>
         ))}
-        {faqs.length === 0 && (
+        {(!faqs || faqs.length === 0) && (
           <div className="p-8 text-center border-[3px] border-black rounded-2xl bg-white shadow-[8px_8px_0_#111111]">
             Belum ada data FAQ.
           </div>

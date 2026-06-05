@@ -1,6 +1,6 @@
 'use server';
 
-import { prisma } from '@/lib/prisma';
+import { supabase } from '@/lib/supabase';
 import { revalidatePath } from 'next/cache';
 import { redirect } from 'next/navigation';
 
@@ -25,9 +25,7 @@ export async function createPortfolio(formData: FormData) {
     results_en: formData.get('results_en') as string,
   };
 
-  await prisma.portfolio.create({
-    data
-  });
+  await supabase.from('Portfolio').insert(data);
 
   revalidatePath('/admin/portfolio');
   revalidatePath('/portfolio');
@@ -36,7 +34,7 @@ export async function createPortfolio(formData: FormData) {
 }
 
 export async function deletePortfolio(id: string) {
-  await prisma.portfolio.delete({ where: { id } });
+  await supabase.from('Portfolio').delete().eq('id', id);
   revalidatePath('/admin/portfolio');
   revalidatePath('/portfolio');
   revalidatePath('/');

@@ -3,7 +3,7 @@ import { Metadata } from 'next';
 export const dynamic = 'force-dynamic';
 import Link from 'next/link';
 import PortfolioClient from './PortfolioClient';
-import { prisma } from '@/lib/prisma';
+import { supabase } from '@/lib/supabase';
 
 export const metadata: Metadata = {
   title: 'Portofolio | Fovea Teknologi',
@@ -11,9 +11,10 @@ export const metadata: Metadata = {
 }
 
 export default async function PortfolioPage() {
-  const portfolioData = await prisma.portfolio.findMany({
-    orderBy: { createdAt: 'desc' }
-  });
+  const { data: portfolioData = [] } = await supabase
+    .from('Portfolio')
+    .select('*')
+    .order('createdAt', { ascending: false });
 
   return (
     <div className="pb-24 pt-32">

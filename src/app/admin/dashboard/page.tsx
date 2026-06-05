@@ -1,11 +1,14 @@
-import { prisma } from '@/lib/prisma';
+import { supabase } from '@/lib/supabase';
 import Link from 'next/link';
 
 export default async function DashboardPage() {
-  const [portfolioCount, faqCount] = await Promise.all([
-    prisma.portfolio.count(),
-    prisma.faq.count(),
+  const [portfolioReq, faqReq] = await Promise.all([
+    supabase.from('Portfolio').select('*', { count: 'exact', head: true }),
+    supabase.from('FAQ').select('*', { count: 'exact', head: true }),
   ]);
+
+  const portfolioCount = portfolioReq.count || 0;
+  const faqCount = faqReq.count || 0;
 
   return (
     <div>

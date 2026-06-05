@@ -12,12 +12,5 @@
 	],
 	"observability": {
 		"enabled": true
-	},
-	"d1_databases": [
-		{
-			"binding": "DB",
-			"database_name": "fovea-db",
-			"database_id": "ca123630-4990-41bd-8068-f59d6ef250d1"
-		}
-	]
+	}
 }

@@ -1,19 +1,23 @@
 import { notFound } from 'next/navigation';
-import { prisma } from '@/lib/prisma';
+import { supabase } from '@/lib/supabase';
 import PortfolioDetailClient from './PortfolioDetailClient';
 
 export const dynamic = 'force-dynamic';
 
 export async function generateStaticParams() {
-  const portfolios = await prisma.portfolio.findMany({ select: { id: true } });
-  return portfolios.map((project) => ({
+  const { data: portfolios } = await supabase.from('Portfolio').select('id');
+  return (portfolios || []).map((project) => ({
     id: project.id,
   }));
 }
 
 export default async function PortfolioDetailPage(props: { params: Promise<{ id: string }> }) {
   const { id } = await props.params;
-  const project = await prisma.portfolio.findUnique({ where: { id } });
+  const { data: project } = await supabase
+    .from('Portfolio')
+    .select('*')
+    .eq('id', id)
+    .single();
 
   if (!project) {
     notFound();

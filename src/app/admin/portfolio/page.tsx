@@ -1,12 +1,13 @@
-import { prisma } from '@/lib/prisma';
+import { supabase } from '@/lib/supabase';
 import Link from 'next/link';
 import { deletePortfolio } from '@/app/actions/portfolio';
 import Image from 'next/image';
 
 export default async function AdminPortfolioPage() {
-  const portfolios = await prisma.portfolio.findMany({
-    orderBy: { createdAt: 'desc' }
-  });
+  const { data: portfolios = [] } = await supabase
+    .from('Portfolio')
+    .select('*')
+    .order('createdAt', { ascending: false });
 
   return (
     <div>
@@ -21,7 +22,7 @@ export default async function AdminPortfolioPage() {
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {portfolios.map(project => (
+        {(portfolios || []).map(project => (
           <div key={project.id} className="rounded-2xl border-[3px] border-black bg-white overflow-hidden shadow-[8px_8px_0_#111111] flex flex-col">
             <div className="relative aspect-16/10 w-full border-b-[3px] border-black bg-[#E2EEFF]">
               <Image src={project.image} alt={project.title_id} fill className="object-cover" sizes="33vw" />
