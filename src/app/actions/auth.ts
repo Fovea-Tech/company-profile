@@ -13,14 +13,20 @@ export async function login(formData: FormData) {
     return { error: 'Email dan password harus diisi.' };
   }
 
-  const { data: user } = await supabase
+  const { data: user, error } = await supabase
     .from('User')
     .select('*')
     .eq('email', email)
     .single();
 
+  if (error) {
+    console.error("Supabase Login Error:", error);
+    // Tampilkan pesan error spesifik jika terjadi kegagalan sistem (misal: env vars hilang, tabel tidak ada)
+    return { error: `System Error: ${error.message || JSON.stringify(error)}` };
+  }
+
   if (!user) {
-    return { error: 'Kredensial tidak valid.' };
+    return { error: 'Akun tidak ditemukan. Pastikan Anda sudah menjalankan SQL Insert.' };
   }
 
   const isValidPassword = await bcrypt.compare(password, user.password);
