@@ -50,6 +50,13 @@ export interface Translations {
     subtitle: string;
     cta: string;
   };
+  Portfolio: {
+    heading: string;
+    title: string;
+    subtitle: string;
+    BottomCTA: string[];
+    CardCTA: string;
+  };
   faq: {
     heading: string;
     title: string;

@@ -13,6 +13,7 @@ interface PortfolioClientProps {
 
 export default function PortfolioClient({ projects }: PortfolioClientProps) {
   const { lang } = useLang();
+  const { t } = useLang();
   const [activeCategory, setActiveCategory] = useState<string>('All');
 
   const categories = useMemo(() => {
@@ -87,7 +88,7 @@ export default function PortfolioClient({ projects }: PortfolioClientProps) {
                     href={`/portfolio/${project.id}`}
                     className="mt-auto inline-flex items-center justify-center rounded-xl border-[3px] border-black bg-[#FFD84D] px-5 py-3 text-sm font-black text-black shadow-[4px_4px_0_#111111] transition-all duration-200 hover:-translate-y-0.5 hover:shadow-[6px_6px_0_#111111] active:translate-y-1 active:shadow-[2px_2px_0_#111111]"
                   >
-                    Lihat Detail
+                    {t.Portfolio.CardCTA}
                   </Link>
                 </div>
               </div>

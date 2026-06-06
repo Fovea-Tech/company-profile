@@ -90,6 +90,18 @@ const id: Translations = {
     subtitle: 'Dari landing page hingga aplikasi SaaS kompleks, kami merancang solusi digital yang mengutamakan performa, keamanan, dan estetika.',
     cta: 'Lihat Semua Portofolio',
   },
+  Portfolio: {
+    heading: 'Portofolio Kami',
+    title: 'Bukti Nyata Kami Mendigitalisasi Bisnis',
+    subtitle: 'Kami tidak hanya menjual janji. Jelajahi berbagai sistem yang telah kami bangun—mulai dari company profile elegan hingga dashboard SaaS berskala besar.',
+    BottomCTA: [
+      'Siap Memulai Proyek Anda?',
+      'Konsultasikan kebutuhan digital Anda dengan tim kami secara gratis.',
+      'Kirim Ringkasan Proyek',
+      'Konsultasi WhatsApp',
+    ],
+    CardCTA: 'Lihat Detail',
+  },
   faq: {
     heading: 'FAQ',
     title: 'Pertanyaan yang sering muncul sebelum mulai proyek.',
@@ -148,6 +160,7 @@ const id: Translations = {
     navigation: ['Beranda', 'Siapa Kami', 'Proses Kerja', 'Layanan', 'FAQ', 'Kontak'],
     services: ['Produk SaaS', 'Website Custom', 'Pemeliharaan'],
   },
+
 };
 
 export default id;

@@ -90,6 +90,18 @@ const en: Translations = {
     subtitle: 'From landing pages to complex SaaS applications, we design digital solutions that prioritize performance, security, and aesthetics.',
     cta: 'View All Portfolios',
   },
+  Portfolio: {
+    heading: 'Our Portfolio',
+    title: 'Real Evidence of Our Digital Transformation Services',
+    subtitle: 'We don\'t just make promises. Explore the various systems we\'ve built—ranging from elegant company profiles to large-scale SaaS dashboards.',
+    BottomCTA: [
+      'Ready to Start Your Project?',
+      'Consult with our team about your digital needs for free.',
+      'Send Project Summary',
+      'WhatsApp Consultation',
+    ],
+    CardCTA: 'View Details',
+  },
   faq: {
     heading: 'FAQ',
     title: 'Questions that often arise before starting a project.',
