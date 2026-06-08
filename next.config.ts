@@ -43,9 +43,9 @@ const securityHeaders = [
       // Fonts
       "font-src 'self' https://fonts.gstatic.com",
       // Images: self + data URIs + Google domains + Unsplash
-      "img-src 'self' data: blob: https://www.google.com https://www.googletagmanager.com https://googleads.g.doubleclick.net https://images.unsplash.com",
+      "img-src 'self' data: blob: https://www.google.com https://www.google.co.id https://www.googletagmanager.com https://googleads.g.doubleclick.net https://images.unsplash.com",
       // Connections: self + Google analytics + Cloudflare Insights
-      "connect-src 'self' https://www.google-analytics.com https://googleads.g.doubleclick.net https://region1.google-analytics.com https://cloudflareinsights.com",
+      "connect-src 'self' https://www.google.com https://www.google-analytics.com https://googleads.g.doubleclick.net https://region1.google-analytics.com https://cloudflareinsights.com",
       // Frames: only Google Ads
       "frame-src https://bid.g.doubleclick.net https://td.doubleclick.net",
       // Block all plugins/objects
@@ -82,6 +82,12 @@ const nextConfig: NextConfig = {
         headers: securityHeaders,
       },
     ];
+  },
+
+  experimental: {},
+  serverActions: {
+    allowedOrigins: ['www.fovea.digital', 'fovea.digital', '*.fovea.digital', 'localhost:3000'],
+    bodySizeLimit: '5mb',
   },
 };
 
