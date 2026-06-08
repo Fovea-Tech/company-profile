@@ -84,10 +84,11 @@ const nextConfig: NextConfig = {
     ];
   },
 
-  experimental: {},
-  serverActions: {
-    allowedOrigins: ['www.fovea.digital', 'fovea.digital', '*.fovea.digital', 'localhost:3000'],
-    bodySizeLimit: '5mb',
+  experimental: {
+    serverActions: {
+      allowedOrigins: ['www.fovea.digital', 'fovea.digital', '*.fovea.digital', 'localhost:3000'],
+      bodySizeLimit: '5mb',
+    },
   },
 };
 
