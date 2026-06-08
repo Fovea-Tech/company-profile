@@ -59,19 +59,19 @@ export default function PortfolioDetailClient({ project }: { project: Portfolio 
             <div className="lg:col-span-4">
               <div className="rounded-3xl border-[3px] border-black bg-[#F7F7F4] p-8 shadow-[8px_8px_0_#111111] sticky top-32">
                 <h3 className="text-2xl font-black tracking-tight text-black mb-8 border-b-[3px] border-black pb-4">
-                  Info Proyek
+                  {t.PortfolioDetail.info}
                 </h3>
                 <div className="space-y-6">
                   <div>
-                    <p className="text-sm font-black uppercase text-[#2C2C2C] mb-1">Klien</p>
+                    <p className="text-sm font-black uppercase text-[#2C2C2C] mb-1">{t.PortfolioDetail.client}</p>
                     <p className="text-xl font-bold text-black">{project.client}</p>
                   </div>
                   <div>
-                    <p className="text-sm font-black uppercase text-[#2C2C2C] mb-1">Tahun</p>
+                    <p className="text-sm font-black uppercase text-[#2C2C2C] mb-1">{t.PortfolioDetail.year}</p>
                     <p className="text-xl font-bold text-black">{project.year}</p>
                   </div>
                   <div>
-                    <p className="text-sm font-black uppercase text-[#2C2C2C] mb-3">Teknologi</p>
+                    <p className="text-sm font-black uppercase text-[#2C2C2C] mb-3">{t.PortfolioDetail.technology}</p>
                     <div className="flex flex-wrap gap-2">
                       {technologies.map(tech => (
                         <span key={tech} className="inline-flex items-center rounded-full border-2 border-black bg-white px-3 py-1 text-sm font-bold text-black shadow-[2px_2px_0_#111111]">
@@ -88,18 +88,18 @@ export default function PortfolioDetailClient({ project }: { project: Portfolio 
             <div className="lg:col-span-8">
               <div className="prose prose-lg max-w-none text-[#2C2C2C]">
                 
-                <h2 className="text-3xl font-black tracking-tight text-black mb-6">Latar Belakang & Tantangan</h2>
+                <h2 className="text-3xl font-black tracking-tight text-black mb-6">{t.PortfolioDetail.challenge}</h2>
                 <p className="text-lg leading-relaxed mb-12 font-medium">
                   {lang === 'id' ? project.challenge_id : project.challenge_en}
                 </p>
 
-                <h2 className="text-3xl font-black tracking-tight text-black mb-6">Solusi Kami</h2>
+                <h2 className="text-3xl font-black tracking-tight text-black mb-6">{t.PortfolioDetail.solution}</h2>
                 <p className="text-lg leading-relaxed mb-12 font-medium">
                   {lang === 'id' ? project.solution_id : project.solution_en}
                 </p>
 
                 <div className="rounded-2xl border-[3px] border-black bg-[#E2EEFF] p-8 shadow-[8px_8px_0_#111111]">
-                  <h2 className="text-2xl font-black tracking-tight text-black mb-4">Hasil & Dampak</h2>
+                  <h2 className="text-2xl font-black tracking-tight text-black mb-4">{t.PortfolioDetail.results}</h2>
                   <p className="text-lg leading-relaxed font-bold text-[#111111]">
                     {lang === 'id' ? project.results_id : project.results_en}
                   </p>
@@ -119,14 +119,14 @@ export default function PortfolioDetailClient({ project }: { project: Portfolio 
               {t.featuredPortfolio.title}
             </h2>
             <p className="mb-10 max-w-2xl text-lg font-medium text-[#111111]">
-              Konsultasikan ide Anda bersama tim kami secara gratis. Mari wujudkan visi digital Anda.
+              {t.featuredPortfolio.subtitle}
             </p>
             <div className="flex flex-col gap-4 sm:flex-row">
               <Link
                 href="/#contact"
                 className="inline-flex min-h-16 items-center justify-center rounded-xl border-[3px] border-black bg-[#FFD84D] px-8 text-lg font-black text-black shadow-[6px_6px_0_#111111] transition-all duration-200 hover:-translate-y-1 hover:shadow-[10px_10px_0_#111111] active:translate-y-1 active:shadow-[2px_2px_0_#111111]"
               >
-                Mulai Konsultasi
+                {t.featuredPortfolio.cta}
               </Link>
             </div>
           </div>
