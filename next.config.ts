@@ -86,7 +86,15 @@ const nextConfig: NextConfig = {
 
   experimental: {
     serverActions: {
-      allowedOrigins: ['www.fovea.digital', 'fovea.digital', '*.fovea.digital', 'localhost:3000'],
+      allowedOrigins: [
+        'www.fovea.digital', 
+        'fovea.digital', 
+        '*.fovea.digital', 
+        'localhost:3000', 
+        'localhost:8787',
+        '127.0.0.1:3000',
+        '127.0.0.1:8787'
+      ],
       bodySizeLimit: '5mb',
     },
   },
