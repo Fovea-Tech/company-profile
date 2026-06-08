@@ -5,6 +5,10 @@ import { revalidatePath } from 'next/cache';
 import { redirect } from 'next/navigation';
 
 export async function createPortfolio(formData: FormData) {
+  const { headers } = await import('next/headers');
+  const h = await headers();
+  console.log('Headers:', Object.fromEntries(h.entries()));
+
   let imageUrl = formData.get('image') as string;
   const imageFile = formData.get('image') as File | null;
 

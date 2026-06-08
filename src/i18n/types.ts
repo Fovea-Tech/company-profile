@@ -57,6 +57,15 @@ export interface Translations {
     BottomCTA: string[];
     CardCTA: string;
   };
+  PortfolioDetail: {
+    challenge: string;
+    solution: string;
+    results: string;
+    year: string;
+    technology: string;
+    client: string;
+    info: string;
+  };
   faq: {
     heading: string;
     title: string;

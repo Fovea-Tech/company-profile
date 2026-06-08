@@ -102,6 +102,15 @@ const id: Translations = {
     ],
     CardCTA: 'Lihat Detail',
   },
+  PortfolioDetail: {
+    challenge: 'Latar Belakang & Tantangan',
+    solution: 'Solusi Kami',
+    results: 'Hasil & Dampak',
+    year: 'Tahun',
+    technology: 'Teknologi',
+    client: 'Klien',
+    info: 'Informasi Proyek',
+  },
   faq: {
     heading: 'FAQ',
     title: 'Pertanyaan yang sering muncul sebelum mulai proyek.',

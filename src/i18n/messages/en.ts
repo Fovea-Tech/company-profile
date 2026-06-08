@@ -102,6 +102,15 @@ const en: Translations = {
     ],
     CardCTA: 'View Details',
   },
+  PortfolioDetail: {
+    challenge: 'Background & Challenges',
+    solution: 'Our Solution',
+    results: 'Results & Impact',
+    year: 'Year',
+    technology: 'Technology',
+    client: 'Client',
+    info: 'Project Information',
+  },
   faq: {
     heading: 'FAQ',
     title: 'Questions that often arise before starting a project.',
