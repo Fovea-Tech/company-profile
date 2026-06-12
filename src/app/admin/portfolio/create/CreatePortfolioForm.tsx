@@ -2,7 +2,6 @@
 
 import { useState, useRef } from 'react';
 import { createPortfolio } from '@/app/actions/portfolio';
-import { useRouter } from 'next/navigation';
 
 export default function CreatePortfolioForm() {
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -94,6 +93,10 @@ export default function CreatePortfolioForm() {
         <div className="md:col-span-2">
           <label className="block text-sm font-black uppercase text-black mb-2">Teknologi (Pisahkan dengan koma)</label>
           <input name="tech" required placeholder="Next.js, Tailwind, SQLite" className="w-full rounded-xl border-[3px] border-black bg-[#F7F7F4] px-4 py-3 font-medium text-black" />
+        </div>
+        <div className="md:col-span-2">
+          <label className="block text-sm font-black uppercase text-black mb-2">Link Proyek</label>
+          <input name="link" required placeholder="https://example.com" className="w-full rounded-xl border-[3px] border-black bg-[#F7F7F4] px-4 py-3 font-medium text-black" />
         </div>
       </div>
 

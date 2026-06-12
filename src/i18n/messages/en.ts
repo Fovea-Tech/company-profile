@@ -110,6 +110,7 @@ const en: Translations = {
     technology: 'Technology',
     client: 'Client',
     info: 'Project Information',
+    link: 'Visit Website',
   },
   faq: {
     heading: 'FAQ',

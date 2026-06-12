@@ -53,6 +53,7 @@ export async function createPortfolio(formData: FormData) {
     solution_en: formData.get('solution_en') as string,
     results_id: formData.get('results_id') as string,
     results_en: formData.get('results_en') as string,
+    link: formData.get('link') as string,
     updatedAt: new Date().toISOString(),
   };
 

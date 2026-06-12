@@ -27,6 +27,7 @@ CREATE TABLE "Portfolio" (
     "solution_en" TEXT NOT NULL,
     "results_id" TEXT NOT NULL,
     "results_en" TEXT NOT NULL,
+    "link" TEXT NOT NULL,
     "createdAt" DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
     "updatedAt" DATETIME NOT NULL
 );

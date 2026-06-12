@@ -11,6 +11,13 @@ export default function PortfolioDetailClient({ project }: { project: Portfolio 
   // Parse tech strings
   const technologies = (project.tech || '').split(',').map(t => t.trim()).filter(Boolean);
 
+  const isUrl = (text: string) =>
+    /^(https?:\/\/|www\.)/i.test(text);
+
+  const href = project.link.startsWith("www.")
+    ? `https://${project.link}`
+    : project.link;
+
   return (
     <div className="pb-24 pt-32">
       {/* Header Section */}
@@ -103,6 +110,27 @@ export default function PortfolioDetailClient({ project }: { project: Portfolio 
                   <p className="text-lg leading-relaxed font-bold text-[#111111]">
                     {lang === 'id' ? project.results_id : project.results_en}
                   </p>
+                </div>
+
+                <div className="rounded-2xl border-[3px] border-black bg-[#E2EEFF] p-8 shadow-[8px_8px_0_#111111]">
+                  <h2 className="text-2xl font-black tracking-tight text-black mb-4">{t.PortfolioDetail.link}</h2>
+                  {
+                    project.link &&
+                    (isUrl(project.link) ? (
+                      <a
+                        href={href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-lg leading-relaxed font-bold text-blue-500 hover:underline"
+                      >
+                        {project.link}
+                      </a>
+                    ) : (
+                      <p className="text-lg leading-relaxed font-bold text-[#111111]">
+                        {project.link}
+                      </p>
+                    ))
+                  }
                 </div>
               </div>
             </div>

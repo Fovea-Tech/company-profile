@@ -63,6 +63,7 @@ export interface Translations {
     results: string;
     year: string;
     technology: string;
+    link: string;
     client: string;
     info: string;
   };

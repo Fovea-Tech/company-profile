@@ -16,6 +16,7 @@ export interface Portfolio {
   solution_en?: string | null;
   results_id?: string | null;
   results_en?: string | null;
+  link: string;
   createdAt?: Date | string;
   updatedAt?: Date | string;
 }

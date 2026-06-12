@@ -110,6 +110,7 @@ const id: Translations = {
     technology: 'Teknologi',
     client: 'Klien',
     info: 'Informasi Proyek',
+    link: 'Kunjungi Website',
   },
   faq: {
     heading: 'FAQ',
