@@ -100,44 +100,6 @@ export default function WebsiteCustomPage() {
           a: { id: 'Kami dapat membantu Anda melakukan pendaftaran domain dan hosting (deployment) di cloud provider modern seperti Vercel. Biaya tahunan server bisa ditagihkan terpisah atau masuk ke paket.', en: 'We can assist with domain registration and hosting (deployment) on modern cloud providers like Vercel. Annual server costs can be billed separately or included in the package.' },
         },
       ]}
-      pricing={[
-        {
-          title: { id: 'Landing Page', en: 'Landing Page' },
-          price: 'Mulai dari Rp 3.000.000',
-          features: [
-            { id: '1 Halaman Responsif', en: '1 Responsive Page' },
-            { id: 'Desain Premium', en: 'Premium Design' },
-            { id: 'Optimasi SEO Dasar', en: 'Basic SEO Optimization' },
-            { id: 'Formulir Kontak / Integrasi WA', en: 'Contact Form / WA Integration' },
-          ],
-          cta: { id: 'Konsultasi Sekarang', en: 'Consult Now' },
-        },
-        {
-          title: { id: 'Company Profile', en: 'Company Profile' },
-          price: 'Mulai dari Rp 5.000.000',
-          isPopular: true,
-          features: [
-            { id: 'Hingga 5 Halaman', en: 'Up to 5 Pages' },
-            { id: 'Desain Custom Eksklusif', en: 'Exclusive Custom Design' },
-            { id: 'Animasi Interaktif', en: 'Interactive Animations' },
-            { id: 'Optimasi Kecepatan Lanjutan', en: 'Advanced Speed Optimization' },
-            { id: 'Integrasi Analitik', en: 'Analytics Integration' },
-          ],
-          cta: { id: 'Konsultasi Sekarang', en: 'Consult Now' },
-        },
-        {
-          title: { id: 'Katalog Produk', en: 'Product Catalog' },
-          price: 'Mulai dari Rp 8.000.000',
-          features: [
-            { id: 'Halaman Tak Terbatas (CMS)', en: 'Unlimited Pages (CMS)' },
-            { id: 'Panel Akses Admin', en: 'Admin Access Panel' },
-            { id: 'Fitur Pencarian & Filter', en: 'Search & Filter Features' },
-            { id: 'Katalog Produk Dinamis', en: 'Dynamic Product Catalog' },
-            { id: 'SEO Lanjutan', en: 'Advanced SEO' },
-          ],
-          cta: { id: 'Konsultasi Sekarang', en: 'Consult Now' },
-        },
-      ]}
     />
   );
 }
