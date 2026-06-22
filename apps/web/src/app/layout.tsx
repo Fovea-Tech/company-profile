@@ -4,6 +4,7 @@ import './globals.css';
 import GoogleAdsTag from '@/components/GoogleAdsTag';
 import { ConditionalNavbar, ConditionalFooter } from '@/components/ConditionalLayout';
 import JsonLd from '@/components/JsonLd';
+import { GoogleAnalytics } from '@next/third-parties/google';
 
 // Only load weights actually used in the UI:
 // Space Grotesk — headings only, always bold (700)
@@ -152,6 +153,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <ConditionalNavbar />
         <main id="main-content">{children}</main>
         <ConditionalFooter />
+        <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID || 'G-XXXXXXXXXX'} />
       </body>
     </html>
   );
