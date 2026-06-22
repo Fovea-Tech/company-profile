@@ -1,49 +1,61 @@
--- CreateTable
-CREATE TABLE "User" (
-    "id" TEXT NOT NULL PRIMARY KEY,
-    "email" TEXT NOT NULL,
-    "password" TEXT NOT NULL,
-    "name" TEXT,
-    "createdAt" DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    "updatedAt" DATETIME NOT NULL
+-- 1. Buat tabel User (untuk Admin Login)
+CREATE TABLE public."User" (
+  "id" text PRIMARY KEY,
+  "email" text UNIQUE NOT NULL,
+  "password" text NOT NULL,
+  "name" text,
+  "createdAt" timestamp with time zone DEFAULT now() NOT NULL,
+  "updatedAt" timestamp with time zone DEFAULT now() NOT NULL
 );
 
--- CreateTable
-CREATE TABLE "Portfolio" (
-    "id" TEXT NOT NULL PRIMARY KEY,
-    "title_id" TEXT NOT NULL,
-    "title_en" TEXT NOT NULL,
-    "category_id" TEXT NOT NULL,
-    "category_en" TEXT NOT NULL,
-    "image" TEXT NOT NULL,
-    "desc_id" TEXT NOT NULL,
-    "desc_en" TEXT NOT NULL,
-    "client" TEXT NOT NULL,
-    "year" TEXT NOT NULL,
-    "tech" TEXT NOT NULL,
-    "challenge_id" TEXT NOT NULL,
-    "challenge_en" TEXT NOT NULL,
-    "solution_id" TEXT NOT NULL,
-    "solution_en" TEXT NOT NULL,
-    "results_id" TEXT NOT NULL,
-    "results_en" TEXT NOT NULL,
-    "link" TEXT NOT NULL,
-    "createdAt" DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    "updatedAt" DATETIME NOT NULL
+-- 2. Buat tabel Portfolio
+CREATE TABLE public."Portfolio" (
+  "id" text PRIMARY KEY,
+  "title" text NOT NULL,
+  "category" text NOT NULL,
+  "image" text NOT NULL,
+  "description" text NOT NULL,
+  "client" text,
+  "year" text,
+  "tech" text,
+  "challenge" text,
+  "solution" text,
+  "results" text,
+  "link" text,
+  "createdAt" timestamp with time zone DEFAULT now() NOT NULL,
+  "updatedAt" timestamp with time zone DEFAULT now() NOT NULL
 );
 
--- CreateTable
-CREATE TABLE "Faq" (
-    "id" TEXT NOT NULL PRIMARY KEY,
-    "question_id" TEXT NOT NULL,
-    "question_en" TEXT NOT NULL,
-    "answer_id" TEXT NOT NULL,
-    "answer_en" TEXT NOT NULL,
-    "order" INTEGER NOT NULL DEFAULT 0,
-    "createdAt" DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    "updatedAt" DATETIME NOT NULL
+-- 3. Buat tabel FAQ
+CREATE TABLE public."FAQ" (
+  "id" uuid DEFAULT gen_random_uuid() PRIMARY KEY,
+  "question" text NOT NULL,
+  "answer" text NOT NULL,
+  "order" integer DEFAULT 0 NOT NULL,
+  "createdAt" timestamp with time zone DEFAULT now() NOT NULL,
+  "updatedAt" timestamp with time zone DEFAULT now() NOT NULL
 );
 
--- CreateIndex
-CREATE UNIQUE INDEX "User_email_key" ON "User"("email");
+-- 4. Buat tabel Blog
+CREATE TABLE public."Blog" (
+  "id" uuid DEFAULT gen_random_uuid() PRIMARY KEY,
+  "title" text NOT NULL,
+  "slug" text UNIQUE NOT NULL,
+  "content" text NOT NULL,
+  "image" text NOT NULL,
+  "category" text NOT NULL,
+  "status" text DEFAULT 'draft' NOT NULL,
+  "createdAt" timestamp with time zone DEFAULT now() NOT NULL,
+  "updatedAt" timestamp with time zone DEFAULT now() NOT NULL
+);
 
+-- 5. Matikan Row Level Security (RLS) sementara karena kita menggunakan Service Role Key
+ALTER TABLE public."User" DISABLE ROW LEVEL SECURITY;
+ALTER TABLE public."Portfolio" DISABLE ROW LEVEL SECURITY;
+ALTER TABLE public."FAQ" DISABLE ROW LEVEL SECURITY;
+ALTER TABLE public."Blog" DISABLE ROW LEVEL SECURITY;
+
+-- 6. Tambahkan User Admin Pertama (Password: admin123)
+INSERT INTO public."User" (id, email, password, name) 
+VALUES ('admin-1', 'admin@fovea.digital', '$2a$10$wT2.6.2fT8b.h7P2YjW9G.Y/a.rI0a3d3c.QZ9C5jZ/lU0vT6Yy1u', 'Admin Fovea')
+ON CONFLICT (email) DO NOTHING;
