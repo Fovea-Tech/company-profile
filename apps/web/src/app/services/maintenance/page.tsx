@@ -101,55 +101,55 @@ export default function MaintenancePage() {
       id: 'starter',
       name: 'Starter',
       tagline: 'Cocok untuk website company profile & landing page',
-      price: 'Rp 500.000',
+      price: 'Rp 1Jt',
       period: '/ bulan',
-      minContract: 'Minimal 6 bulan',
+      minContract: 'Kontrak min. 6 bulan',
       highlighted: false,
-      cta: 'Konsultasi Gratis',
-      ctaHref: '/#contact',
+      cta: 'Pilih Starter',
+      ctaHref: 'https://wa.me/628818204100?text=Halo%20Fovea,%20saya%20tertarik%20dengan%20paket%20Maintenance%20Starter.',
       features: [
         { label: 'Monitoring uptime 24/7', included: true },
         { label: 'Security patching', included: true },
         { label: 'Backup mingguan (cloud)', included: true },
-        { label: 'Bug fixing (maks. 4 jam/bulan)', included: true },
+        { label: 'Bug fixing (maks. 6 jam/bulan)', included: true },
         { label: 'Laporan bulanan dasar', included: true },
         { label: 'Performance optimization', included: false },
         { label: 'Database optimization', included: false },
-        { label: 'Priority response < 4 jam', included: false },
+        { label: 'Priority response < 8 jam', included: true },
       ],
     },
     {
       id: 'professional',
       name: 'Professional',
       tagline: 'Untuk aplikasi web aktif dengan traffic harian',
-      price: 'Rp 1.500.000',
+      price: 'Rp 2Jt',
       period: '/ bulan',
-      minContract: 'Minimal 6 bulan',
+      minContract: 'Kontrak min. 6 bulan',
       highlighted: true,
       badge: 'Paling Populer',
-      cta: 'Pilih Paket Ini',
-      ctaHref: '/#contact',
+      cta: 'Pilih Professional',
+      ctaHref: 'https://wa.me/628818204100?text=Halo%20Fovea,%20saya%20tertarik%20dengan%20paket%20Maintenance%20Professional.',
       features: [
         { label: 'Monitoring uptime 24/7', included: true },
         { label: 'Security patching', included: true },
         { label: 'Backup harian (cloud)', included: true },
-        { label: 'Bug fixing (maks. 10 jam/bulan)', included: true },
+        { label: 'Bug fixing (maks. 12 jam/bulan)', included: true },
         { label: 'Laporan bulanan lengkap', included: true },
         { label: 'Performance optimization', included: true },
         { label: 'Database optimization', included: true },
-        { label: 'Priority response < 4 jam', included: false },
+        { label: 'Priority response < 4 jam', included: true },
       ],
     },
     {
       id: 'enterprise',
       name: 'Enterprise',
       tagline: 'Untuk sistem kritikal & SaaS dengan SLA ketat',
-      price: 'Custom',
+      price: 'Hubungi Kami',
       period: '',
       minContract: 'Kontrak tahunan',
       highlighted: false,
-      cta: 'Hubungi Tim Kami',
-      ctaHref: 'https://wa.me/628818204100',
+      cta: 'Hubungi Tim Ahli',
+      ctaHref: 'https://wa.me/628818204100?text=Halo%20Fovea,%20saya%20tertarik%20dengan%20paket%20Maintenance%20Enterprise.',
       features: [
         { label: 'Monitoring uptime + alert real-time', included: true },
         { label: 'Security patching', included: true },
@@ -372,85 +372,59 @@ export default function MaintenancePage() {
             <p className="text-slate-600 text-lg">Transparansi harga tanpa biaya tersembunyi. Kontrak minimal 6 bulan.</p>
           </header>
 
-          <div className="grid md:grid-cols-3 gap-8 items-stretch max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
             {PLANS.map((plan) => (
-              <article
+              <div
                 key={plan.id}
-                className="flex flex-col relative"
-                style={{
-                  background: plan.highlighted ? '#1E293B' : '#FFFFFF',
-                  borderRadius: '24px',
-                  border: plan.highlighted ? '1px solid #334155' : '1px solid var(--border)',
-                  boxShadow: plan.highlighted ? '0 25px 50px -12px rgba(0, 0, 0, 0.25)' : 'var(--shadow-sm)',
-                  padding: '40px 32px',
-                  color: plan.highlighted ? '#FFFFFF' : '#0F172A',
-                  zIndex: plan.highlighted ? 10 : 1,
-                  transform: plan.highlighted ? 'scale(1.02)' : 'scale(1)',
-                }}
+                className={`mnt-plan-card ${plan.highlighted ? 'mnt-plan-card--highlight relative z-10 transform transition-transform duration-300 lg:scale-105 lg:-translate-y-2' : ''}`}
+                style={plan.highlighted ? { padding: '32px 24px' } : undefined}
               >
                 {plan.badge && (
-                  <div
-                    style={{
-                      position: 'absolute',
-                      top: '-14px',
-                      left: '50%',
-                      transform: 'translateX(-50%)',
-                      background: 'var(--secondary)',
-                      color: '#FFFFFF',
-                      fontSize: '0.85rem',
-                      fontWeight: 700,
-                      padding: '4px 16px',
-                      borderRadius: '99px',
-                      textTransform: 'uppercase',
-                      letterSpacing: '0.05em',
-                      boxShadow: '0 4px 12px rgba(59, 130, 246, 0.3)',
-                    }}
-                  >
-                    {plan.badge}
-                  </div>
+                  <span className="mnt-plan-badge">{plan.badge}</span>
                 )}
                 
-                <div style={{ marginBottom: '32px' }}>
-                  <h3 style={{ fontSize: '1.4rem', fontWeight: 800, marginBottom: '8px' }}>{plan.name}</h3>
-                  <p style={{ fontSize: '0.95rem', color: plan.highlighted ? '#94A3B8' : '#64748B', lineHeight: 1.5, minHeight: '44px' }}>
-                    {plan.tagline}
-                  </p>
+                <div className="mnt-plan-header">
+                  <h3 className="mnt-plan-name">{plan.name}</h3>
+                  <p className="mnt-plan-tagline">{plan.tagline}</p>
                 </div>
 
-                <div style={{ marginBottom: '32px' }}>
-                  <div style={{ display: 'flex', alignItems: 'baseline', gap: '4px' }}>
-                    <span style={{ fontSize: '2.5rem', fontWeight: 800, letterSpacing: '-0.04em' }}>
-                      {plan.price}
-                    </span>
-                  </div>
-                  <div style={{ fontSize: '0.9rem', color: plan.highlighted ? '#94A3B8' : '#64748B', marginTop: '4px' }}>
-                    {plan.period} <span style={{ opacity: 0.5 }}>•</span> {plan.minContract}
-                  </div>
+                <div className="mnt-plan-price-row mt-2">
+                  <span className="mnt-plan-price" style={{ fontSize: plan.price === 'Hubungi Kami' ? '1.45rem' : '1.75rem' }}>
+                    {plan.price}
+                  </span>
+                  {plan.period && <span className="mnt-plan-period">{plan.period}</span>}
                 </div>
+                {plan.minContract && (
+                  <div className="text-xs font-semibold text-slate-500 mt-1">
+                    {plan.minContract}
+                  </div>
+                )}
 
-                <ul style={{ display: 'flex', flexDirection: 'column', gap: '16px', marginBottom: '40px', flex: 1 }}>
+                <ul className="mnt-plan-features mt-4">
                   {plan.features.map((f, idx) => (
-                    <li key={idx} style={{ display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
+                    <li key={idx} className={`mnt-plan-feature ${!f.included ? 'mnt-plan-feature--off' : ''}`}>
                       {f.included ? (
-                        <Check size={18} color={plan.highlighted ? '#10B981' : 'var(--secondary)'} style={{ flexShrink: 0, marginTop: '2px' }} />
+                        <Check size={16} className="mnt-check-icon" />
                       ) : (
-                        <X size={18} color={plan.highlighted ? '#475569' : '#CBD5E1'} style={{ flexShrink: 0, marginTop: '2px' }} />
+                        <X size={16} className="mnt-x-icon" />
                       )}
-                      <span style={{ fontSize: '0.95rem', color: plan.highlighted ? (f.included ? '#F8FAFC' : '#475569') : (f.included ? '#334155' : '#94A3B8') }}>
+                      <span style={{ fontWeight: plan.highlighted && f.included ? 600 : 500, color: plan.highlighted && f.included ? '#0F172A' : undefined }}>
                         {f.label}
                       </span>
                     </li>
                   ))}
                 </ul>
 
-                <Link
+                <a
                   href={plan.ctaHref}
-                  className={plan.highlighted ? 'btn-primary text-center justify-center' : 'btn-secondary text-center justify-center'}
-                  style={plan.highlighted ? { width: '100%' } : { width: '100%', background: '#F8FAFC' }}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={plan.highlighted ? 'btn-primary mt-6 text-sm flex w-full' : 'mnt-plan-cta-ghost mt-6'}
+                  style={plan.highlighted ? { marginTop: 'auto', textAlign: 'center', justifyContent: 'center', padding: '13px 20px' } : undefined}
                 >
                   {plan.cta}
-                </Link>
-              </article>
+                </a>
+              </div>
             ))}
           </div>
           <div style={{ marginTop: '64px', paddingTop: '32px', borderTop: '1px solid var(--border)' }}>

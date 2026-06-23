@@ -9,6 +9,7 @@ import Zap from 'lucide-react/dist/esm/icons/zap';
 import Shield from 'lucide-react/dist/esm/icons/shield';
 import BarChart3 from 'lucide-react/dist/esm/icons/chart-column';
 import React from 'react';
+import { Pricing } from './Pricing';
 
 export const metadata = {
   title: 'Solusi Pendidikan Swasta | Fovea Technology',
@@ -814,6 +815,9 @@ export default function SolusiPendidikanPage() {
           </div>
         </div>
       </section>
+
+      {/* ── Pricing Khusus Sekolah ── */}
+      <Pricing />
 
       {/* ── CTA ── */}
       <section
